@@ -121,7 +121,7 @@ export function DarkFooter() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
             <div className="text-sm text-gray-300 text-center md:text-left">
-              © {new Date().getFullYear()} T.S.P. Digital. All rights reserved.
+              © {new Date().getFullYear()} TSP Digital.
             </div>
 
             {/* Social links */}

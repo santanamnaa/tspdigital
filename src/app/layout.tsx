@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "T.S.P. Digital - We Don't Build Apps. We Build Unfair Advantages.",
-  description: "T.S.P. Digital is a strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software.",
+  metadataBase: new URL('https://tspdigital.com'),
+  title: {
+    template: '%s | TSP Digital',
+    default: 'TSP Digital - AI & Strategic Development',
+  },
+  description: 'We are a strategic technology partner that weaponizes data and automates processes using AI. We build unfair advantages for ambitious businesses.',
   icons: {
     icon: '/logo/tspd.svg',
     shortcut: '/logo/tspd.svg',

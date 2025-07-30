@@ -97,7 +97,7 @@ export function Footer({ darkMode = false }: FooterProps) {
                     ? "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" 
                     : "bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
                 )}>
-                  T.S.P. Digital
+                  TSP Digital
                 </h3>
                 <p className={cn(
                   "text-xs sm:text-sm mb-6 leading-relaxed",
@@ -169,7 +169,7 @@ export function Footer({ darkMode = false }: FooterProps) {
               "text-xs sm:text-sm text-center sm:text-left",
               darkMode ? "text-gray-300" : "text-muted-foreground"
             )}>
-              © {new Date().getFullYear()} T.S.P. Digital. All rights reserved.
+              © {new Date().getFullYear()} TSP Digital.
             </div>
 
             {/* Social links */}

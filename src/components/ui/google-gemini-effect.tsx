@@ -34,6 +34,7 @@ export const GoogleGeminiEffect = ({
           Transformasi Strategi Progresif Digital
         </button>
       </div>
+      
       <svg
         width="1440"
         height="890"
