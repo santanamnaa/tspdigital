@@ -53,7 +53,7 @@ export default function AboutPage() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Start</NavbarButton>
+            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
           </div>
         </NavBody>
 
@@ -82,6 +82,7 @@ export default function AboutPage() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
@@ -131,12 +132,12 @@ export default function AboutPage() {
       </section>
 
       {/* Team Section with Canvas Reveal Effect */}
-      <section className="py-20 px-4 bg-card">
+      <section className="py-12 md:py-20 px-4 bg-card">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-16">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
             The Core Command.
           </h2>
-          <div className="py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-4 mx-auto px-8">
+          <div className="py-8 md:py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6 md:gap-8 mx-auto px-4 md:px-8">
             <Card title="Santana Mena" subtitle="Lead Strategist & Principal Engineer" icon={<AceternityIcon />} bgColor="bg-[#080c39]">
               <Suspense fallback={<div className="w-full h-full bg-[#080c39] animate-pulse" />}>
                 <CanvasRevealEffect
@@ -210,12 +211,12 @@ const Card = React.memo(function Card({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className={`border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] max-w-sm w-full mx-auto p-4 relative h-[30rem] relative ${bgColor}`}
+      className={`border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2] w-full max-w-[280px] sm:max-w-[320px] md:max-w-[350px] mx-auto p-4 md:p-6 relative h-[280px] sm:h-[320px] md:h-[400px] relative ${bgColor}`}
     >
-      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
-      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 sm:-top-3 -left-2 sm:-left-3 text-white" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 sm:-bottom-3 -left-2 sm:-left-3 text-white" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -top-2 sm:-top-3 -right-2 sm:-right-3 text-white" />
+      <Icon className="absolute h-4 w-4 sm:h-6 sm:w-6 -bottom-2 sm:-bottom-3 -right-2 sm:-right-3 text-white" />
 
       <AnimatePresence mode="wait">
         {hovered && (
@@ -231,15 +232,15 @@ const Card = React.memo(function Card({
         )}
       </AnimatePresence>
 
-      <div className="relative z-20">
-        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+      <div className="relative z-20 w-full">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full mx-auto flex items-center justify-center mb-4">
           {icon}
         </div>
-        <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+        <h2 className="text-white text-base sm:text-lg md:text-xl opacity-100 md:opacity-0 md:group-hover/canvas-card:opacity-100 relative z-10 font-bold group-hover/canvas-card:-translate-y-2 transition duration-200 text-center leading-tight">
           {title}
         </h2>
         {subtitle && (
-          <p className="dark:text-white text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-2 font-medium group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+          <p className="text-white text-xs sm:text-sm md:text-base opacity-100 md:opacity-0 md:group-hover/canvas-card:opacity-100 relative z-10 mt-2 font-medium group-hover/canvas-card:-translate-y-2 transition duration-200 text-center leading-tight">
             {subtitle}
           </p>
         )}
@@ -256,7 +257,7 @@ const AceternityIcon = React.memo(function AceternityIcon() {
       viewBox="0 0 66 65"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className="h-10 w-10 text-black dark:text-white group-hover/canvas-card:text-white "
+      className="h-8 w-8 sm:h-10 sm:w-10 text-white"
     >
       <path
         d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"

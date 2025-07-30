@@ -50,7 +50,7 @@ export default function ServicesPage() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton variant="primary">Start</NavbarButton>
+            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
           </div>
         </NavBody>
 
@@ -79,6 +79,7 @@ export default function ServicesPage() {
             ))}
             <div className="flex w-full flex-col gap-4">
               <NavbarButton
+                href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
