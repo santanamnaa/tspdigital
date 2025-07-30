@@ -12,7 +12,7 @@ import {
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
 import { Cover } from "@/components/ui/cover";
-import { IconHome, IconUser, IconMessage, IconBriefcase, IconFolder } from "@tabler/icons-react";
+
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { GlowingStarsBackgroundCard, GlowingStarsTitle, GlowingStarsDescription } from "@/components/ui/glowing-stars";
 import TimelineDemo from "@/components/ui/timeline-demo";
@@ -104,10 +104,12 @@ export default function HomePage() {
             <Logo width={120} height={120} showText={false} />
           </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-             <span className="bg-gradient-to-b from-gray-900 via-gray-500 to-gray-200 bg-clip-text text-transparent">
+             <span className="bg-gradient-to-b from-gray-900 via-gray-500 to-gray-200 bg-clip-text text-transparent block mb-2">
                We Don&apos;t Build Apps.
-             </span> <br />
-             We Build <Cover>Unfair Advantages.</Cover>
+             </span>
+             <span className="block mt-4">
+               We Build <Cover>Unfair Advantages.</Cover>
+             </span>
            </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             T.S.P. Digital is a strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software.
@@ -122,14 +124,14 @@ export default function HomePage() {
       <section className="py-60 px-4 bg-card">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex flex-col items-center justify-center">
-            <h2 className="font-bold text-lg md:text-4xl mb-6 text-black dark:text-white max-w-4xl text-center">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-black dark:text-white max-w-4xl text-center">
               Trusted in High-Stakes Environments.
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm text-center">
+            <p className="text-neutral-700 dark:text-neutral-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-center">
               Our clients rely on us when the stakes are highest. We deliver results where reliability, security, and innovation are non-negotiable.
             </p>
           </div>
-          <div className="mt-20">
+          <div className="mt-20 w-full flex justify-center items-center">
             <AnimatedTooltipDemo />
           </div>
         </div>
@@ -139,10 +141,10 @@ export default function HomePage() {
       <section className="py-60 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col items-center justify-center text-center">
-            <h2 className="font-bold text-lg md:text-4xl mb-6 text-black dark:text-white max-w-4xl">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-black dark:text-white max-w-4xl">
               Our Arsenal.
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm mb-12">
+            <p className="text-neutral-700 dark:text-neutral-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mb-12">
               We deploy a full spectrum of capabilities from strategy and engineering to AI integration to give you a decisive edge.
             </p>
           </div>
@@ -168,7 +170,7 @@ export default function HomePage() {
                 proximity={80}
                 inactiveZone={0.01}
               />
-              <div className="relative z-10">
+              <div className="relative z-10 text-center py">
                 <h3 className="text-xl font-semibold mb-3">Full-Stack Development</h3>
                 <p className="text-muted-foreground">We build the war machine.</p>
               </div>
@@ -181,7 +183,7 @@ export default function HomePage() {
                 proximity={80}
                 inactiveZone={0.01}
               />
-              <div className="relative z-10">
+              <div className="relative z-10 text-center py">
                 <h3 className="text-xl font-semibold mb-3">AI & ML Integration</h3>
                 <p className="text-muted-foreground">We deliver the intelligence.</p>
               </div>
@@ -216,13 +218,13 @@ export default function HomePage() {
             inactiveZone={0.01}
           />
           <div className="relative z-10">
-            <h2 className="font-bold text-lg md:text-4xl mb-6 text-black dark:text-white max-w-4xl text-center mx-auto">
+            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-black dark:text-white max-w-4xl text-center mx-auto">
               From National Research to Business Operations.
             </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm mb-12 text-center mx-auto">
+            <p className="text-neutral-700 dark:text-neutral-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mb-12 text-center mx-auto">
               Our portfolio spans from national-scale research initiatives to transformative business solutions, showcasing our expertise in delivering real-world impact across industries.
             </p>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               <GlowingStarsBackgroundCard>
                 <GlowingStarsTitle>AI-Powered Aerial Inspection System</GlowingStarsTitle>
                 <div className="flex justify-between items-end">

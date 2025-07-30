@@ -11,7 +11,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { IconHome, IconUser, IconMessage, IconBriefcase, IconFolder } from "@tabler/icons-react";
+
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { Logo } from "@/components/ui/logo";

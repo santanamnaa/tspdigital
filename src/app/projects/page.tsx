@@ -11,7 +11,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { IconHome, IconUser, IconMessage, IconBriefcase, IconFolder } from "@tabler/icons-react";
+
 import { GlowingStarsBackgroundCard, GlowingStarsTitle, GlowingStarsDescription } from "@/components/ui/glowing-stars";
 import { Logo } from "@/components/ui/logo";
 
@@ -180,7 +180,7 @@ export default function ProjectsPage() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>Nationwide Blood Bank Application ("Hemo")</GlowingStarsTitle>
+              <GlowingStarsTitle>Nationwide Blood Bank Application (&quot;Hemo&quot;)</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
                   <strong>Type:</strong> R&D Case Study

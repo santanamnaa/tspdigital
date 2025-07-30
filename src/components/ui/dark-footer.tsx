@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone } from "@tabler/icons-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { cn } from "@/lib/utils";
+
 
 interface FooterLink {
   name: string;
@@ -64,7 +64,7 @@ export function DarkFooter() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Company info */}
           <div className="lg:col-span-1">
-            <div className="relative p-6 rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm">
+            <div className="relative p-6 rounded-lg border border-white/20 bg-black/50 backdrop-blur-sm text-center sm:text-left">
               <GlowingEffect
                 spread={20}
                 glow={true}
@@ -77,11 +77,10 @@ export function DarkFooter() {
                   T.S.P. Digital
                 </h3>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                  We don't build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
+                  We don&apos;t build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
                 </p>
-                
                 {/* Contact info */}
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col items-center sm:items-start">
                   {contactInfo.map((contact, index) => (
                     <a
                       key={index}
@@ -99,7 +98,7 @@ export function DarkFooter() {
 
           {/* Footer sections */}
           {footerSections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="space-y-4">
+            <div key={sectionIndex} className="space-y-4 text-center sm:text-left">
               <h4 className="font-semibold text-white">{section.title}</h4>
               <ul className="space-y-3">
                 {section.links.map((link, linkIndex) => (
@@ -121,12 +120,12 @@ export function DarkFooter() {
         <div className="border-t border-white/10 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
-            <div className="text-sm text-gray-300">
+            <div className="text-sm text-gray-300 text-center md:text-left">
               © {new Date().getFullYear()} T.S.P. Digital. All rights reserved.
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-4 justify-center md:justify-end w-full md:w-auto">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}

@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone, IconMapPin } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone } from "@tabler/icons-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
@@ -71,11 +71,11 @@ export function Footer({ darkMode = false }: FooterProps) {
     )}>
       {/* Main footer content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {/* Company info */}
           <div className="lg:col-span-1">
             <div className={cn(
-              "relative p-6 rounded-lg border backdrop-blur-sm",
+              "relative p-6 rounded-lg border backdrop-blur-sm text-center sm:text-left",
               darkMode 
                 ? "border-white/20 bg-black/50" 
                 : "border-border/50 bg-card/50"
@@ -88,11 +88,11 @@ export function Footer({ darkMode = false }: FooterProps) {
                 inactiveZone={0.01}
               />
               <div className="relative z-10">
-                <div className="mb-4">
+                <div className="mb-4 flex justify-center sm:justify-start">
                   <Logo width={48} height={48} showText={false} />
                 </div>
                 <h3 className={cn(
-                  "text-2xl font-bold mb-4",
+                  "text-xl sm:text-2xl font-bold mb-4",
                   darkMode 
                     ? "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" 
                     : "bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
@@ -100,26 +100,26 @@ export function Footer({ darkMode = false }: FooterProps) {
                   T.S.P. Digital
                 </h3>
                 <p className={cn(
-                  "text-sm mb-6 leading-relaxed",
+                  "text-xs sm:text-sm mb-6 leading-relaxed",
                   darkMode ? "text-gray-300" : "text-muted-foreground"
                 )}>
-                  We don't build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
+                  We don&apos;t build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
                 </p>
                 
                 {/* Contact info */}
-                <div className="space-y-3">
+                <div className="space-y-3 flex flex-col items-center sm:items-start">
                   {contactInfo.map((contact, index) => (
                     <a
                       key={index}
                       href={contact.href}
                       className={cn(
-                        "flex items-center gap-3 text-sm transition-colors group",
+                        "flex items-center gap-3 text-xs sm:text-sm transition-colors group",
                         darkMode 
                           ? "text-gray-300 hover:text-white" 
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
-                      <contact.icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                      <contact.icon className="h-3 w-3 sm:h-4 sm:w-4 group-hover:scale-110 transition-transform" />
                       <span>{contact.text}</span>
                     </a>
                   ))}
@@ -130,20 +130,20 @@ export function Footer({ darkMode = false }: FooterProps) {
 
           {/* Footer sections */}
           {footerSections.map((section, sectionIndex) => (
-            <div key={sectionIndex} className="space-y-4">
+            <div key={sectionIndex} className="space-y-4 text-center sm:text-left">
               <h4 className={cn(
-                "font-semibold",
+                "font-semibold text-base sm:text-lg",
                 darkMode ? "text-white" : "text-foreground"
               )}>
                 {section.title}
               </h4>
-              <ul className="space-y-3">
+              <ul className="space-y-2 sm:space-y-3">
                 {section.links.map((link, linkIndex) => (
                   <li key={linkIndex}>
                     <a
                       href={link.href}
                       className={cn(
-                        "text-sm transition-colors hover:translate-x-1 inline-block",
+                        "text-xs sm:text-sm transition-colors hover:translate-x-1 inline-block",
                         darkMode 
                           ? "text-gray-300 hover:text-white" 
                           : "text-muted-foreground hover:text-foreground"
@@ -166,14 +166,14 @@ export function Footer({ darkMode = false }: FooterProps) {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             {/* Copyright */}
             <div className={cn(
-              "text-sm",
+              "text-xs sm:text-sm text-center sm:text-left",
               darkMode ? "text-gray-300" : "text-muted-foreground"
             )}>
               © {new Date().getFullYear()} T.S.P. Digital. All rights reserved.
             </div>
 
             {/* Social links */}
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-2 sm:gap-4">
               {socialLinks.map((social, index) => (
                 <a
                   key={index}
@@ -195,7 +195,7 @@ export function Footer({ darkMode = false }: FooterProps) {
                     inactiveZone={0.01}
                   />
                   <social.icon className={cn(
-                    "h-5 w-5 transition-all duration-300 relative z-10 group-hover:scale-110",
+                    "h-4 w-4 sm:h-5 sm:w-5 transition-all duration-300 relative z-10 group-hover:scale-110",
                     darkMode 
                       ? "text-gray-300 group-hover:text-white" 
                       : "text-muted-foreground group-hover:text-foreground"

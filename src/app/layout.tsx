@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Footer } from "@/components/ui/footer";
-import { DarkFooter } from "@/components/ui/dark-footer";
 
 export const metadata: Metadata = {
   title: "T.S.P. Digital - We Don't Build Apps. We Build Unfair Advantages.",

@@ -13,7 +13,7 @@ import {
   MobileNavToggle,
   MobileNavMenu,
 } from "@/components/ui/resizable-navbar";
-import { IconHome, IconUser, IconMessage, IconBriefcase, IconFolder, IconSend, IconCheck } from "@tabler/icons-react";
+import { IconMessage, IconUser, IconSend, IconCheck } from "@tabler/icons-react";
 import { DarkFooter } from "@/components/ui/dark-footer";
 import { Logo } from "@/components/ui/logo";
 import emailjs from '@emailjs/browser';
@@ -213,7 +213,7 @@ export default function ContactPage() {
             Unfair Advantage?
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let's discuss how we can transform your business with strategic technology solutions.
+            Let&apos;s discuss how we can transform your business with strategic technology solutions.
           </p>
           <button className="bg-primary text-white px-8 py-4 rounded-full text-lg font-semibold hover:bg-primary/90 transition-colors">
             Schedule Strategy Call
@@ -228,7 +228,7 @@ export default function ContactPage() {
             <div>
               <h2 className="text-3xl font-bold mb-6">Get in Touch</h2>
               <p className="text-muted-foreground mb-8">
-                Ready to discuss your project? We're here to help you build the technology solutions that will give you a competitive edge.
+                Ready to discuss your project? We&apos;re here to help you build the technology solutions that will give you a competitive edge.
               </p>
               <div className="space-y-4">
                 <div className="flex items-center space-x-3">
@@ -326,7 +326,7 @@ export default function ContactPage() {
                     <div className="flex items-center space-x-2">
                       <IconCheck className="h-5 w-5 text-green-600 dark:text-green-400" />
                       <p className="text-green-600 dark:text-green-400 text-sm">
-                        Message sent successfully! We'll get back to you soon.
+                        Message sent successfully! We&apos;ll get back to you soon.
                       </p>
                     </div>
                   </div>
@@ -369,10 +369,9 @@ export default function ContactPage() {
             pathLengthFifth,
           ]}
           title="Ready to Transform Your Business?"
-          description="Let's build something extraordinary together. Our team is ready to help you create the technology solutions that will give you an unfair advantage in your market."
+          description="Let&apos;s build something extraordinary together. Our team is ready to help you create the technology solutions that will give you an unfair advantage in your market."
         />
       </div>
-      <div className="py-20 bg-black"></div>
 
       {/* Dark Footer for Contact Page */}
       <DarkFooter />

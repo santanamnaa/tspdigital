@@ -10,10 +10,10 @@ export default function AppleCardsCarouselDemo() {
 
   return (
     <div className="w-full h-full py-20">
-      <h2 className="font-bold text-lg md:text-4xl mb-4 text-black dark:text-white max-w-4xl mx-auto text-center">
+      <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-black dark:text-white max-w-4xl mx-auto text-center">
         Our Strategic Portfolio.
       </h2>
-      <p className="text-neutral-700 dark:text-neutral-300 text-sm md:text-base max-w-sm mx-auto text-center">
+      <p className="text-neutral-700 dark:text-neutral-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl mb-12 mx-auto text-center">
         A showcase of high-impact projects delivered for clients in critical industries.
       </p>
       <Carousel items={cards} />
