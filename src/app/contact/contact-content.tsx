@@ -129,12 +129,12 @@ export default function ContactContent() {
         });
       } else {
         setSubmitStatus("error");
-        setErrorMessage("Failed to send message. Please try again.");
+        setErrorMessage("Failed to send message. Please email us directly at tspdigital.id@gmail.com.");
       }
     } catch (error) {
       console.error("EmailJS error:", error);
       setSubmitStatus("error");
-      setErrorMessage("Failed to send message. Please try again.");
+      setErrorMessage("Failed to send message. Please email us directly at tspdigital.id@gmail.com.");
     } finally {
       setIsSubmitting(false);
     }
