@@ -71,7 +71,6 @@ export default function HomePage() {
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
               <a

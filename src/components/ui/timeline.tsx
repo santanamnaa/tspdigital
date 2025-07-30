@@ -36,7 +36,6 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
       if (!ref.current) return;
       const total = data.length;
-      const rect = ref.current.getBoundingClientRect();
       const progress = Math.min(Math.max(v, 0), 1);
       // Which item is currently active based on progress
       const idx = Math.floor(progress * total);

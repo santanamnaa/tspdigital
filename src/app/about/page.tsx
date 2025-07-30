@@ -69,7 +69,6 @@ export default function AboutPage() {
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
               <a
@@ -271,7 +270,7 @@ const AceternityIcon = React.memo(function AceternityIcon() {
   );
 });
 
-export const Icon = ({ className, ...rest }: { className?: string; [key: string]: unknown }) => {
+const Icon = ({ className, ...rest }: { className?: string; [key: string]: unknown }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

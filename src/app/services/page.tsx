@@ -66,7 +66,6 @@ export default function ServicesPage() {
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
               <a

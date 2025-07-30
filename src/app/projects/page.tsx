@@ -65,7 +65,6 @@ export default function ProjectsPage() {
 
           <MobileNavMenu
             isOpen={isMobileMenuOpen}
-            onClose={() => setIsMobileMenuOpen(false)}
           >
             {navItems.map((item, idx) => (
               <a
