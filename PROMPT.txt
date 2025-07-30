@@ -1,0 +1,2200 @@
+NAVBAR:
+
+"You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/floating-navbar-demo.tsx
+
+File content: "use client";
+import React from "react";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { IconHome, IconMessage, IconUser } from "@tabler/icons-react";
+export default function FloatingNavDemo() {
+  const navItems = [
+    {
+      name: "Home",
+      link: "/",
+      icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "About",
+      link: "/about",
+      icon: <IconUser className="h-4 w-4 text-neutral-500 dark:text-white" />,
+    },
+    {
+      name: "Contact",
+      link: "/contact",
+      icon: (
+        <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />
+      ),
+    },
+  ];
+  return (
+    <div className="relative  w-full">
+      <FloatingNav navItems={navItems} />
+      <DummyContent />
+    </div>
+  );
+}
+const DummyContent = () => {
+  return (
+    <div className="grid grid-cols-1 h-[40rem] w-full bg-white dark:bg-black relative border border-neutral-200 dark:border-white/[0.2] rounded-md">
+      <p className="dark:text-white text-neutral-600 text-center text-4xl mt-40 font-bold">
+        Scroll back up to reveal Navbar
+      </p>
+      <div className="inset-0 absolute bg-grid-black/[0.1] dark:bg-grid-white/[0.2]" />
+    </div>
+  );
+};
+
+
+File location: components/ui/floating-navbar.tsx
+
+File content: "use client";
+import React, { useState } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+} from "motion/react";
+import { cn } from "@/lib/utils";
+
+
+export const FloatingNav = ({
+  navItems,
+  className,
+}: {
+  navItems: {
+    name: string;
+    link: string;
+    icon?: JSX.Element;
+  }[];
+  className?: string;
+}) => {
+  const { scrollYProgress } = useScroll();
+
+  const [visible, setVisible] = useState(false);
+
+  useMotionValueEvent(scrollYProgress, "change", (current) => {
+    // Check if current is not undefined and is a number
+    if (typeof current === "number") {
+      let direction = current! - scrollYProgress.getPrevious()!;
+
+      if (scrollYProgress.get() < 0.05) {
+        setVisible(false);
+      } else {
+        if (direction < 0) {
+          setVisible(true);
+        } else {
+          setVisible(false);
+        }
+      }
+    }
+  });
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial={{
+          opacity: 1,
+          y: -100,
+        }}
+        animate={{
+          y: visible ? 0 : -100,
+          opacity: visible ? 1 : 0,
+        }}
+        transition={{
+          duration: 0.2,
+        }}
+        className={cn(
+          "flex max-w-fit  fixed top-10 inset-x-0 mx-auto border border-transparent dark:border-white/[0.2] rounded-full dark:bg-black bg-white shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] z-[5000] pr-2 pl-8 py-2  items-center justify-center space-x-4",
+          className
+        )}
+      >
+        {navItems.map((navItem: any, idx: number) => (
+          <a
+            key={`link=${idx}`}
+            href={navItem.link}
+            className={cn(
+              "relative dark:text-neutral-50 items-center flex space-x-1 text-neutral-600 dark:hover:text-neutral-300 hover:text-neutral-500"
+            )}
+          >
+            <span className="block sm:hidden">{navItem.icon}</span>
+            <span className="hidden sm:block text-sm">{navItem.name}</span>
+          </a>
+        ))}
+        <button className="border text-sm font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
+          <span>Login</span>
+          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-gradient-to-r from-transparent via-blue-500 to-transparent  h-px" />
+        </button>
+      </motion.div>
+    </AnimatePresence>
+  );
+};"
+
+
+TEAM:
+
+"You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/canvas-reveal-effect-demo.tsx
+
+File content: "use client";
+import React from "react";
+
+import { AnimatePresence, motion } from "motion/react";
+import { CanvasRevealEffect } from "@/components/ui/canvas-reveal-effect";
+
+export default function CanvasRevealEffectDemo() {
+  return (
+    <>
+      <div className="py-20 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+        <Card title="Sheetal is Nisha" icon={<AceternityIcon />}>
+          <CanvasRevealEffect
+            animationSpeed={5.1}
+            containerClassName="bg-emerald-900"
+          />
+        </Card>
+        <Card title="Nisha is Munni" icon={<AceternityIcon />}>
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-black"
+            colors={[
+              [236, 72, 153],
+              [232, 121, 249],
+            ]}
+            dotSize={2}
+          />
+          {/* Radial gradient for the cute fade */}
+          <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-black/50 dark:bg-black/90" />
+        </Card>
+        <Card title="Munni is Aditi" icon={<AceternityIcon />}>
+          <CanvasRevealEffect
+            animationSpeed={3}
+            containerClassName="bg-sky-600"
+            colors={[[125, 211, 252]]}
+          />
+        </Card>
+      </div>
+    </>
+  );
+}
+
+const Card = ({
+  title,
+  icon,
+  children,
+}: {
+  title: string;
+  icon: React.ReactNode;
+  children?: React.ReactNode;
+}) => {
+  const [hovered, setHovered] = React.useState(false);
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="border border-black/[0.2] group/canvas-card flex items-center justify-center dark:border-white/[0.2]  max-w-sm w-full mx-auto p-4 relative h-[30rem] relative"
+    >
+      <Icon className="absolute h-6 w-6 -top-3 -left-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -left-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -top-3 -right-3 dark:text-white text-black" />
+      <Icon className="absolute h-6 w-6 -bottom-3 -right-3 dark:text-white text-black" />
+
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="h-full w-full absolute inset-0"
+          >
+            {children}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <div className="relative z-20">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 group-hover/canvas-card:opacity-0 transition duration-200 w-full  mx-auto flex items-center justify-center">
+          {icon}
+        </div>
+        <h2 className="dark:text-white text-xl opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4  font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200">
+          {title}
+        </h2>
+      </div>
+    </div>
+  );
+};
+
+const AceternityIcon = () => {
+  return (
+    <svg
+      width="66"
+      height="65"
+      viewBox="0 0 66 65"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-10 w-10 text-black dark:text-white group-hover/canvas-card:text-white "
+    >
+      <path
+        d="M8 8.05571C8 8.05571 54.9009 18.1782 57.8687 30.062C60.8365 41.9458 9.05432 57.4696 9.05432 57.4696"
+        stroke="currentColor"
+        strokeWidth="15"
+        strokeMiterlimit="3.86874"
+        strokeLinecap="round"
+        style={{ mixBlendMode: "darken" }}
+      />
+    </svg>
+  );
+};
+
+export const Icon = ({ className, ...rest }: any) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="currentColor"
+      className={className}
+      {...rest}
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m6-6H6" />
+    </svg>
+  );
+};
+
+
+File location: components/ui/canvas-reveal-effect.tsx
+
+File content: "use client";
+import { cn } from "@/lib/utils";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import React, { useMemo, useRef } from "react";
+import * as THREE from "three";
+
+export const CanvasRevealEffect = ({
+  animationSpeed = 0.4,
+  opacities = [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1],
+  colors = [[0, 255, 255]],
+  containerClassName,
+  dotSize,
+  showGradient = true,
+}: {
+  /**
+   * 0.1 - slower
+   * 1.0 - faster
+   */
+  animationSpeed?: number;
+  opacities?: number[];
+  colors?: number[][];
+  containerClassName?: string;
+  dotSize?: number;
+  showGradient?: boolean;
+}) => {
+  return (
+    <div className={cn("h-full relative bg-white w-full", containerClassName)}>
+      <div className="h-full w-full">
+        <DotMatrix
+          colors={colors ?? [[0, 255, 255]]}
+          dotSize={dotSize ?? 3}
+          opacities={
+            opacities ?? [0.3, 0.3, 0.3, 0.5, 0.5, 0.5, 0.8, 0.8, 0.8, 1]
+          }
+          shader={`
+              float animation_speed_factor = ${animationSpeed.toFixed(1)};
+              float intro_offset = distance(u_resolution / 2.0 / u_total_size, st2) * 0.01 + (random(st2) * 0.15);
+              opacity *= step(intro_offset, u_time * animation_speed_factor);
+              opacity *= clamp((1.0 - step(intro_offset + 0.1, u_time * animation_speed_factor)) * 1.25, 1.0, 1.25);
+            `}
+          center={["x", "y"]}
+        />
+      </div>
+      {showGradient && (
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950 to-[84%]" />
+      )}
+    </div>
+  );
+};
+
+interface DotMatrixProps {
+  colors?: number[][];
+  opacities?: number[];
+  totalSize?: number;
+  dotSize?: number;
+  shader?: string;
+  center?: ("x" | "y")[];
+}
+
+const DotMatrix: React.FC<DotMatrixProps> = ({
+  colors = [[0, 0, 0]],
+  opacities = [0.04, 0.04, 0.04, 0.04, 0.04, 0.08, 0.08, 0.08, 0.08, 0.14],
+  totalSize = 4,
+  dotSize = 2,
+  shader = "",
+  center = ["x", "y"],
+}) => {
+  const uniforms = React.useMemo(() => {
+    let colorsArray = [
+      colors[0],
+      colors[0],
+      colors[0],
+      colors[0],
+      colors[0],
+      colors[0],
+    ];
+    if (colors.length === 2) {
+      colorsArray = [
+        colors[0],
+        colors[0],
+        colors[0],
+        colors[1],
+        colors[1],
+        colors[1],
+      ];
+    } else if (colors.length === 3) {
+      colorsArray = [
+        colors[0],
+        colors[0],
+        colors[1],
+        colors[1],
+        colors[2],
+        colors[2],
+      ];
+    }
+
+    return {
+      u_colors: {
+        value: colorsArray.map((color) => [
+          color[0] / 255,
+          color[1] / 255,
+          color[2] / 255,
+        ]),
+        type: "uniform3fv",
+      },
+      u_opacities: {
+        value: opacities,
+        type: "uniform1fv",
+      },
+      u_total_size: {
+        value: totalSize,
+        type: "uniform1f",
+      },
+      u_dot_size: {
+        value: dotSize,
+        type: "uniform1f",
+      },
+    };
+  }, [colors, opacities, totalSize, dotSize]);
+
+  return (
+    <Shader
+      source={`
+        precision mediump float;
+        in vec2 fragCoord;
+
+        uniform float u_time;
+        uniform float u_opacities[10];
+        uniform vec3 u_colors[6];
+        uniform float u_total_size;
+        uniform float u_dot_size;
+        uniform vec2 u_resolution;
+        out vec4 fragColor;
+        float PHI = 1.61803398874989484820459;
+        float random(vec2 xy) {
+            return fract(tan(distance(xy * PHI, xy) * 0.5) * xy.x);
+        }
+        float map(float value, float min1, float max1, float min2, float max2) {
+            return min2 + (value - min1) * (max2 - min2) / (max1 - min1);
+        }
+        void main() {
+            vec2 st = fragCoord.xy;
+            ${
+              center.includes("x")
+                ? "st.x -= abs(floor((mod(u_resolution.x, u_total_size) - u_dot_size) * 0.5));"
+                : ""
+            }
+            ${
+              center.includes("y")
+                ? "st.y -= abs(floor((mod(u_resolution.y, u_total_size) - u_dot_size) * 0.5));"
+                : ""
+            }
+      float opacity = step(0.0, st.x);
+      opacity *= step(0.0, st.y);
+
+      vec2 st2 = vec2(int(st.x / u_total_size), int(st.y / u_total_size));
+
+      float frequency = 5.0;
+      float show_offset = random(st2);
+      float rand = random(st2 * floor((u_time / frequency) + show_offset + frequency) + 1.0);
+      opacity *= u_opacities[int(rand * 10.0)];
+      opacity *= 1.0 - step(u_dot_size / u_total_size, fract(st.x / u_total_size));
+      opacity *= 1.0 - step(u_dot_size / u_total_size, fract(st.y / u_total_size));
+
+      vec3 color = u_colors[int(show_offset * 6.0)];
+
+      ${shader}
+
+      fragColor = vec4(color, opacity);
+      fragColor.rgb *= fragColor.a;
+        }`}
+      uniforms={uniforms}
+      maxFps={60}
+    />
+  );
+};
+
+type Uniforms = {
+  [key: string]: {
+    value: number[] | number[][] | number;
+    type: string;
+  };
+};
+const ShaderMaterial = ({
+  source,
+  uniforms,
+  maxFps = 60,
+}: {
+  source: string;
+  hovered?: boolean;
+  maxFps?: number;
+  uniforms: Uniforms;
+}) => {
+  const { size } = useThree();
+  const ref = useRef<THREE.Mesh>();
+  let lastFrameTime = 0;
+
+  useFrame(({ clock }) => {
+    if (!ref.current) return;
+    const timestamp = clock.getElapsedTime();
+    if (timestamp - lastFrameTime < 1 / maxFps) {
+      return;
+    }
+    lastFrameTime = timestamp;
+
+    const material: any = ref.current.material;
+    const timeLocation = material.uniforms.u_time;
+    timeLocation.value = timestamp;
+  });
+
+  const getUniforms = () => {
+    const preparedUniforms: any = {};
+
+    for (const uniformName in uniforms) {
+      const uniform: any = uniforms[uniformName];
+
+      switch (uniform.type) {
+        case "uniform1f":
+          preparedUniforms[uniformName] = { value: uniform.value, type: "1f" };
+          break;
+        case "uniform3f":
+          preparedUniforms[uniformName] = {
+            value: new THREE.Vector3().fromArray(uniform.value),
+            type: "3f",
+          };
+          break;
+        case "uniform1fv":
+          preparedUniforms[uniformName] = { value: uniform.value, type: "1fv" };
+          break;
+        case "uniform3fv":
+          preparedUniforms[uniformName] = {
+            value: uniform.value.map((v: number[]) =>
+              new THREE.Vector3().fromArray(v)
+            ),
+            type: "3fv",
+          };
+          break;
+        case "uniform2f":
+          preparedUniforms[uniformName] = {
+            value: new THREE.Vector2().fromArray(uniform.value),
+            type: "2f",
+          };
+          break;
+        default:
+          console.error(`Invalid uniform type for '${uniformName}'.`);
+          break;
+      }
+    }
+
+    preparedUniforms["u_time"] = { value: 0, type: "1f" };
+    preparedUniforms["u_resolution"] = {
+      value: new THREE.Vector2(size.width * 2, size.height * 2),
+    }; // Initialize u_resolution
+    return preparedUniforms;
+  };
+
+  // Shader material
+  const material = useMemo(() => {
+    const materialObject = new THREE.ShaderMaterial({
+      vertexShader: `
+      precision mediump float;
+      in vec2 coordinates;
+      uniform vec2 u_resolution;
+      out vec2 fragCoord;
+      void main(){
+        float x = position.x;
+        float y = position.y;
+        gl_Position = vec4(x, y, 0.0, 1.0);
+        fragCoord = (position.xy + vec2(1.0)) * 0.5 * u_resolution;
+        fragCoord.y = u_resolution.y - fragCoord.y;
+      }
+      `,
+      fragmentShader: source,
+      uniforms: getUniforms(),
+      glslVersion: THREE.GLSL3,
+      blending: THREE.CustomBlending,
+      blendSrc: THREE.SrcAlphaFactor,
+      blendDst: THREE.OneFactor,
+    });
+
+    return materialObject;
+  }, [size.width, size.height, source]);
+
+  return (
+    <mesh ref={ref as any}>
+      <planeGeometry args={[2, 2]} />
+      <primitive object={material} attach="material" />
+    </mesh>
+  );
+};
+
+const Shader: React.FC<ShaderProps> = ({ source, uniforms, maxFps = 60 }) => {
+  return (
+    <Canvas className="absolute inset-0  h-full w-full">
+      <ShaderMaterial source={source} uniforms={uniforms} maxFps={maxFps} />
+    </Canvas>
+  );
+};
+interface ShaderProps {
+  source: string;
+  uniforms: {
+    [key: string]: {
+      value: number[] | number[][] | number;
+      type: string;
+    };
+  };
+  maxFps?: number;
+}"
+
+
+HERO:
+"
+You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/cover-demo.tsx
+
+File content: import React from "react";
+import { Cover } from "@/components/ui/cover";
+
+export default function CoverDemo() {
+  return (
+    <div>
+      <h1 className="text-4xl md:text-4xl lg:text-6xl font-semibold max-w-7xl mx-auto text-center mt-6 relative z-20 py-6 bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-neutral-700 to-neutral-700 dark:from-neutral-800 dark:via-white dark:to-white">
+        Build amazing websites <br /> at <Cover>warp speed</Cover>
+      </h1>
+    </div>
+  );
+}
+
+
+File location: components/ui/cover.tsx
+
+File content: "use client";
+import React, { useEffect, useId, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { useRef } from "react";
+import { cn } from "@/lib/utils";
+import { SparklesCore } from "@/components/ui/sparkles";
+
+export const Cover = ({
+  children,
+  className,
+}: {
+  children?: React.ReactNode;
+  className?: string;
+}) => {
+  const [hovered, setHovered] = useState(false);
+
+  const ref = useRef<HTMLDivElement>(null);
+
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [beamPositions, setBeamPositions] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (ref.current) {
+      setContainerWidth(ref.current?.clientWidth ?? 0);
+
+      const height = ref.current?.clientHeight ?? 0;
+      const numberOfBeams = Math.floor(height / 10); // Adjust the divisor to control the spacing
+      const positions = Array.from(
+        { length: numberOfBeams },
+        (_, i) => (i + 1) * (height / (numberOfBeams + 1))
+      );
+      setBeamPositions(positions);
+    }
+  }, [ref.current]);
+
+  return (
+    <div
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      ref={ref}
+      className="relative hover:bg-neutral-900  group/cover inline-block dark:bg-neutral-900 bg-neutral-100 px-2 py-2  transition duration-200 rounded-sm"
+    >
+      <AnimatePresence>
+        {hovered && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{
+              opacity: {
+                duration: 0.2,
+              },
+            }}
+            className="h-full w-full overflow-hidden absolute inset-0"
+          >
+            <motion.div
+              animate={{
+                translateX: ["-50%", "0%"],
+              }}
+              transition={{
+                translateX: {
+                  duration: 10,
+                  ease: "linear",
+                  repeat: Infinity,
+                },
+              }}
+              className="w-[200%] h-full flex"
+            >
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={500}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+              />
+              <SparklesCore
+                background="transparent"
+                minSize={0.4}
+                maxSize={1}
+                particleDensity={500}
+                className="w-full h-full"
+                particleColor="#FFFFFF"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+      {beamPositions.map((position, index) => (
+        <Beam
+          key={index}
+          hovered={hovered}
+          duration={Math.random() * 2 + 1}
+          delay={Math.random() * 2 + 1}
+          width={containerWidth}
+          style={{
+            top: `${position}px`,
+          }}
+        />
+      ))}
+      <motion.span
+        key={String(hovered)}
+        animate={{
+          scale: hovered ? 0.8 : 1,
+          x: hovered ? [0, -30, 30, -30, 30, 0] : 0,
+          y: hovered ? [0, 30, -30, 30, -30, 0] : 0,
+        }}
+        exit={{
+          filter: "none",
+          scale: 1,
+          x: 0,
+          y: 0,
+        }}
+        transition={{
+          duration: 0.2,
+          x: {
+            duration: 0.2,
+            repeat: Infinity,
+            repeatType: "loop",
+          },
+          y: {
+            duration: 0.2,
+            repeat: Infinity,
+            repeatType: "loop",
+          },
+          scale: {
+            duration: 0.2,
+          },
+          filter: {
+            duration: 0.2,
+          },
+        }}
+        className={cn(
+          "dark:text-white inline-block text-neutral-900 relative z-20 group-hover/cover:text-white transition duration-200",
+          className
+        )}
+      >
+        {children}
+      </motion.span>
+      <CircleIcon className="absolute -right-[2px] -top-[2px]" />
+      <CircleIcon className="absolute -bottom-[2px] -right-[2px]" delay={0.4} />
+      <CircleIcon className="absolute -left-[2px] -top-[2px]" delay={0.8} />
+      <CircleIcon className="absolute -bottom-[2px] -left-[2px]" delay={1.6} />
+    </div>
+  );
+};
+
+export const Beam = ({
+  className,
+  delay,
+  duration,
+  hovered,
+  width = 600,
+  ...svgProps
+}: {
+  className?: string;
+  delay?: number;
+  duration?: number;
+  hovered?: boolean;
+  width?: number;
+} & React.ComponentProps<typeof motion.svg>) => {
+  const id = useId();
+
+  return (
+    <motion.svg
+      width={width ?? "600"}
+      height="1"
+      viewBox={`0 0 ${width ?? "600"} 1`}
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={cn("absolute inset-x-0 w-full", className)}
+      {...svgProps}
+    >
+      <motion.path
+        d={`M0 0.5H${width ?? "600"}`}
+        stroke={`url(#svgGradient-${id})`}
+      />
+
+      <defs>
+        <motion.linearGradient
+          id={`svgGradient-${id}`}
+          key={String(hovered)}
+          gradientUnits="userSpaceOnUse"
+          initial={{
+            x1: "0%",
+            x2: hovered ? "-10%" : "-5%",
+            y1: 0,
+            y2: 0,
+          }}
+          animate={{
+            x1: "110%",
+            x2: hovered ? "100%" : "105%",
+            y1: 0,
+            y2: 0,
+          }}
+          transition={{
+            duration: hovered ? 0.5 : duration ?? 2,
+            ease: "linear",
+            repeat: Infinity,
+            delay: hovered ? Math.random() * (1 - 0.2) + 0.2 : 0,
+            repeatDelay: hovered ? Math.random() * (2 - 1) + 1 : delay ?? 1,
+          }}
+        >
+          <stop stopColor="#2EB9DF" stopOpacity="0" />
+          <stop stopColor="#3b82f6" />
+          <stop offset="1" stopColor="#3b82f6" stopOpacity="0" />
+        </motion.linearGradient>
+      </defs>
+    </motion.svg>
+  );
+};
+
+export const CircleIcon = ({
+  className,
+  delay,
+}: {
+  className?: string;
+  delay?: number;
+}) => {
+  return (
+    <div
+      className={cn(
+        `pointer-events-none animate-pulse group-hover/cover:hidden group-hover/cover:opacity-100 group h-2 w-2 rounded-full bg-neutral-600 dark:bg-white opacity-20 group-hover/cover:bg-white`,
+        className
+      )}
+    ></div>
+  );
+};
+
+
+File location: components/ui/sparkles.tsx
+
+File content: "use client";
+import React, { useId, useMemo } from "react";
+import { useEffect, useState } from "react";
+import Particles, { initParticlesEngine } from "@tsparticles/react";
+import type { Container, SingleOrMultiple } from "@tsparticles/engine";
+import { loadSlim } from "@tsparticles/slim";
+import { cn } from "@/lib/utils";
+import { motion, useAnimation } from "motion/react";
+
+type ParticlesProps = {
+  id?: string;
+  className?: string;
+  background?: string;
+  particleSize?: number;
+  minSize?: number;
+  maxSize?: number;
+  speed?: number;
+  particleColor?: string;
+  particleDensity?: number;
+};
+export const SparklesCore = (props: ParticlesProps) => {
+  const {
+    id,
+    className,
+    background,
+    minSize,
+    maxSize,
+    speed,
+    particleColor,
+    particleDensity,
+  } = props;
+  const [init, setInit] = useState(false);
+  useEffect(() => {
+    initParticlesEngine(async (engine) => {
+      await loadSlim(engine);
+    }).then(() => {
+      setInit(true);
+    });
+  }, []);
+  const controls = useAnimation();
+
+  const particlesLoaded = async (container?: Container) => {
+    if (container) {
+      controls.start({
+        opacity: 1,
+        transition: {
+          duration: 1,
+        },
+      });
+    }
+  };
+
+  const generatedId = useId();
+  return (
+    <motion.div animate={controls} className={cn("opacity-0", className)}>
+      {init && (
+        <Particles
+          id={id || generatedId}
+          className={cn("h-full w-full")}
+          particlesLoaded={particlesLoaded}
+          options={{
+            background: {
+              color: {
+                value: background || "#0d47a1",
+              },
+            },
+            fullScreen: {
+              enable: false,
+              zIndex: 1,
+            },
+
+            fpsLimit: 120,
+            interactivity: {
+              events: {
+                onClick: {
+                  enable: true,
+                  mode: "push",
+                },
+                onHover: {
+                  enable: false,
+                  mode: "repulse",
+                },
+                resize: true as any,
+              },
+              modes: {
+                push: {
+                  quantity: 4,
+                },
+                repulse: {
+                  distance: 200,
+                  duration: 0.4,
+                },
+              },
+            },
+            particles: {
+              bounce: {
+                horizontal: {
+                  value: 1,
+                },
+                vertical: {
+                  value: 1,
+                },
+              },
+              collisions: {
+                absorb: {
+                  speed: 2,
+                },
+                bounce: {
+                  horizontal: {
+                    value: 1,
+                  },
+                  vertical: {
+                    value: 1,
+                  },
+                },
+                enable: false,
+                maxSpeed: 50,
+                mode: "bounce",
+                overlap: {
+                  enable: true,
+                  retries: 0,
+                },
+              },
+              color: {
+                value: particleColor || "#ffffff",
+                animation: {
+                  h: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                  s: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                  l: {
+                    count: 0,
+                    enable: false,
+                    speed: 1,
+                    decay: 0,
+                    delay: 0,
+                    sync: true,
+                    offset: 0,
+                  },
+                },
+              },
+              effect: {
+                close: true,
+                fill: true,
+                options: {},
+                type: {} as SingleOrMultiple<string> | undefined,
+              },
+              groups: {},
+              move: {
+                angle: {
+                  offset: 0,
+                  value: 90,
+                },
+                attract: {
+                  distance: 200,
+                  enable: false,
+                  rotate: {
+                    x: 3000,
+                    y: 3000,
+                  },
+                },
+                center: {
+                  x: 50,
+                  y: 50,
+                  mode: "percent",
+                  radius: 0,
+                },
+                decay: 0,
+                distance: {},
+                direction: "none",
+                drift: 0,
+                enable: true,
+                gravity: {
+                  acceleration: 9.81,
+                  enable: false,
+                  inverse: false,
+                  maxSpeed: 50,
+                },
+                path: {
+                  clamp: true,
+                  delay: {
+                    value: 0,
+                  },
+                  enable: false,
+                  options: {},
+                },
+                outModes: {
+                  default: "out",
+                },
+                random: false,
+                size: false,
+                speed: {
+                  min: 0.1,
+                  max: 1,
+                },
+                spin: {
+                  acceleration: 0,
+                  enable: false,
+                },
+                straight: false,
+                trail: {
+                  enable: false,
+                  length: 10,
+                  fill: {},
+                },
+                vibrate: false,
+                warp: false,
+              },
+              number: {
+                density: {
+                  enable: true,
+                  width: 400,
+                  height: 400,
+                },
+                limit: {
+                  mode: "delete",
+                  value: 0,
+                },
+                value: particleDensity || 120,
+              },
+              opacity: {
+                value: {
+                  min: 0.1,
+                  max: 1,
+                },
+                animation: {
+                  count: 0,
+                  enable: true,
+                  speed: speed || 4,
+                  decay: 0,
+                  delay: 0,
+                  sync: false,
+                  mode: "auto",
+                  startValue: "random",
+                  destroy: "none",
+                },
+              },
+              reduceDuplicates: false,
+              shadow: {
+                blur: 0,
+                color: {
+                  value: "#000",
+                },
+                enable: false,
+                offset: {
+                  x: 0,
+                  y: 0,
+                },
+              },
+              shape: {
+                close: true,
+                fill: true,
+                options: {},
+                type: "circle",
+              },
+              size: {
+                value: {
+                  min: minSize || 1,
+                  max: maxSize || 3,
+                },
+                animation: {
+                  count: 0,
+                  enable: false,
+                  speed: 5,
+                  decay: 0,
+                  delay: 0,
+                  sync: false,
+                  mode: "auto",
+                  startValue: "random",
+                  destroy: "none",
+                },
+              },
+              stroke: {
+                width: 0,
+              },
+              zIndex: {
+                value: 0,
+                opacityRate: 1,
+                sizeRate: 1,
+                velocityRate: 1,
+              },
+              destroy: {
+                bounds: {},
+                mode: "none",
+                split: {
+                  count: 1,
+                  factor: {
+                    value: 3,
+                  },
+                  rate: {
+                    value: {
+                      min: 4,
+                      max: 9,
+                    },
+                  },
+                  sizeOffset: true,
+                },
+              },
+              roll: {
+                darken: {
+                  enable: false,
+                  value: 0,
+                },
+                enable: false,
+                enlighten: {
+                  enable: false,
+                  value: 0,
+                },
+                mode: "vertical",
+                speed: 25,
+              },
+              tilt: {
+                value: 0,
+                animation: {
+                  enable: false,
+                  speed: 0,
+                  decay: 0,
+                  sync: false,
+                },
+                direction: "clockwise",
+                enable: false,
+              },
+              twinkle: {
+                lines: {
+                  enable: false,
+                  frequency: 0.05,
+                  opacity: 1,
+                },
+                particles: {
+                  enable: false,
+                  frequency: 0.05,
+                  opacity: 1,
+                },
+              },
+              wobble: {
+                distance: 5,
+                enable: false,
+                speed: {
+                  angle: 50,
+                  move: 10,
+                },
+              },
+              life: {
+                count: 0,
+                delay: {
+                  value: 0,
+                  sync: false,
+                },
+                duration: {
+                  value: 0,
+                  sync: false,
+                },
+              },
+              rotate: {
+                value: 0,
+                animation: {
+                  enable: false,
+                  speed: 0,
+                  decay: 0,
+                  sync: false,
+                },
+                direction: "clockwise",
+                path: false,
+              },
+              orbit: {
+                animation: {
+                  count: 0,
+                  enable: false,
+                  speed: 1,
+                  decay: 0,
+                  delay: 0,
+                  sync: false,
+                },
+                enable: false,
+                opacity: 1,
+                rotation: {
+                  value: 45,
+                },
+                width: 1,
+              },
+              links: {
+                blink: false,
+                color: {
+                  value: "#fff",
+                },
+                consent: false,
+                distance: 100,
+                enable: false,
+                frequency: 1,
+                opacity: 1,
+                shadow: {
+                  blur: 5,
+                  color: {
+                    value: "#000",
+                  },
+                  enable: false,
+                },
+                triangles: {
+                  enable: false,
+                  frequency: 1,
+                },
+                width: 1,
+                warp: false,
+              },
+              repulse: {
+                value: 0,
+                enabled: false,
+                distance: 1,
+                duration: 1,
+                factor: 1,
+                speed: 1,
+              },
+            },
+            detectRetina: true,
+          }}
+        />
+      )}
+    </motion.div>
+  );
+};"
+
+"
+You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/google-gemini-effect-demo.tsx
+
+File content: "use client";
+import { useScroll, useTransform } from "motion/react";
+import React from "react";
+import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
+
+export default function GoogleGeminiEffectDemo() {
+  const ref = React.useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const pathLengthFirst = useTransform(scrollYProgress, [0, 0.8], [0.2, 1.2]);
+  const pathLengthSecond = useTransform(scrollYProgress, [0, 0.8], [0.15, 1.2]);
+  const pathLengthThird = useTransform(scrollYProgress, [0, 0.8], [0.1, 1.2]);
+  const pathLengthFourth = useTransform(scrollYProgress, [0, 0.8], [0.05, 1.2]);
+  const pathLengthFifth = useTransform(scrollYProgress, [0, 0.8], [0, 1.2]);
+
+  return (
+    <div
+      className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
+      ref={ref}
+    >
+      <GoogleGeminiEffect
+        pathLengths={[
+          pathLengthFirst,
+          pathLengthSecond,
+          pathLengthThird,
+          pathLengthFourth,
+          pathLengthFifth,
+        ]}
+      />
+    </div>
+  );
+}
+
+
+File location: components/ui/google-gemini-effect.tsx
+
+File content: "use client";
+import { cn } from "@/lib/utils";
+import { motion, MotionValue } from "motion/react";
+import React from "react";
+
+const transition = {
+  duration: 0,
+  ease: "linear",
+};
+
+export const GoogleGeminiEffect = ({
+  pathLengths,
+  title,
+  description,
+  className,
+}: {
+  pathLengths: MotionValue[];
+  title?: string;
+  description?: string;
+  className?: string;
+}) => {
+  return (
+    <div className={cn("sticky top-80", className)}>
+      <p className="text-lg md:text-7xl font-normal pb-4 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-100 to-neutral-300">
+        {title || `Build with Aceternity UI`}
+      </p>
+      <p className="text-xs md:text-xl font-normal text-center text-neutral-400 mt-4 max-w-lg mx-auto">
+        {description ||
+          `Scroll this component and see the bottom SVG come to life wow this
+        works!`}
+      </p>
+      <div className="w-full h-[890px] -top-60 md:-top-40  flex items-center justify-center bg-red-transparent absolute ">
+        <button className="font-bold bg-white rounded-full md:px-4 md:py-2 px-2 py-1 md:mt-24 mt-8 z-30 md:text-base text-black text-xs  w-fit mx-auto ">
+          ui.aceternity.com
+        </button>
+      </div>
+      <svg
+        width="1440"
+        height="890"
+        viewBox="0 0 1440 890"
+        xmlns="http://www.w3.org/2000/svg"
+        className=" absolute -top-60  md:-top-40 w-full"
+      >
+        <motion.path
+          d="M0 663C145.5 663 191 666.265 269 647C326.5 630 339.5 621 397.5 566C439 531.5 455 529.5 490 523C509.664 519.348 521 503.736 538 504.236C553.591 504.236 562.429 514.739 584.66 522.749C592.042 525.408 600.2 526.237 607.356 523.019C624.755 515.195 641.446 496.324 657 496.735C673.408 496.735 693.545 519.572 712.903 526.769C718.727 528.934 725.184 528.395 730.902 525.965C751.726 517.115 764.085 497.106 782 496.735C794.831 496.47 804.103 508.859 822.469 518.515C835.13 525.171 850.214 526.815 862.827 520.069C875.952 513.049 889.748 502.706 903.5 503.736C922.677 505.171 935.293 510.562 945.817 515.673C954.234 519.76 963.095 522.792 972.199 524.954C996.012 530.611 1007.42 534.118 1034 549C1077.5 573.359 1082.5 594.5 1140 629C1206 670 1328.5 662.5 1440 662.5"
+          stroke="#FFB7C5"
+          strokeWidth="2"
+          fill="none"
+          initial={{
+            pathLength: 0,
+          }}
+          style={{
+            pathLength: pathLengths[0],
+          }}
+          transition={transition}
+        />
+        <motion.path
+          d="M0 587.5C147 587.5 277 587.5 310 573.5C348 563 392.5 543.5 408 535C434 523.5 426 526.235 479 515.235C494 512.729 523 510.435 534.5 512.735C554.5 516.735 555.5 523.235 576 523.735C592 523.735 616 496.735 633 497.235C648.671 497.235 661.31 515.052 684.774 524.942C692.004 527.989 700.2 528.738 707.349 525.505C724.886 517.575 741.932 498.33 757.5 498.742C773.864 498.742 791.711 520.623 810.403 527.654C816.218 529.841 822.661 529.246 828.451 526.991C849.246 518.893 861.599 502.112 879.5 501.742C886.47 501.597 896.865 506.047 907.429 510.911C930.879 521.707 957.139 519.639 982.951 520.063C1020.91 520.686 1037.5 530.797 1056.5 537C1102.24 556.627 1116.5 570.704 1180.5 579.235C1257.5 589.5 1279 587 1440 588"
+          stroke="#FFDDB7"
+          strokeWidth="2"
+          fill="none"
+          initial={{
+            pathLength: 0,
+          }}
+          style={{
+            pathLength: pathLengths[1],
+          }}
+          transition={transition}
+        />
+        <motion.path
+          d="M0 514C147.5 514.333 294.5 513.735 380.5 513.735C405.976 514.94 422.849 515.228 436.37 515.123C477.503 514.803 518.631 506.605 559.508 511.197C564.04 511.706 569.162 512.524 575 513.735C588 516.433 616 521.702 627.5 519.402C647.5 515.402 659 499.235 680.5 499.235C700.5 499.235 725 529.235 742 528.735C757.654 528.735 768.77 510.583 791.793 500.59C798.991 497.465 807.16 496.777 814.423 499.745C832.335 507.064 850.418 524.648 866 524.235C882.791 524.235 902.316 509.786 921.814 505.392C926.856 504.255 932.097 504.674 937.176 505.631C966.993 511.248 970.679 514.346 989.5 514.735C1006.3 515.083 1036.5 513.235 1055.5 513.235C1114.5 513.235 1090.5 513.235 1124 513.235C1177.5 513.235 1178.99 514.402 1241 514.402C1317.5 514.402 1274.5 512.568 1440 513.235"
+          stroke="#B1C5FF"
+          strokeWidth="2"
+          fill="none"
+          initial={{
+            pathLength: 0,
+          }}
+          style={{
+            pathLength: pathLengths[2],
+          }}
+          transition={transition}
+        />
+        <motion.path
+          d="M0 438.5C150.5 438.5 261 438.318 323.5 456.5C351 464.5 387.517 484.001 423.5 494.5C447.371 501.465 472 503.735 487 507.735C503.786 512.212 504.5 516.808 523 518.735C547 521.235 564.814 501.235 584.5 501.235C604.5 501.235 626 529.069 643 528.569C658.676 528.569 672.076 511.63 695.751 501.972C703.017 499.008 711.231 498.208 718.298 501.617C735.448 509.889 751.454 529.98 767 529.569C783.364 529.569 801.211 507.687 819.903 500.657C825.718 498.469 832.141 499.104 837.992 501.194C859.178 508.764 873.089 523.365 891 523.735C907.8 524.083 923 504.235 963 506.735C1034.5 506.735 1047.5 492.68 1071 481.5C1122.5 457 1142.23 452.871 1185 446.5C1255.5 436 1294 439 1439.5 439"
+          stroke="#4FABFF"
+          strokeWidth="2"
+          fill="none"
+          initial={{
+            pathLength: 0,
+          }}
+          style={{
+            pathLength: pathLengths[3],
+          }}
+          transition={transition}
+        />
+        <motion.path
+          d="M0.5 364C145.288 362.349 195 361.5 265.5 378C322 391.223 399.182 457.5 411 467.5C424.176 478.649 456.916 491.677 496.259 502.699C498.746 503.396 501.16 504.304 503.511 505.374C517.104 511.558 541.149 520.911 551.5 521.236C571.5 521.236 590 498.736 611.5 498.736C631.5 498.736 652.5 529.236 669.5 528.736C685.171 528.736 697.81 510.924 721.274 501.036C728.505 497.988 736.716 497.231 743.812 500.579C761.362 508.857 778.421 529.148 794 528.736C810.375 528.736 829.35 508.68 848.364 502.179C854.243 500.169 860.624 500.802 866.535 502.718C886.961 509.338 898.141 519.866 916 520.236C932.8 520.583 934.5 510.236 967.5 501.736C1011.5 491 1007.5 493.5 1029.5 480C1069.5 453.5 1072 440.442 1128.5 403.5C1180.5 369.5 1275 360.374 1439 364"
+          stroke="#076EFF"
+          strokeWidth="2"
+          fill="none"
+          initial={{
+            pathLength: 0,
+          }}
+          style={{
+            pathLength: pathLengths[4],
+          }}
+          transition={transition}
+        />
+
+        {/* Gaussian blur for the background paths */}
+
+        <path
+          d="M0 663C145.5 663 191 666.265 269 647C326.5 630 339.5 621 397.5 566C439 531.5 455 529.5 490 523C509.664 519.348 521 503.736 538 504.236C553.591 504.236 562.429 514.739 584.66 522.749C592.042 525.408 600.2 526.237 607.356 523.019C624.755 515.195 641.446 496.324 657 496.735C673.408 496.735 693.545 519.572 712.903 526.769C718.727 528.934 725.184 528.395 730.902 525.965C751.726 517.115 764.085 497.106 782 496.735C794.831 496.47 804.103 508.859 822.469 518.515C835.13 525.171 850.214 526.815 862.827 520.069C875.952 513.049 889.748 502.706 903.5 503.736C922.677 505.171 935.293 510.562 945.817 515.673C954.234 519.76 963.095 522.792 972.199 524.954C996.012 530.611 1007.42 534.118 1034 549C1077.5 573.359 1082.5 594.5 1140 629C1206 670 1328.5 662.5 1440 662.5"
+          stroke="#FFB7C5"
+          strokeWidth="2"
+          fill="none"
+          pathLength={1}
+          filter="url(#blurMe)"
+        />
+        <path
+          d="M0 587.5C147 587.5 277 587.5 310 573.5C348 563 392.5 543.5 408 535C434 523.5 426 526.235 479 515.235C494 512.729 523 510.435 534.5 512.735C554.5 516.735 555.5 523.235 576 523.735C592 523.735 616 496.735 633 497.235C648.671 497.235 661.31 515.052 684.774 524.942C692.004 527.989 700.2 528.738 707.349 525.505C724.886 517.575 741.932 498.33 757.5 498.742C773.864 498.742 791.711 520.623 810.403 527.654C816.218 529.841 822.661 529.246 828.451 526.991C849.246 518.893 861.599 502.112 879.5 501.742C886.47 501.597 896.865 506.047 907.429 510.911C930.879 521.707 957.139 519.639 982.951 520.063C1020.91 520.686 1037.5 530.797 1056.5 537C1102.24 556.627 1116.5 570.704 1180.5 579.235C1257.5 589.5 1279 587 1440 588"
+          stroke="#FFDDB7"
+          strokeWidth="2"
+          fill="none"
+          pathLength={1}
+          filter="url(#blurMe)"
+        />
+        <path
+          d="M0 514C147.5 514.333 294.5 513.735 380.5 513.735C405.976 514.94 422.849 515.228 436.37 515.123C477.503 514.803 518.631 506.605 559.508 511.197C564.04 511.706 569.162 512.524 575 513.735C588 516.433 616 521.702 627.5 519.402C647.5 515.402 659 499.235 680.5 499.235C700.5 499.235 725 529.235 742 528.735C757.654 528.735 768.77 510.583 791.793 500.59C798.991 497.465 807.16 496.777 814.423 499.745C832.335 507.064 850.418 524.648 866 524.235C882.791 524.235 902.316 509.786 921.814 505.392C926.856 504.255 932.097 504.674 937.176 505.631C966.993 511.248 970.679 514.346 989.5 514.735C1006.3 515.083 1036.5 513.235 1055.5 513.235C1114.5 513.235 1090.5 513.235 1124 513.235C1177.5 513.235 1178.99 514.402 1241 514.402C1317.5 514.402 1274.5 512.568 1440 513.235"
+          stroke="#B1C5FF"
+          strokeWidth="2"
+          fill="none"
+          pathLength={1}
+          filter="url(#blurMe)"
+        />
+        <path
+          d="M0 438.5C150.5 438.5 261 438.318 323.5 456.5C351 464.5 387.517 484.001 423.5 494.5C447.371 501.465 472 503.735 487 507.735C503.786 512.212 504.5 516.808 523 518.735C547 521.235 564.814 501.235 584.5 501.235C604.5 501.235 626 529.069 643 528.569C658.676 528.569 672.076 511.63 695.751 501.972C703.017 499.008 711.231 498.208 718.298 501.617C735.448 509.889 751.454 529.98 767 529.569C783.364 529.569 801.211 507.687 819.903 500.657C825.718 498.469 832.141 499.104 837.992 501.194C859.178 508.764 873.089 523.365 891 523.735C907.8 524.083 923 504.235 963 506.735C1034.5 506.735 1047.5 492.68 1071 481.5C1122.5 457 1142.23 452.871 1185 446.5C1255.5 436 1294 439 1439.5 439"
+          stroke="#4FABFF"
+          strokeWidth="2"
+          fill="none"
+          pathLength={1}
+          filter="url(#blurMe)"
+        />
+        <path
+          d="M0.5 364C145.288 362.349 195 361.5 265.5 378C322 391.223 399.182 457.5 411 467.5C424.176 478.649 456.916 491.677 496.259 502.699C498.746 503.396 501.16 504.304 503.511 505.374C517.104 511.558 541.149 520.911 551.5 521.236C571.5 521.236 590 498.736 611.5 498.736C631.5 498.736 652.5 529.236 669.5 528.736C685.171 528.736 697.81 510.924 721.274 501.036C728.505 497.988 736.716 497.231 743.812 500.579C761.362 508.857 778.421 529.148 794 528.736C810.375 528.736 829.35 508.68 848.364 502.179C854.243 500.169 860.624 500.802 866.535 502.718C886.961 509.338 898.141 519.866 916 520.236C932.8 520.583 934.5 510.236 967.5 501.736C1011.5 491 1007.5 493.5 1029.5 480C1069.5 453.5 1072 440.442 1128.5 403.5C1180.5 369.5 1275 360.374 1439 364"
+          stroke="#076EFF"
+          strokeWidth="2"
+          fill="none"
+          pathLength={1}
+          filter="url(#blurMe)"
+        />
+
+        <defs>
+          <filter id="blurMe">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+          </filter>
+        </defs>
+      </svg>
+    </div>
+  );
+};"
+
+ABOUT US:
+"
+You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/container-scroll-animation-demo.tsx
+
+File content: "use client";
+import React from "react";
+import { ContainerScroll } from "@/components/ui/container-scroll-animation";
+
+export default function HeroScrollDemo() {
+  return (
+    <div className="flex flex-col overflow-hidden">
+      <ContainerScroll
+        titleComponent={
+          <>
+            <h1 className="text-4xl font-semibold text-black dark:text-white">
+              Unleash the power of <br />
+              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                Scroll Animations
+              </span>
+            </h1>
+          </>
+        }
+      >
+        <img
+          src={`/linear.webp`}
+          alt="hero"
+          height={720}
+          width={1400}
+          className="mx-auto rounded-2xl object-cover h-full object-left-top"
+          draggable={false}
+        />
+      </ContainerScroll>
+    </div>
+  );
+}
+
+
+File location: components/ui/container-scroll-animation.tsx
+
+File content: "use client";
+import React, { useRef } from "react";
+import { useScroll, useTransform, motion, MotionValue } from "motion/react";
+
+export const ContainerScroll = ({
+  titleComponent,
+  children,
+}: {
+  titleComponent: string | React.ReactNode;
+  children: React.ReactNode;
+}) => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+  });
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => {
+      window.removeEventListener("resize", checkMobile);
+    };
+  }, []);
+
+  const scaleDimensions = () => {
+    return isMobile ? [0.7, 0.9] : [1.05, 1];
+  };
+
+  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
+  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+
+  return (
+    <div
+      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+      ref={containerRef}
+    >
+      <div
+        className="py-10 md:py-40 w-full relative"
+        style={{
+          perspective: "1000px",
+        }}
+      >
+        <Header translate={translate} titleComponent={titleComponent} />
+        <Card rotate={rotate} translate={translate} scale={scale}>
+          {children}
+        </Card>
+      </div>
+    </div>
+  );
+};
+
+export const Header = ({ translate, titleComponent }: any) => {
+  return (
+    <motion.div
+      style={{
+        translateY: translate,
+      }}
+      className="div max-w-5xl mx-auto text-center"
+    >
+      {titleComponent}
+    </motion.div>
+  );
+};
+
+export const Card = ({
+  rotate,
+  scale,
+  children,
+}: {
+  rotate: MotionValue<number>;
+  scale: MotionValue<number>;
+  translate: MotionValue<number>;
+  children: React.ReactNode;
+}) => {
+  return (
+    <motion.div
+      style={{
+        rotateX: rotate,
+        scale,
+        boxShadow:
+          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+      }}
+      className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+    >
+      <div className=" h-full w-full  overflow-hidden rounded-2xl bg-gray-100 dark:bg-zinc-900 md:rounded-2xl md:p-4 ">
+        {children}
+      </div>
+    </motion.div>
+  );
+};"
+
+SERVICES:
+"
+You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/glowing-effect-demo.tsx
+
+File content: "use client";
+
+import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { GlowingEffect } from "@/components/ui/glowing-effect";
+
+export default function GlowingEffectDemo() {
+  return (
+    <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 md:grid-rows-3 lg:gap-4 xl:max-h-[34rem] xl:grid-rows-2">
+      <GridItem
+        area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
+        icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
+        title="Do things the right way"
+        description="Running out of copy so I'll write anything."
+      />
+
+      <GridItem
+        area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
+        icon={<Settings className="h-4 w-4 text-black dark:text-neutral-400" />}
+        title="The best AI code editor ever."
+        description="Yes, it's true. I'm not even kidding. Ask my mom if you don't believe me."
+      />
+
+      <GridItem
+        area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
+        icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
+        title="You should buy Aceternity UI Pro"
+        description="It's the best money you'll ever spend"
+      />
+
+      <GridItem
+        area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
+        icon={<Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />}
+        title="This card is also built by Cursor"
+        description="I'm not even kidding. Ask my mom if you don't believe me."
+      />
+
+      <GridItem
+        area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
+        icon={<Search className="h-4 w-4 text-black dark:text-neutral-400" />}
+        title="Coming soon on Aceternity UI"
+        description="I'm writing the code as I record this, no shit."
+      />
+    </ul>
+  );
+}
+
+interface GridItemProps {
+  area: string;
+  icon: React.ReactNode;
+  title: string;
+  description: React.ReactNode;
+}
+
+const GridItem = ({ area, icon, title, description }: GridItemProps) => {
+  return (
+    <li className={`min-h-[14rem] list-none ${area}`}>
+      <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
+        <GlowingEffect
+          spread={40}
+          glow={true}
+          disabled={false}
+          proximity={64}
+          inactiveZone={0.01}
+        />
+        <div className="border-0.75 relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl p-6 md:p-6 dark:shadow-[0px_0px_27px_0px_#2D2D2D]">
+          <div className="relative flex flex-1 flex-col justify-between gap-3">
+            <div className="w-fit rounded-lg border border-gray-600 p-2">
+              {icon}
+            </div>
+            <div className="space-y-3">
+              <h3 className="-tracking-4 pt-0.5 font-sans text-xl/[1.375rem] font-semibold text-balance text-black md:text-2xl/[1.875rem] dark:text-white">
+                {title}
+              </h3>
+              <h2 className="font-sans text-sm/[1.125rem] text-black md:text-base/[1.375rem] dark:text-neutral-400 [&_b]:md:font-semibold [&_strong]:md:font-semibold">
+                {description}
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  );
+};
+
+
+File location: components/ui/glowing-effect.tsx
+
+File content: "use client";
+
+import { memo, useCallback, useEffect, useRef } from "react";
+import { cn } from "@/lib/utils";
+import { animate } from "motion/react";
+
+interface GlowingEffectProps {
+  blur?: number;
+  inactiveZone?: number;
+  proximity?: number;
+  spread?: number;
+  variant?: "default" | "white";
+  glow?: boolean;
+  className?: string;
+  disabled?: boolean;
+  movementDuration?: number;
+  borderWidth?: number;
+}
+const GlowingEffect = memo(
+  ({
+    blur = 0,
+    inactiveZone = 0.7,
+    proximity = 0,
+    spread = 20,
+    variant = "default",
+    glow = false,
+    className,
+    movementDuration = 2,
+    borderWidth = 1,
+    disabled = true,
+  }: GlowingEffectProps) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const lastPosition = useRef({ x: 0, y: 0 });
+    const animationFrameRef = useRef<number>(0);
+
+    const handleMove = useCallback(
+      (e?: MouseEvent | { x: number; y: number }) => {
+        if (!containerRef.current) return;
+
+        if (animationFrameRef.current) {
+          cancelAnimationFrame(animationFrameRef.current);
+        }
+
+        animationFrameRef.current = requestAnimationFrame(() => {
+          const element = containerRef.current;
+          if (!element) return;
+
+          const { left, top, width, height } = element.getBoundingClientRect();
+          const mouseX = e?.x ?? lastPosition.current.x;
+          const mouseY = e?.y ?? lastPosition.current.y;
+
+          if (e) {
+            lastPosition.current = { x: mouseX, y: mouseY };
+          }
+
+          const center = [left + width * 0.5, top + height * 0.5];
+          const distanceFromCenter = Math.hypot(
+            mouseX - center[0],
+            mouseY - center[1]
+          );
+          const inactiveRadius = 0.5 * Math.min(width, height) * inactiveZone;
+
+          if (distanceFromCenter < inactiveRadius) {
+            element.style.setProperty("--active", "0");
+            return;
+          }
+
+          const isActive =
+            mouseX > left - proximity &&
+            mouseX < left + width + proximity &&
+            mouseY > top - proximity &&
+            mouseY < top + height + proximity;
+
+          element.style.setProperty("--active", isActive ? "1" : "0");
+
+          if (!isActive) return;
+
+          const currentAngle =
+            parseFloat(element.style.getPropertyValue("--start")) || 0;
+          let targetAngle =
+            (180 * Math.atan2(mouseY - center[1], mouseX - center[0])) /
+              Math.PI +
+            90;
+
+          const angleDiff = ((targetAngle - currentAngle + 180) % 360) - 180;
+          const newAngle = currentAngle + angleDiff;
+
+          animate(currentAngle, newAngle, {
+            duration: movementDuration,
+            ease: [0.16, 1, 0.3, 1],
+            onUpdate: (value) => {
+              element.style.setProperty("--start", String(value));
+            },
+          });
+        });
+      },
+      [inactiveZone, proximity, movementDuration]
+    );
+
+    useEffect(() => {
+      if (disabled) return;
+
+      const handleScroll = () => handleMove();
+      const handlePointerMove = (e: PointerEvent) => handleMove(e);
+
+      window.addEventListener("scroll", handleScroll, { passive: true });
+      document.body.addEventListener("pointermove", handlePointerMove, {
+        passive: true,
+      });
+
+      return () => {
+        if (animationFrameRef.current) {
+          cancelAnimationFrame(animationFrameRef.current);
+        }
+        window.removeEventListener("scroll", handleScroll);
+        document.body.removeEventListener("pointermove", handlePointerMove);
+      };
+    }, [handleMove, disabled]);
+
+    return (
+      <>
+        <div
+          className={cn(
+            "pointer-events-none absolute -inset-px hidden rounded-[inherit] border opacity-0 transition-opacity",
+            glow && "opacity-100",
+            variant === "white" && "border-white",
+            disabled && "!block"
+          )}
+        />
+        <div
+          ref={containerRef}
+          style={
+            {
+              "--blur": `${blur}px`,
+              "--spread": spread,
+              "--start": "0",
+              "--active": "0",
+              "--glowingeffect-border-width": `${borderWidth}px`,
+              "--repeating-conic-gradient-times": "5",
+              "--gradient":
+                variant === "white"
+                  ? `repeating-conic-gradient(
+                  from 236.84deg at 50% 50%,
+                  var(--black),
+                  var(--black) calc(25% / var(--repeating-conic-gradient-times))
+                )`
+                  : `radial-gradient(circle, #dd7bbb 10%, #dd7bbb00 20%),
+                radial-gradient(circle at 40% 40%, #d79f1e 5%, #d79f1e00 15%),
+                radial-gradient(circle at 60% 60%, #5a922c 10%, #5a922c00 20%), 
+                radial-gradient(circle at 40% 60%, #4c7894 10%, #4c789400 20%),
+                repeating-conic-gradient(
+                  from 236.84deg at 50% 50%,
+                  #dd7bbb 0%,
+                  #d79f1e calc(25% / var(--repeating-conic-gradient-times)),
+                  #5a922c calc(50% / var(--repeating-conic-gradient-times)), 
+                  #4c7894 calc(75% / var(--repeating-conic-gradient-times)),
+                  #dd7bbb calc(100% / var(--repeating-conic-gradient-times))
+                )`,
+            } as React.CSSProperties
+          }
+          className={cn(
+            "pointer-events-none absolute inset-0 rounded-[inherit] opacity-100 transition-opacity",
+            glow && "opacity-100",
+            blur > 0 && "blur-[var(--blur)] ",
+            className,
+            disabled && "!hidden"
+          )}
+        >
+          <div
+            className={cn(
+              "glow",
+              "rounded-[inherit]",
+              'after:content-[""] after:rounded-[inherit] after:absolute after:inset-[calc(-1*var(--glowingeffect-border-width))]',
+              "after:[border:var(--glowingeffect-border-width)_solid_transparent]",
+              "after:[background:var(--gradient)] after:[background-attachment:fixed]",
+              "after:opacity-[var(--active)] after:transition-opacity after:duration-300",
+              "after:[mask-clip:padding-box,border-box]",
+              "after:[mask-composite:intersect]",
+              "after:[mask-image:linear-gradient(#0000,#0000),conic-gradient(from_calc((var(--start)-var(--spread))*1deg),#00000000_0deg,#fff,#00000000_calc(var(--spread)*2deg))]"
+            )}
+          />
+        </div>
+      </>
+    );
+  }
+);
+
+GlowingEffect.displayName = "GlowingEffect";
+
+export { GlowingEffect };"
+
+PORTFOLIO:
+"
+You are given a task to integrate a React component into your codebase.
+Please verify your project has the following setup:
+- shadcn/ui project structure
+- Tailwind CSS v4.0
+- TypeScript
+
+If any of these are missing, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+File location: components/glowing-stars-demo.tsx
+
+File content: "use client";
+import React from "react";
+import {
+  GlowingStarsBackgroundCard,
+  GlowingStarsDescription,
+  GlowingStarsTitle,
+} from "@/components/ui/glowing-stars";
+
+export default function GlowingStarsBackgroundCardPreview() {
+  return (
+    <div className="flex py-20 items-center justify-center antialiased">
+      <GlowingStarsBackgroundCard>
+        <GlowingStarsTitle>Next.js 14</GlowingStarsTitle>
+        <div className="flex justify-between items-end">
+          <GlowingStarsDescription>
+            The power of full-stack to the frontend. Read the release notes.
+          </GlowingStarsDescription>
+          <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
+            <Icon />
+          </div>
+        </div>
+      </GlowingStarsBackgroundCard>
+    </div>
+  );
+}
+
+const Icon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      className="h-4 w-4 text-white stroke-2"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+      />
+    </svg>
+  );
+};
+
+
+File location: components/ui/glowing-stars.tsx
+
+File content: "use client";
+
+import React, { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
+import { cn } from "@/lib/utils";
+
+export const GlowingStarsBackgroundCard = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
+  const [mouseEnter, setMouseEnter] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => {
+        setMouseEnter(true);
+      }}
+      onMouseLeave={() => {
+        setMouseEnter(false);
+      }}
+      className={cn(
+        "bg-[linear-gradient(110deg,#333_0.6%,#222)] p-4 max-w-md max-h-[20rem] h-full w-full rounded-xl border border-[#eaeaea] dark:border-neutral-600",
+        className
+      )}
+    >
+      <div className="flex justify-center items-center">
+        <Illustration mouseEnter={mouseEnter} />
+      </div>
+      <div className="px-2 pb-6">{children}</div>
+    </div>
+  );
+};
+
+export const GlowingStarsDescription = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <p className={cn("text-base text-white max-w-[16rem]", className)}>
+      {children}
+    </p>
+  );
+};
+
+export const GlowingStarsTitle = ({
+  className,
+  children,
+}: {
+  className?: string;
+  children?: React.ReactNode;
+}) => {
+  return (
+    <h2 className={cn("font-bold text-2xl text-[#eaeaea]", className)}>
+      {children}
+    </h2>
+  );
+};
+
+export const Illustration = ({ mouseEnter }: { mouseEnter: boolean }) => {
+  const stars = 108;
+  const columns = 18;
+
+  const [glowingStars, setGlowingStars] = useState<number[]>([]);
+
+  const highlightedStars = useRef<number[]>([]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      highlightedStars.current = Array.from({ length: 5 }, () =>
+        Math.floor(Math.random() * stars)
+      );
+      setGlowingStars([...highlightedStars.current]);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className="h-48 p-1 w-full"
+      style={{
+        display: "grid",
+        gridTemplateColumns: `repeat(${columns}, 1fr)`,
+        gap: `1px`,
+      }}
+    >
+      {[...Array(stars)].map((_, starIdx) => {
+        const isGlowing = glowingStars.includes(starIdx);
+        const delay = (starIdx % 10) * 0.1;
+        const staticDelay = starIdx * 0.01;
+        return (
+          <div
+            key={`matrix-col-${starIdx}}`}
+            className="relative flex items-center justify-center"
+          >
+            <Star
+              isGlowing={mouseEnter ? true : isGlowing}
+              delay={mouseEnter ? staticDelay : delay}
+            />
+            {mouseEnter && <Glow delay={staticDelay} />}
+            <AnimatePresence mode="wait">
+              {isGlowing && <Glow delay={delay} />}
+            </AnimatePresence>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
+const Star = ({ isGlowing, delay }: { isGlowing: boolean; delay: number }) => {
+  return (
+    <motion.div
+      key={delay}
+      initial={{
+        scale: 1,
+      }}
+      animate={{
+        scale: isGlowing ? [1, 1.2, 2.5, 2.2, 1.5] : 1,
+        background: isGlowing ? "#fff" : "#666",
+      }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        delay: delay,
+      }}
+      className={cn("bg-[#666] h-[1px] w-[1px] rounded-full relative z-20")}
+    ></motion.div>
+  );
+};
+
+const Glow = ({ delay }: { delay: number }) => {
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{
+        duration: 2,
+        ease: "easeInOut",
+        delay: delay,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+      className="absolute  left-1/2 -translate-x-1/2 z-10 h-[4px] w-[4px] rounded-full bg-blue-500 blur-[1px] shadow-2xl shadow-blue-400"
+    />
+  );
+};"
+
+
+DESIGN:
+"Overwrite my previous design system configuration with a new one based on Apple's Human Interface Guidelines for the web.
+
+In tailwind.config.ts:
+
+Extend the theme.colors object. Define this new palette:
+
+background: '#161617'
+
+card: '#1D1D1F'
+
+primary: '#0A84FF'
+
+foreground: '#F5F5F7'
+
+'muted-foreground': '#8E8E93'
+
+border: '#3A3A3C'
+
+Extend the theme.fontFamily object. Set the sans property to ['-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'].
+
+In app/layout.tsx:
+
+Remove any existing imports for Google Fonts (like 'Inter').
+
+Ensure the <body> tag's className applies the new default colors: bg-background text-foreground.
+
+Ensure the <body> tag's className correctly applies the font-sans class from Tailwind.
+"
