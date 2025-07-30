@@ -74,7 +74,7 @@ export function DarkFooter() {
               />
               <div className="relative z-10">
                 <h3 className="text-2xl font-bold mb-4 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-                  T.S.P. Digital
+                  TSP Digital
                 </h3>
                 <p className="text-gray-300 text-sm mb-6 leading-relaxed">
                   We don&apos;t build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
