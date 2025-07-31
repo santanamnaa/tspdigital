@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tspdigital.com'),
+  metadataBase: new URL('https://tspdigital.agency'),
   title: {
     template: '%s | TSP Digital',
     default: 'TSP Digital - AI & Strategic Development',
