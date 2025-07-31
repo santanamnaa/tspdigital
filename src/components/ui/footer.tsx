@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone } from "@tabler/icons-react";
+import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPhone, IconBrandWhatsapp } from "@tabler/icons-react";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
@@ -58,6 +58,7 @@ const socialLinks = [
 const contactInfo = [
   { icon: IconMail, text: "tspdigital.id@gmail.com", href: "mailto:tspdigital.id@gmail.com" },
   { icon: IconPhone, text: "+62 851-2119-0261", href: "tel:+6285121190261" },
+  { icon: IconBrandWhatsapp, text: "+62 851-2119-0261", href: "https://wa.me/6285121190261" },
 //   { icon: IconMapPin, text: "Jakarta, Indonesia", href: "#" },
 ];
 
