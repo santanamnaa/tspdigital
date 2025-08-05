@@ -13,6 +13,9 @@ export const metadata: Metadata = {
     shortcut: '/logo/tspd.svg',
     apple: '/logo/tspd.svg',
   },
+  verification: {
+    google: 'google510f30a9d8055108.html',
+  },
 };
 
 export default function RootLayout({
