@@ -1,11 +1,13 @@
-import { MetadataRoute } from 'next'
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  const lastMod = new Date().toISOString();
+
   return [
-      { url: 'https://tspdigital.agency', lastModified: new Date() },
-  { url: 'https://tspdigital.agency/about', lastModified: new Date() },
-  { url: 'https://tspdigital.agency/services', lastModified: new Date() },
-  { url: 'https://tspdigital.agency/projects', lastModified: new Date() },
-  { url: 'https://tspdigital.agency/contact', lastModified: new Date() },
-  ]
-} 
+    { url: 'https://tspdigital.agency', lastModified: lastMod },
+    { url: 'https://tspdigital.agency/about', lastModified: lastMod },
+    { url: 'https://tspdigital.agency/services', lastModified: lastMod },
+    { url: 'https://tspdigital.agency/projects', lastModified: lastMod },
+    { url: 'https://tspdigital.agency/contact', lastModified: lastMod },
+  ];
+}
