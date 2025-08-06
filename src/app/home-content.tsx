@@ -119,7 +119,7 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Social Proof Section */}
+      {/* Social Proof Section
       <section className="py-60 px-4 bg-card">
         <div className="max-w-6xl mx-auto text-center">
           <div className="flex flex-col items-center justify-center">
@@ -134,7 +134,7 @@ export default function HomeContent() {
             <AnimatedTooltipDemo />
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Teaser Section */}
       <section className="py-60 px-4">
