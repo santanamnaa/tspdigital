@@ -49,8 +49,7 @@ export default function PricingContent() {
 
   const handleWhatsAppClick = (packageName: string) => {
     const message = `Halo! Saya tertarik dengan paket ${packageName}. Bisa minta informasi lebih detail?`;
-    // TODO: Replace with actual WhatsApp business number
-    const whatsappUrl = `https://wa.me/6281234567890?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/6285121190261?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
   };
 
