@@ -33,6 +33,10 @@ export default function ContactContent() {
       link: "/services",
     },
     {
+      name: "Pricing",
+      link: "/pricing",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },

@@ -36,6 +36,10 @@ export default function HomeContent() {
       link: "/services",
     },
     {
+      name: "Pricing",
+      link: "/pricing",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },

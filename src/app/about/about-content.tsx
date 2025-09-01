@@ -33,6 +33,10 @@ export default function AboutContent() {
       link: "/services",
     },
     {
+      name: "Pricing",
+      link: "/pricing",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },

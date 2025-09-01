@@ -30,6 +30,10 @@ export default function ProjectsContent() {
       link: "/services",
     },
     {
+      name: "Pricing",
+      link: "/pricing",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },

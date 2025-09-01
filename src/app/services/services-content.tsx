@@ -31,6 +31,10 @@ export default function ServicesContent() {
       link: "/services",
     },
     {
+      name: "Pricing",
+      link: "/pricing",
+    },
+    {
       name: "Projects",
       link: "/projects",
     },
