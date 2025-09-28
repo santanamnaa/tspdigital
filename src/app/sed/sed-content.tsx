@@ -1,22 +1,12 @@
 "use client";
 import React, { useState } from "react";
-import {
-  Navbar,
-  NavBody,
-  NavItems,
-  MobileNav,
-  NavbarLogo,
-  NavbarButton,
-  MobileNavHeader,
-  MobileNavToggle,
-  MobileNavMenu,
-} from "@/components/ui/resizable-navbar";
 import { Check, ArrowRight, Zap, Clock, Users, Globe } from "lucide-react";
+import Image from "next/image";
 
 export default function SEDContent() {
   const navItems = [
-    { name: "Home", link: "/" },
-    { name: "SED", link: "/sed" },
+    { name: "TSPD", link: "/" },
+    { name: "Home", link: "/sed" },
     { name: "Paket", link: "/sed/pricing" },
     { name: "Pesan", link: "/sed/order" },
   ];
@@ -36,9 +26,13 @@ export default function SEDContent() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <Image 
+                src="/logo/sed/logo_sed.svg" 
+                alt="SED Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-semibold text-gray-900 dark:text-white">SED</span>
             </div>
             
@@ -48,7 +42,7 @@ export default function SEDContent() {
                 <a
                   key={idx}
                   href={item.link}
-                  className="text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm font-medium"
+                  className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium"
                 >
                   {item.name}
                 </a>
@@ -75,7 +69,7 @@ export default function SEDContent() {
                   key={idx}
                   href={item.link}
                   onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm"
+                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm"
                 >
                   {item.name}
                 </a>
@@ -88,15 +82,15 @@ export default function SEDContent() {
       {/* Hero Section - Minimalist */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-green-50 dark:bg-green-900/20 text-green-700 dark:text-green-300 px-4 py-2 rounded-full text-sm font-medium mb-8">
-            <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+          <div className="inline-flex items-center gap-2 bg-[#363636]/10 dark:bg-[#363636]/20 text-[#363636] dark:text-[#363636] px-4 py-2 rounded-full text-sm font-medium mb-8">
+            <div className="w-2 h-2 bg-[#363636] rounded-full"></div>
             Strategi Era Digital
           </div>
           
           <h1 className="text-5xl md:text-7xl font-light mb-6 text-gray-900 dark:text-white">
             Website untuk
             <br />
-            <span className="font-semibold text-green-500">Rp500rb</span>
+            <span className="font-semibold text-[#363636]">Rp500rb</span>
           </h1>
           
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
@@ -107,7 +101,7 @@ export default function SEDContent() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => handleWhatsAppClick("Paket Website Rp500rb")}
-              className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+              className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
             >
               Mulai Sekarang
               <ArrowRight className="w-4 h-4" />
@@ -129,13 +123,13 @@ export default function SEDContent() {
             <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
               Yang Anda dapatkan
             </h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-12">
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Globe className="w-7 h-7 text-green-500" />
+              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Globe className="w-7 h-7 text-[#363636]" />
               </div>
               <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Website + Domain</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -144,8 +138,8 @@ export default function SEDContent() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-7 h-7 text-green-500" />
+              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Clock className="w-7 h-7 text-[#363636]" />
               </div>
               <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Siap 48 Jam</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -154,8 +148,8 @@ export default function SEDContent() {
             </div>
             
             <div className="text-center">
-              <div className="w-16 h-16 bg-green-50 dark:bg-green-900/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="w-7 h-7 text-green-500" />
+              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                <Users className="w-7 h-7 text-[#363636]" />
               </div>
               <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Fitur UMKM</h3>
               <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
@@ -174,7 +168,7 @@ export default function SEDContent() {
               {/* Package Info */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-[#363636] rounded-xl flex items-center justify-center">
                     <Zap className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -188,7 +182,7 @@ export default function SEDContent() {
                     <span className="text-4xl font-light text-gray-900 dark:text-white">Rp500.000</span>
                     <span className="text-lg text-gray-400 line-through">Rp750.000</span>
                   </div>
-                  <p className="text-sm text-green-600 dark:text-green-400 mt-1">Hemat Rp250.000</p>
+                  <p className="text-sm text-[#363636] dark:text-[#363636] mt-1">Hemat Rp250.000</p>
                 </div>
 
                 <div className="space-y-3 mb-8">
@@ -203,8 +197,8 @@ export default function SEDContent() {
                     "Setup dalam 48 jam"
                   ].map((feature, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-green-50 dark:bg-green-900/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-green-500" />
+                      <div className="w-5 h-5 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-3 w-3 text-[#363636]" />
                       </div>
                       <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                     </div>
@@ -213,7 +207,7 @@ export default function SEDContent() {
 
                 <button
                   onClick={() => handleWhatsAppClick("Starter Pack Rp500rb")}
-                  className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                  className="w-full bg-[#363636] hover:bg-[#4a4a4a] text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
                 >
                   Pesan Sekarang
                   <ArrowRight className="w-4 h-4" />
@@ -250,7 +244,7 @@ export default function SEDContent() {
             <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
               Proses sederhana
             </h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
@@ -260,7 +254,7 @@ export default function SEDContent() {
               { step: "3", title: "Online", desc: "Website siap dalam 48 jam" }
             ].map((process, index) => (
               <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-green-500 text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-medium">
+                <div className="w-12 h-12 bg-[#363636] text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-medium">
                   {process.step}
                 </div>
                 <h3 className="text-lg font-medium mb-2 text-gray-900 dark:text-white">{process.title}</h3>
@@ -282,7 +276,7 @@ export default function SEDContent() {
           </p>
           <button
             onClick={() => handleWhatsAppClick("Konsultasi Website")}
-            className="bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
+            className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
           >
             Konsultasi Gratis
             <ArrowRight className="w-4 h-4" />
@@ -294,9 +288,13 @@ export default function SEDContent() {
       <footer className="py-12 px-4 border-t border-gray-100 dark:border-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <Image 
+              src="/logo/sed/logo_sed.svg" 
+              alt="SED Logo" 
+              width={32} 
+              height={32}
+              className="w-8 h-8"
+            />
             <span className="font-semibold text-gray-900 dark:text-white">Strategi Era Digital</span>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">

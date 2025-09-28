@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { ArrowRight, MessageCircle, Phone, Mail } from "lucide-react";
+import Image from "next/image";
 
 export default function SEDOrderContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -18,20 +19,24 @@ export default function SEDOrderContent() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <Image 
+                src="/logo/sed/logo_sed.svg" 
+                alt="SED Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-semibold text-gray-900 dark:text-white">SED</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="/sed" className="text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm font-medium">
+              <a href="/sed" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
                 Home
               </a>
-              <a href="/sed/pricing" className="text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm font-medium">
+              <a href="/sed/pricing" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
                 Paket
               </a>
-              <a href="/sed/order" className="text-green-500 text-sm font-medium">
+              <a href="/sed/order" className="text-[#363636] text-sm font-medium">
                 Pesan
               </a>
             </div>
@@ -51,7 +56,7 @@ export default function SEDOrderContent() {
             <div className="md:hidden mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
               <a href="/sed" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Home</a>
               <a href="/sed/pricing" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Paket</a>
-              <a href="/sed/order" className="block py-2 text-green-500 text-sm">Pesan</a>
+              <a href="/sed/order" className="block py-2 text-[#363636] text-sm">Pesan</a>
             </div>
           )}
         </div>
@@ -63,7 +68,7 @@ export default function SEDOrderContent() {
           <h1 className="text-5xl md:text-6xl font-light mb-6 text-gray-900 dark:text-white">
             Siap untuk
             <br />
-            <span className="font-medium text-green-500">mulai?</span>
+            <span className="font-medium text-[#363636]">mulai?</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
             Pilih paket yang sesuai atau konsultasi gratis untuk mendapatkan rekomendasi terbaik.
@@ -76,17 +81,17 @@ export default function SEDOrderContent() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light mb-4 text-gray-900 dark:text-white">Pilih paket</h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-6 text-center hover:shadow-md transition-all duration-200">
               <h3 className="text-xl font-medium mb-2 text-gray-900 dark:text-white">Starter</h3>
-              <p className="text-2xl font-light text-green-500 mb-2">Rp500K</p>
+              <p className="text-2xl font-light text-[#363636] mb-2">Rp500K</p>
               <p className="text-sm text-gray-600 dark:text-gray-400 mb-6">Landing page profesional</p>
               <button
                 onClick={() => handleWhatsAppClick("Starter Pack (Rp500K)")}
-                className="w-full bg-green-500 hover:bg-green-600 text-white py-3 px-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
+                className="w-full bg-[#363636] hover:bg-[#4a4a4a] text-white py-3 px-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
               >
                 Pesan Starter
                 <ArrowRight className="w-4 h-4" />
@@ -135,7 +140,7 @@ export default function SEDOrderContent() {
           <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
             <button
               onClick={() => handleWhatsAppClick("Konsultasi Gratis Website UMKM")}
-              className="w-full bg-green-500 hover:bg-green-600 text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-3 mb-6"
+              className="w-full bg-[#363636] hover:bg-[#4a4a4a] text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-3 mb-6"
             >
               <MessageCircle className="w-5 h-5" />
               Konsultasi via WhatsApp
@@ -154,13 +159,13 @@ export default function SEDOrderContent() {
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-light mb-4 text-gray-900 dark:text-white">Hubungi kami</h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="p-6">
-              <div className="w-12 h-12 bg-green-50 dark:bg-green-900/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <MessageCircle className="w-6 h-6 text-green-500" />
+              <div className="w-12 h-12 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <MessageCircle className="w-6 h-6 text-[#363636]" />
               </div>
               <h3 className="font-medium mb-2 text-gray-900 dark:text-white">WhatsApp</h3>
               <p className="text-gray-600 dark:text-gray-400 text-sm">+62 851 2119 0261</p>
@@ -189,9 +194,13 @@ export default function SEDOrderContent() {
       <footer className="py-12 px-4 border-t border-gray-100 dark:border-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <Image 
+              src="/logo/sed/logo_sed.svg" 
+              alt="SED Logo" 
+              width={32} 
+              height={32}
+              className="w-8 h-8"
+            />
             <span className="font-semibold text-gray-900 dark:text-white">Strategi Era Digital</span>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">

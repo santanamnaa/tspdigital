@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react";
+import Image from "next/image";
 
 export default function SEDPricingContent() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function SEDPricingContent() {
         "1x revisi gratis"
       ],
       popular: true,
-      color: "green"
+      color: "gray"
     },
     {
       name: "Growth", 
@@ -84,20 +85,24 @@ export default function SEDPricingContent() {
         <div className="max-w-6xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">S</span>
-              </div>
+              <Image 
+                src="/logo/sed/logo_sed.svg" 
+                alt="SED Logo" 
+                width={32} 
+                height={32}
+                className="w-8 h-8"
+              />
               <span className="font-semibold text-gray-900 dark:text-white">SED</span>
             </div>
             
             <div className="hidden md:flex items-center gap-8">
-              <a href="/sed" className="text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm font-medium">
+              <a href="/sed" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
                 Home
               </a>
-              <a href="/sed/pricing" className="text-green-500 text-sm font-medium">
+              <a href="/sed/pricing" className="text-[#363636] text-sm font-medium">
                 Paket
               </a>
-              <a href="/sed/order" className="text-gray-600 dark:text-gray-300 hover:text-green-500 transition-colors text-sm font-medium">
+              <a href="/sed/order" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
                 Pesan
               </a>
             </div>
@@ -116,7 +121,7 @@ export default function SEDPricingContent() {
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
               <a href="/sed" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Home</a>
-              <a href="/sed/pricing" className="block py-2 text-green-500 text-sm">Paket</a>
+              <a href="/sed/pricing" className="block py-2 text-[#363636] text-sm">Paket</a>
               <a href="/sed/order" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Pesan</a>
             </div>
           )}
@@ -129,7 +134,7 @@ export default function SEDPricingContent() {
           <h1 className="text-5xl md:text-6xl font-light mb-6 text-gray-900 dark:text-white">
             Pilih paket
             <br />
-            <span className="font-medium text-green-500">yang tepat</span>
+            <span className="font-medium text-[#363636]">yang tepat</span>
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
             Solusi website untuk setiap tahap perkembangan bisnis Anda.
@@ -146,13 +151,13 @@ export default function SEDPricingContent() {
                 key={index}
                 className={`relative bg-white dark:bg-gray-900 rounded-2xl p-8 shadow-sm border transition-all duration-200 hover:shadow-md ${
                   plan.popular 
-                    ? 'border-green-200 dark:border-green-800 ring-1 ring-green-500/20' 
+                    ? 'border-[#363636]/20 dark:border-[#363636]/80 ring-1 ring-[#363636]/20' 
                     : 'border-gray-100 dark:border-gray-800'
                 } ${plan.popular ? 'scale-105' : ''}`}
               >
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-green-500 text-white px-4 py-1 rounded-full text-xs font-medium">
+                    <span className="bg-[#363636] text-white px-4 py-1 rounded-full text-xs font-medium">
                       Terpopuler
                     </span>
                   </div>
@@ -162,7 +167,7 @@ export default function SEDPricingContent() {
                 <div className="mb-8">
                   <div className="flex items-center gap-3 mb-4">
                     <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${
-                      plan.color === 'green' ? 'bg-green-50 dark:bg-green-900/20 text-green-500' :
+                      plan.color === 'gray' ? 'bg-[#363636]/5 dark:bg-[#363636]/20 text-[#363636]' :
                       plan.color === 'blue' ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-500' :
                       'bg-purple-50 dark:bg-purple-900/20 text-purple-500'
                     }`}>
@@ -185,8 +190,8 @@ export default function SEDPricingContent() {
                 <div className="space-y-3 mb-8">
                   {plan.features.map((feature, featureIndex) => (
                     <div key={featureIndex} className="flex items-center gap-3">
-                      <div className="w-4 h-4 bg-green-50 dark:bg-green-900/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-2.5 w-2.5 text-green-500" />
+                      <div className="w-4 h-4 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Check className="h-2.5 w-2.5 text-[#363636]" />
                       </div>
                       <span className="text-sm text-gray-700 dark:text-gray-300">{feature}</span>
                     </div>
@@ -198,7 +203,7 @@ export default function SEDPricingContent() {
                   onClick={() => handleWhatsAppClick(`Paket ${plan.name} (Rp${plan.price})`)}
                   className={`w-full py-3 px-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
                     plan.popular
-                      ? 'bg-green-500 hover:bg-green-600 text-white'
+                      ? 'bg-[#363636] hover:bg-[#4a4a4a] text-white'
                       : 'border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600'
                   }`}
                 >
@@ -218,7 +223,7 @@ export default function SEDPricingContent() {
             <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
               Layanan tambahan
             </h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -233,7 +238,7 @@ export default function SEDPricingContent() {
               <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
                 <div className="flex justify-between items-start mb-3">
                   <h3 className="font-medium text-gray-900 dark:text-white">{addon.name}</h3>
-                  <span className="font-medium text-green-500">Rp{addon.price}</span>
+                  <span className="font-medium text-[#363636]">Rp{addon.price}</span>
                 </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400">{addon.desc}</p>
               </div>
@@ -249,7 +254,7 @@ export default function SEDPricingContent() {
             <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
               Yang sering ditanya
             </h2>
-            <div className="w-16 h-px bg-green-500 mx-auto"></div>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
           </div>
           
           <div className="space-y-8">
@@ -291,7 +296,7 @@ export default function SEDPricingContent() {
           </p>
           <button
             onClick={() => handleWhatsAppClick("Konsultasi Paket Website")}
-            className="bg-green-500 hover:bg-green-600 text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
+            className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
           >
             Konsultasi Gratis
             <ArrowRight className="w-4 h-4" />
@@ -303,9 +308,13 @@ export default function SEDPricingContent() {
       <footer className="py-12 px-4 border-t border-gray-100 dark:border-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <div className="flex items-center justify-center gap-2 mb-4">
-            <div className="w-8 h-8 bg-green-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">S</span>
-            </div>
+            <Image 
+              src="/logo/sed/logo_sed.svg" 
+              alt="SED Logo" 
+              width={32} 
+              height={32}
+              className="w-8 h-8"
+            />
             <span className="font-semibold text-gray-900 dark:text-white">Strategi Era Digital</span>
           </div>
           <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
