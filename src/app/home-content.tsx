@@ -47,6 +47,10 @@ export default function HomeContent() {
       name: "Contact",
       link: "/contact",
     },
+    {
+      name: "SED",
+      link: "/sed",
+    },
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
