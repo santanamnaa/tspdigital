@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { ArrowRight, MessageCircle, Phone, Mail } from "lucide-react";
+import { ArrowRight, MessageCircle, Phone, Mail, Check } from "lucide-react";
 import Image from "next/image";
 
 export default function SEDOrderContent() {
@@ -65,12 +65,12 @@ export default function SEDOrderContent() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-light mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 dark:text-white">
             Siap untuk
             <br />
-            <span className="font-medium text-[#363636]">mulai?</span>
+            <span className="font-medium text-[#363636]">memesan?</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
             Pilih paket yang sesuai atau konsultasi gratis untuk mendapatkan rekomendasi terbaik.
           </p>
         </div>
@@ -122,6 +122,90 @@ export default function SEDOrderContent() {
                 Pesan Premium
                 <ArrowRight className="w-4 h-4" />
               </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Order Steps */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Proses Pemesanan
+            </h2>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: "1", title: "Pesan & Konsultasi", desc: "Hubungi kami via WhatsApp untuk memilih paket dan konsultasi kebutuhan" },
+              { step: "2", title: "Kirim Konten", desc: "Kirimkan teks, foto, logo bisnis Anda untuk proses pembuatan" },
+              { step: "3", title: "Website Online", desc: "Website Anda akan selesai dan online dalam waktu 2-3 hari" }
+            ].map((step, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 bg-[#363636] text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-medium">
+                  {step.step}
+                </div>
+                <h3 className="text-lg font-medium mb-2 text-gray-900 dark:text-white">{step.title}</h3>
+                <p className="text-gray-600 dark:text-gray-400">{step.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What's Included */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Yang Termasuk dalam Paket
+            </h2>
+            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-800">
+              <h3 className="text-xl font-medium mb-6 text-gray-900 dark:text-white">Starter (Rp500K)</h3>
+              <ul className="space-y-4">
+                {[
+                  "1 landing page profesional",
+                  "Domain .my.id gratis 1 tahun",
+                  "Hosting basic 1 tahun",
+                  "Template premium mobile-friendly",
+                  "WhatsApp button integration",
+                  "SSL certificate (HTTPS)",
+                  "2 revisi gratis",
+                  "Setup dalam 48 jam"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <Check className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" />
+                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-gray-900 p-8 rounded-xl border border-gray-100 dark:border-gray-800">
+              <h3 className="text-xl font-medium mb-6 text-gray-900 dark:text-white">Upgrade Tersedia</h3>
+              <ul className="space-y-4">
+                {[
+                  "Domain .com/.id (Rp250K)",
+                  "Hosting premium (Rp150K/thn)",
+                  "Copywriting profesional (Rp300K)",
+                  "Desain logo custom (Rp250K)",
+                  "QRIS payment integration (Rp200K)",
+                  "E-commerce setup (Rp500K)",
+                  "Google Analytics (Rp100K)",
+                  "Maintenance & support (Rp100K/bulan)"
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="w-5 h-5 bg-gray-200 dark:bg-gray-700 rounded-full mt-0.5 flex-shrink-0"></div>
+                    <span className="text-gray-700 dark:text-gray-300">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

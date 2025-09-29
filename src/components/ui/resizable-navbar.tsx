@@ -119,7 +119,7 @@ export const NavItems = ({ items, className, onItemClick }: NavItemsProps) => {
     <motion.div
       onMouseLeave={() => setHovered(null)}
       className={cn(
-        "absolute inset-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
+        "absolute inset-0 z-0 hidden flex-1 flex-row items-center justify-center space-x-2 text-sm font-medium text-zinc-600 transition duration-200 hover:text-zinc-800 lg:flex lg:space-x-2",
         className,
       )}
     >
@@ -232,7 +232,7 @@ import { Logo } from "./logo";
 
 export const NavbarLogo = () => {
   return (
-    <div className="relative z-20 mr-4 px-4 py-1">
+    <div className="relative z-10 mr-4 px-4 py-1">
       <Logo width={32} height={32} showText={true} />
     </div>
   );
@@ -253,7 +253,7 @@ export const NavbarButton = ({
   variant?: "primary" | "secondary" | "dark" | "gradient";
 } & React.ComponentPropsWithoutRef<"a">) => {
   const baseStyles =
-    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center";
+    "px-4 py-2 rounded-md bg-white button bg-white text-black text-sm font-bold relative cursor-pointer hover:-translate-y-0.5 transition duration-200 inline-block text-center z-10";
 
   const variantStyles = {
     primary:

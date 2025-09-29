@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Check, ArrowRight, Zap, TrendingUp, Crown } from "lucide-react";
+import { Check, ArrowRight, Zap, TrendingUp, Crown, Smartphone, Globe, ShoppingCart, CreditCard, Mail } from "lucide-react";
 import Image from "next/image";
 
 export default function SEDPricingContent() {
@@ -15,9 +15,9 @@ export default function SEDPricingContent() {
   const pricingPlans = [
     {
       name: "Starter",
-      price: "500K",
-      originalPrice: "750K",
-      period: "/tahun",
+      price: "500.000",
+      originalPrice: "750.000",
+      period: "sekali bayar",
       icon: <Zap className="h-5 w-5" />,
       description: "Perfect untuk UMKM pemula",
       features: [
@@ -28,7 +28,8 @@ export default function SEDPricingContent() {
         "WhatsApp button",
         "Mobile friendly",
         "SSL certificate",
-        "1x revisi gratis"
+        "2x revisi gratis",
+        "Basic SEO setup"
       ],
       popular: true,
       color: "gray"
@@ -49,7 +50,8 @@ export default function SEDPricingContent() {
         "SEO optimization",
         "Google Analytics",
         "3x revisi gratis",
-        "Copywriting 3 halaman"
+        "Copywriting 3 halaman",
+        "Social media integration"
       ],
       popular: false,
       color: "blue"
@@ -71,7 +73,8 @@ export default function SEDPricingContent() {
         "Advanced SEO",
         "Social media integration",
         "Training 1x",
-        "Maintenance 3 bulan"
+        "Maintenance 3 bulan",
+        "Google Ads setup"
       ],
       popular: false,
       color: "purple"
@@ -112,8 +115,8 @@ export default function SEDPricingContent() {
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <div className="w-5 h-5 flex flex-col justify-center gap-1">
-                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300"></div>
-                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300"></div>
+                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-700"></div>
+                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-700"></div>
               </div>
             </button>
           </div>
@@ -131,12 +134,12 @@ export default function SEDPricingContent() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-light mb-6 text-gray-900 dark:text-white">
+          <h1 className="text-4xl md:text-5xl font-light mb-6 text-gray-900 dark:text-white">
             Pilih paket
             <br />
             <span className="font-medium text-[#363636]">yang tepat</span>
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
             Solusi website untuk setiap tahap perkembangan bisnis Anda.
           </p>
         </div>
@@ -182,7 +185,7 @@ export default function SEDPricingContent() {
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-light text-gray-900 dark:text-white">Rp{plan.price}</span>
                     <span className="text-lg text-gray-400 line-through">Rp{plan.originalPrice}</span>
-                    <span className="text-sm text-gray-500 dark:text-gray-400">{plan.period}</span>
+                    <span className="text-sm text-gray-500 dark:text-gray-400">/{plan.period}</span>
                   </div>
                 </div>
 
@@ -228,19 +231,26 @@ export default function SEDPricingContent() {
           
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { name: "Halaman Extra", price: "150K", desc: "Tambah halaman About, Services, Blog" },
-              { name: "Domain Premium", price: "250K", desc: "Upgrade ke .com atau .id" },
-              { name: "Copywriting", price: "300K", desc: "Penulisan konten profesional" },
-              { name: "Logo Design", price: "250K", desc: "Desain logo custom" },
-              { name: "QRIS Payment", price: "200K", desc: "Terima pembayaran digital" },
-              { name: "Maintenance", price: "100K/bln", desc: "Pemeliharaan dan update rutin" }
+              { name: "Halaman Extra", price: "150K", desc: "Tambah halaman About, Services, Blog", icon: <Globe className="h-5 w-5" /> },
+              { name: "Domain Premium", price: "250K", desc: "Upgrade ke .com atau .id", icon: <Globe className="h-5 w-5" /> },
+              { name: "Copywriting", price: "300K", desc: "Penulisan konten profesional", icon: <Mail className="h-5 w-5" /> },
+              { name: "Logo Design", price: "250K", desc: "Desain logo custom", icon: <Mail className="h-5 w-5" /> },
+              { name: "QRIS Payment", price: "200K", desc: "Terima pembayaran digital", icon: <CreditCard className="h-5 w-5" /> },
+              { name: "Maintenance", price: "100K/bln", desc: "Pemeliharaan dan update rutin", icon: <Smartphone className="h-5 w-5" /> }
             ].map((addon, index) => (
-              <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800">
-                <div className="flex justify-between items-start mb-3">
-                  <h3 className="font-medium text-gray-900 dark:text-white">{addon.name}</h3>
-                  <span className="font-medium text-[#363636]">Rp{addon.price}</span>
+              <div key={index} className="bg-white dark:bg-gray-900 p-6 rounded-xl border border-gray-100 dark:border-gray-800 flex items-start gap-4">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${
+                  index % 2 === 0 ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-500' : 'bg-purple-50 dark:bg-purple-900/20 text-purple-500'
+                }`}>
+                  {addon.icon}
                 </div>
-                <p className="text-sm text-gray-600 dark:text-gray-400">{addon.desc}</p>
+                <div>
+                  <div className="flex justify-between items-start mb-1">
+                    <h3 className="font-medium text-gray-900 dark:text-white">{addon.name}</h3>
+                    <span className="font-medium text-[#363636]">Rp{addon.price}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{addon.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -285,22 +295,29 @@ export default function SEDPricingContent() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 px-4">
+      {/* CTA Section */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light mb-6 text-gray-900 dark:text-white">
-            Masih ragu paket mana?
+          <h2 className="text-3xl font-light mb-6 text-gray-900 dark:text-white">
+            Siap tingkatkan bisnis Anda?
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 font-light">
-            Konsultasi gratis untuk mendapatkan rekomendasi yang tepat.
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-12 font-light">
+            Dapatkan website profesional yang membantu Anda mendapatkan lebih banyak pelanggan.
           </p>
-          <button
-            onClick={() => handleWhatsAppClick("Konsultasi Paket Website")}
-            className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
-          >
-            Konsultasi Gratis
-            <ArrowRight className="w-4 h-4" />
-          </button>
+          
+          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 border border-gray-100 dark:border-gray-800">
+            <button
+              onClick={() => handleWhatsAppClick("Konsultasi Gratis Website UMKM")}
+              className="w-full bg-[#363636] hover:bg-[#4a4a4a] text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-3 mb-6"
+            >
+              Konsultasi Gratis Sekarang
+              <ArrowRight className="w-4 h-4" />
+            </button>
+            
+            <div className="text-sm text-gray-500 dark:text-gray-400">
+              <p>Respon cepat dalam 2 jam (jam kerja)</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -328,4 +345,4 @@ export default function SEDPricingContent() {
       </footer>
     </div>
   );
-};
+}

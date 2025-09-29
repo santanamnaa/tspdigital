@@ -1,17 +1,15 @@
 "use client";
 import React, { useState } from "react";
-import { Check, ArrowRight, Zap, Clock, Users, Globe } from "lucide-react";
+import { Check, ArrowRight, Clock, FileText, Users, Smartphone, Star, ChevronDown, Minus } from "lucide-react";
 import Image from "next/image";
 
 export default function SEDContent() {
-  const navItems = [
-    { name: "TSPD", link: "/" },
-    { name: "Home", link: "/sed" },
-    { name: "Paket", link: "/sed/pricing" },
-    { name: "Pesan", link: "/sed/order" },
-  ];
-
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null);
+
+  const toggleFaq = (index: number) => {
+    setOpenFaqIndex(openFaqIndex === index ? null : index);
+  };
 
   const handleWhatsAppClick = (packageName: string) => {
     const message = `Halo! Saya tertarik dengan ${packageName} dari Strategi Era Digital. Bisa minta informasi lebih detail?`;
@@ -36,273 +34,431 @@ export default function SEDContent() {
               <span className="font-semibold text-gray-900 dark:text-white">SED</span>
             </div>
             
-            {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.link}
-                  className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium"
-                >
-                  {item.name}
-                </a>
-              ))}
+              <a href="/sed" className="text-[#363636] text-sm font-medium">
+                Home
+              </a>
+              <a href="/sed/pricing" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
+                Paket
+              </a>
+              <a href="/sed/order" className="text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm font-medium">
+                Pesan
+              </a>
             </div>
 
-            {/* Mobile Menu Button */}
             <button 
               className="md:hidden p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               <div className="w-5 h-5 flex flex-col justify-center gap-1">
-                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300 transition-all"></div>
-                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300 transition-all"></div>
+                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300"></div>
+                <div className="w-full h-0.5 bg-gray-600 dark:bg-gray-300"></div>
               </div>
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {isMobileMenuOpen && (
             <div className="md:hidden mt-4 pt-4 border-t border-gray-100 dark:border-gray-800">
-              {navItems.map((item, idx) => (
-                <a
-                  key={idx}
-                  href={item.link}
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block py-2 text-gray-600 dark:text-gray-300 hover:text-[#363636] transition-colors text-sm"
-                >
-                  {item.name}
-                </a>
-              ))}
+              <a href="/sed" className="block py-2 text-[#363636] text-sm">Home</a>
+              <a href="/sed/pricing" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Paket</a>
+              <a href="/sed/order" className="block py-2 text-gray-600 dark:text-gray-300 text-sm">Pesan</a>
             </div>
           )}
         </div>
       </nav>
 
-      {/* Hero Section - Minimalist */}
+      {/* Hero Section */}
       <section className="pt-32 pb-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-[#363636]/10 dark:bg-[#363636]/20 text-[#363636] dark:text-[#363636] px-4 py-2 rounded-full text-sm font-medium mb-8">
-            <div className="w-2 h-2 bg-[#363636] rounded-full"></div>
-            Strategi Era Digital
-          </div>
-          
-          <h1 className="text-5xl md:text-7xl font-light mb-6 text-gray-900 dark:text-white">
-            Website untuk
-            <br />
-            <span className="font-semibold text-[#363636]">Rp500rb</span>
+          <h1 className="text-4xl md:text-5xl font-light mb-4 text-gray-900 dark:text-white">
+            Landing Page Profesional, Selesai 3 Hari. Fixed Price Rp500.000.
           </h1>
-          
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 max-w-2xl mx-auto font-light">
-            Solusi website sederhana dan profesional untuk UMKM Indonesia.
-            Domain, hosting, template — semua sudah termasuk.
+          <p className="text-lg text-gray-600 dark:text-gray-400 mb-10 max-w-2xl mx-auto font-light">
+            Solusi cepat untuk UKM & profesional yang ingin tampil online dengan budget minim.
           </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button 
-              onClick={() => handleWhatsAppClick("Paket Website Rp500rb")}
-              className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
-            >
-              Mulai Sekarang
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <a 
-              href="/sed/pricing" 
-              className="border border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-600 px-8 py-4 rounded-lg font-medium transition-all duration-200"
-            >
-              Lihat Paket
-            </a>
-          </div>
+          <button 
+            onClick={() => handleWhatsAppClick("Landing Page 500K Offer")}
+            className="bg-green-500 hover:bg-green-600 text-white px-8 py-4 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2 mx-auto">
+            Chat Kami di WhatsApp
+            <ArrowRight className="w-4 h-4" />
+          </button>
         </div>
       </section>
 
-      {/* What You Get - Clean Grid */}
-      <section className="py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
-              Yang Anda dapatkan
-            </h2>
-            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-12">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Globe className="w-7 h-7 text-[#363636]" />
-              </div>
-              <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Website + Domain</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Landing page profesional dengan domain .my.id gratis selama 1 tahun
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Clock className="w-7 h-7 text-[#363636]" />
-              </div>
-              <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Siap 48 Jam</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                Proses cepat dan otomatis. Berikan konten, website langsung online
-              </p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Users className="w-7 h-7 text-[#363636]" />
-              </div>
-              <h3 className="text-xl font-medium mb-3 text-gray-900 dark:text-white">Fitur UMKM</h3>
-              <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-                WhatsApp button, mobile-friendly, cocok untuk bisnis lokal
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Main Package - Clean Card */}
-      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+      {/* Section 1 – Masalah & Solusi */}
+      <section className="py-16 px-4 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-4xl mx-auto">
-          <div className="bg-white dark:bg-gray-900 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 dark:border-gray-800">
-            <div className="flex flex-col lg:flex-row gap-8">
-              {/* Package Info */}
-              <div className="flex-1">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-12 h-12 bg-[#363636] rounded-xl flex items-center justify-center">
-                    <Zap className="h-6 w-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-medium text-gray-900 dark:text-white">Starter Pack</h3>
-                    <p className="text-gray-600 dark:text-gray-400">Website profesional untuk UMKM</p>
-                  </div>
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-2xl md:text-3xl font-light mb-6 text-gray-900 dark:text-white">
+                Belum punya website?
+                <br />
+                Susah dipercaya pelanggan?
+              </h2>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2.5"></div>
+                  <p className="text-gray-600 dark:text-gray-400">Calon pelanggan tidak percaya karena tidak ada kehadiran online</p>
                 </div>
-                
-                <div className="mb-8">
-                  <div className="flex items-baseline gap-3">
-                    <span className="text-4xl font-light text-gray-900 dark:text-white">Rp500.000</span>
-                    <span className="text-lg text-gray-400 line-through">Rp750.000</span>
-                  </div>
-                  <p className="text-sm text-[#363636] dark:text-[#363636] mt-1">Hemat Rp250.000</p>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2.5"></div>
+                  <p className="text-gray-600 dark:text-gray-400">Kehilangan peluang karena tidak muncul di pencarian online</p>
                 </div>
+                <div className="flex items-start gap-3">
+                  <div className="w-2 h-2 bg-red-500 rounded-full mt-2.5"></div>
+                  <p className="text-gray-600 dark:text-gray-400">Bisnis terlihat tidak profesional dibanding kompetitor</p>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-medium mb-4 text-gray-900 dark:text-white">Solusi:</h3>
+              <p className="text-gray-600 dark:text-gray-400 mb-6">
+                Landing page simple tapi powerful, 100% mobile-ready. Tampilan profesional yang membuat pelanggan percaya dan mudah ditemukan di Google.
+              </p>
+              <div className="bg-white dark:bg-gray-800 p-4 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div className="flex items-center gap-2 text-green-600 dark:text-green-400">
+                  <Check className="w-5 h-5" />
+                  <span className="font-medium">Mobile-friendly design</span>
+                </div>
+                <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mt-2">
+                  <Check className="w-5 h-5" />
+                  <span className="font-medium">Optimized for Google search</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="space-y-3 mb-8">
-                  {[
-                    "1-page website profesional",
-                    "Domain .my.id gratis 1 tahun", 
-                    "Hosting basic 1 tahun",
-                    "Template premium mobile-friendly",
-                    "WhatsApp button integration",
-                    "SSL certificate (HTTPS)",
-                    "1x revisi gratis",
-                    "Setup dalam 48 jam"
-                  ].map((feature, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-5 h-5 bg-[#363636]/5 dark:bg-[#363636]/20 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Check className="h-3 w-3 text-[#363636]" />
-                      </div>
-                      <span className="text-gray-700 dark:text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
+      {/* Section 2 – Value Proposition (USP) */}
+      <section className="py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-light mb-16 text-gray-900 dark:text-white">
+            Kenapa Harus Pilih Kami?
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-6 h-6 text-blue-500" />
+              </div>
+              <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Selesai ≤ 3 hari</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Proses cepat dan efisien tanpa mengorbankan kualitas
+              </p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <FileText className="w-6 h-6 text-blue-500" />
+              </div>
+              <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Harga transparan: Rp500rb</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Tidak ada biaya tersembunyi, semua sudah termasuk
+              </p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="w-12 h-12 bg-blue-500/10 dark:bg-blue-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <Users className="w-6 h-6 text-blue-500" />
+              </div>
+              <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Gratis 2 revisi + basic SEO</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                Hasil sesuai harapan dan mudah ditemukan di Google
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <button
-                  onClick={() => handleWhatsAppClick("Starter Pack Rp500rb")}
-                  className="w-full bg-[#363636] hover:bg-[#4a4a4a] text-white py-4 px-6 rounded-lg font-medium transition-all duration-200 flex items-center justify-center gap-2"
-                >
-                  Pesan Sekarang
-                  <ArrowRight className="w-4 h-4" />
+      {/* Section 3 – Demo / Portfolio */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Contoh Landing Page
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Lihat contoh landing page untuk berbagai jenis bisnis
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+              <div className="p-6">
+                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">F&B Template</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Desain modern untuk restoran dan bisnis makanan
+                </p>
+                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                  Lihat Demo
+                  <ArrowRight className="w-3 h-3" />
                 </button>
               </div>
-
-              {/* Add-ons - Simplified */}
-              <div className="lg:w-72 bg-gray-50 dark:bg-gray-800/50 p-6 rounded-xl">
-                <h4 className="font-medium mb-4 text-gray-900 dark:text-white">Upgrade tersedia:</h4>
-                <div className="space-y-3 text-sm">
-                  {[
-                    { name: "Halaman extra", price: "Rp150K" },
-                    { name: "Domain .com", price: "Rp250K" },
-                    { name: "Copywriting", price: "Rp300K" },
-                    { name: "Design logo", price: "Rp250K" },
-                    { name: "QRIS payment", price: "Rp200K" }
-                  ].map((addon, index) => (
-                    <div key={index} className="flex justify-between py-2">
-                      <span className="text-gray-600 dark:text-gray-400">{addon.name}</span>
-                      <span className="text-gray-900 dark:text-white font-medium">{addon.price}</span>
-                    </div>
-                  ))}
-                </div>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+              <div className="p-6">
+                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Jasa Lokal</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Tampil profesional untuk bisnis jasa di daerah Anda
+                </p>
+                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                  Lihat Demo
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              </div>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
+              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+              <div className="p-6">
+                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Personal Brand</h3>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                  Tunjukkan expertise Anda dengan landing page profesional
+                </p>
+                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                  Lihat Demo
+                  <ArrowRight className="w-3 h-3" />
+                </button>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Process - Minimal Steps */}
+      {/* Section 4 – Testimoni / Bukti Sosial */}
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-light mb-4 text-gray-900 dark:text-white">
-              Proses sederhana
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Apa Kata Mereka
             </h2>
-            <div className="w-16 h-px bg-[#363636] mx-auto"></div>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Testimoni dari pelanggan yang sudah menggunakan jasa kami
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                "Cepat, murah, hasil rapi—langsung dapat order via WA."
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Budi Santoso, Resto Padang</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                "Akhirnya bisa tampil online, pelanggan lebih percaya sekarang."
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Siti Rahayu, Jasa Salon</p>
+            </div>
+            <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
+              <div className="flex items-center gap-1 mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                ))}
+              </div>
+              <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
+                "Harga terjangkau tapi hasil profesional, sangat worth it!"
+              </p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Andi Pratama, Bengkel Motor</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 – Pricing Table Sederhana */}
+      <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Pilihan Paket
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Dapatkan landing page profesional sesuai kebutuhan bisnis Anda
+            </p>
+          </div>
+          <div className="bg-white dark:bg-gray-900 rounded-xl p-8 shadow-sm border border-gray-200 dark:border-gray-700">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-xl font-medium mb-2 text-gray-900 dark:text-white">500K Plan</h3>
+                <div className="flex items-baseline gap-2 mb-4">
+                  <span className="text-3xl font-medium text-gray-900 dark:text-white">Rp 500.000</span>
+                  <span className="text-sm text-gray-500 dark:text-gray-400">sekali bayar</span>
+                </div>
+                <p className="text-gray-600 dark:text-gray-400 mb-6">
+                  Paket dasar untuk memulai kehadiran online bisnis Anda
+                </p>
+                <button 
+                  onClick={() => handleWhatsAppClick("500K Plan")}
+                  className="bg-blue-500 hover:bg-blue-600 text-white px-6 py-3 rounded-lg font-medium transition-all duration-200">
+                  Pilih Paket Ini
+                </button>
+              </div>
+              <div>
+                <h4 className="font-medium mb-4 text-gray-900 dark:text-white">Yang Anda Dapatkan:</h4>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">1 landing page profesional</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">Domain .my.id gratis</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">Hosting 1 tahun</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">Template responsif</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">WhatsApp button</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">Gratis 2 revisi</span>
+                  </li>
+                  <li className="flex items-center gap-2">
+                    <Check className="w-4 h-4 text-green-500" />
+                    <span className="text-gray-700 dark:text-gray-300">Basic SEO setup</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
           
-          <div className="grid md:grid-cols-3 gap-8">
+          {/* Optional upsell */}
+          <div className="mt-8 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl p-6">
+            <h4 className="font-medium mb-2 text-blue-800 dark:text-blue-200">Upsell Tersedia:</h4>
+            <div className="grid md:grid-cols-3 gap-4">
+              <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                <p className="font-medium text-gray-900 dark:text-white">Domain .com/.id</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Rp200rb/tahun</p>
+              </div>
+              <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                <p className="font-medium text-gray-900 dark:text-white">Hosting Premium</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Rp150rb/tahun</p>
+              </div>
+              <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
+                <p className="font-medium text-gray-900 dark:text-white">Kampanye Landing Page</p>
+                <p className="text-sm text-gray-600 dark:text-gray-400">Rp300rb</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6 – FAQ */}
+      <section className="py-20 px-4">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-white">
+              Pertanyaan Umum
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Jawaban untuk pertanyaan yang sering diajukan
+            </p>
+          </div>
+          <div className="space-y-4">
             {[
-              { step: "1", title: "Pesan", desc: "Hubungi WhatsApp, pilih template" },
-              { step: "2", title: "Konten", desc: "Kirim text, foto, logo bisnis" },
-              { step: "3", title: "Online", desc: "Website siap dalam 48 jam" }
-            ].map((process, index) => (
-              <div key={index} className="text-center">
-                <div className="w-12 h-12 bg-[#363636] text-white rounded-xl flex items-center justify-center mx-auto mb-4 font-medium">
-                  {process.step}
-                </div>
-                <h3 className="text-lg font-medium mb-2 text-gray-900 dark:text-white">{process.title}</h3>
-                <p className="text-gray-600 dark:text-gray-400">{process.desc}</p>
+              {
+                question: "Apakah ada biaya tersembunyi?",
+                answer: "Tidak, fixed 500rb untuk paket dasar. Hanya ada biaya tambahan jika Anda memilih upsell seperti domain premium atau hosting."
+              },
+              {
+                question: "Kalau butuh revisi tambahan?",
+                answer: "Anda dapat 2 revisi gratis. Untuk revisi tambahan, biayanya Rp100rb/revisi."
+              },
+              {
+                question: "Berapa lama landing page selesai?",
+                answer: "Rata-rata 2-3 hari kerja setelah konten dari Anda lengkap."
+              },
+              {
+                question: "Bisakah saya edit sendiri nanti?",
+                answer: "Kami memberikan akses ke platform yang mudah digunakan, namun untuk perubahan signifikan sebaiknya konsultasi dengan kami."
+              },
+              {
+                question: "Apakah landing page mobile-friendly?",
+                answer: "Ya, semua template kami 100% responsif dan mobile-friendly."
+              }
+            ].map((faq, index) => (
+              <div 
+                key={index} 
+                className="border border-gray-200 dark:border-gray-700 rounded-xl overflow-hidden"
+              >
+                <button
+                  className="w-full p-4 text-left flex justify-between items-center bg-gray-50 dark:bg-gray-900/50 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                  onClick={() => toggleFaq(index)}
+                >
+                  <span className="font-medium text-gray-900 dark:text-white">{faq.question}</span>
+                  {openFaqIndex === index ? <ChevronDown className="w-5 h-5 rotate-180" /> : <ChevronDown className="w-5 h-5" />}
+                </button>
+                {openFaqIndex === index && (
+                  <div className="p-4 bg-white dark:bg-gray-950 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
+                  </div>
+                )}
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA - Clean and Simple */}
-      <section className="py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-light mb-6 text-gray-900 dark:text-white">
-            Mulai transformasi digital
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-12 font-light">
-            Jangan biarkan bisnis tertinggal. Website profesional dalam 48 jam.
-          </p>
-          <button
-            onClick={() => handleWhatsAppClick("Konsultasi Website")}
-            className="bg-[#363636] hover:bg-[#4a4a4a] text-white px-12 py-4 rounded-lg font-medium transition-all duration-200 inline-flex items-center gap-2"
-          >
-            Konsultasi Gratis
-            <ArrowRight className="w-4 h-4" />
-          </button>
-        </div>
-      </section>
-
-      {/* Footer - Minimal */}
+      {/* Footer */}
       <footer className="py-12 px-4 border-t border-gray-100 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="flex items-center justify-center gap-2 mb-4">
-            <Image 
-              src="/logo/sed/logo_sed.svg" 
-              alt="SED Logo" 
-              width={32} 
-              height={32}
-              className="w-8 h-8"
-            />
-            <span className="font-semibold text-gray-900 dark:text-white">Strategi Era Digital</span>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8 mb-8">
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <Image 
+                  src="/logo/sed/logo_sed.svg" 
+                  alt="SED Logo" 
+                  width={32} 
+                  height={32}
+                  className="w-8 h-8"
+                />
+                <span className="font-semibold text-gray-900 dark:text-white">SED</span>
+              </div>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
+                Solusi digital untuk UMKM Indonesia
+              </p>
+            </div>
+            <div>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">Layanan</h4>
+              <ul className="space-y-2">
+                <li><a href="/sed" className="text-sm text-gray-600 dark:text-gray-400 hover:text-[#363636]">Landing Page</a></li>
+                <li><a href="/sed/pricing" className="text-sm text-gray-600 dark:text-gray-400 hover:text-[#363636]">Paket Lengkap</a></li>
+                <li><a href="/sed/order" className="text-sm text-gray-600 dark:text-gray-400 hover:text-[#363636]">Konsultasi</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">Kontak</h4>
+              <ul className="space-y-2">
+                <li className="text-sm text-gray-600 dark:text-gray-400">WhatsApp: +62 851 2119 0261</li>
+                <li className="text-sm text-gray-600 dark:text-gray-400">Email: info@tspdigital.agency</li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-medium mb-4 text-gray-900 dark:text-white">Jam Kerja</h4>
+              <ul className="space-y-2">
+                <li className="text-sm text-gray-600 dark:text-gray-400">Senin - Jumat</li>
+                <li className="text-sm text-gray-600 dark:text-gray-400">09:00 - 17:00 WIB</li>
+              </ul>
+            </div>
           </div>
-          <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">
-            Website UMKM profesional dengan harga terjangkau
-          </p>
-          <div className="text-sm text-gray-500 dark:text-gray-500">
-            <p>WhatsApp: +62 851 2119 0261</p>
-            <p className="mt-2">© 2025 Strategi Era Digital. Part of TSP Digital.</p>
+          <div className="pt-8 border-t border-gray-100 dark:border-gray-800 text-center">
+            <p className="text-sm text-gray-500 dark:text-gray-400">
+              Powered by TSP Digital – Solusi Digital untuk UMKM Indonesia
+            </p>
           </div>
         </div>
       </footer>
