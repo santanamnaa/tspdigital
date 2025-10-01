@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SEDPricingContent from './pricing-content';
 
 export const metadata: Metadata = {
-  title: 'Harga Paket Website UMKM - Strategi Era Digital | TSP Digital',
+  title: 'Paket Website UMKM Rp500rb - Strategi Era Digital | TSP Digital',
   description: 'Lihat semua paket website UMKM mulai dari Rp500rb. Starter Pack, Growth Pack, dan Premium Pack untuk semua kebutuhan bisnis digital Anda.',
 };
 

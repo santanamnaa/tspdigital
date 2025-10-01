@@ -170,53 +170,95 @@ export default function SEDContent() {
 
       {/* Section 3 – Demo / Portfolio */}
       <section className="py-20 px-4 bg-gray-50 dark:bg-gray-900/50">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-2xl md:text-3xl font-light mb-4 text-gray-900 dark:text-white">
-              Contoh Landing Page
+              Contoh Hasil
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Lihat contoh landing page untuk berbagai jenis bisnis
+              Tampilan portofolio berbagai jenis bisnis yang sudah dikerjakan
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+            <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-gradient-to-r from-amber-100 to-amber-50 dark:from-amber-900/20 dark:to-amber-800/20 border-b border-gray-200 dark:border-gray-700 p-5">
+                <h3 className="font-medium mb-1 text-gray-900 dark:text-white">Roti Hangat Bakery</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">F&B Template</p>
+              </div>
               <div className="p-6">
-                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">F&B Template</h3>
+                <div className="bg-gradient-to-br from-amber-200 to-amber-400 rounded-xl w-full h-40 mb-4 flex items-center justify-center">
+                  <div className="text-6xl">🍞</div>
+                </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Desain modern untuk restoran dan bisnis makanan
+                  Nikmati roti segar setiap pagi, pesan online & siap antar langsung dari oven ke meja Anda.
                 </p>
-                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">Fresh Daily</span>
+                </div>
+                <button 
+                  onClick={() => handleWhatsAppClick("Demo Roti Hangat Bakery")}
+                  className="bg-amber-500 hover:bg-amber-600 text-white w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                   Lihat Demo
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">
+                  *Ini contoh tampilan portofolio
+                </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+            <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-gradient-to-r from-blue-100 to-blue-50 dark:from-blue-900/20 dark:to-blue-800/20 border-b border-gray-200 dark:border-gray-700 p-5">
+                <h3 className="font-medium mb-1 text-gray-900 dark:text-white">Suma Barber</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">Jasa Lokal</p>
+              </div>
               <div className="p-6">
-                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Jasa Lokal</h3>
+                <div className="bg-gradient-to-br from-blue-200 to-blue-400 rounded-xl w-full h-40 mb-4 flex items-center justify-center">
+                  <div className="text-6xl">💇</div>
+                </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Tampil profesional untuk bisnis jasa di daerah Anda
+                  Potongan stylish, harga ramah. Booking online sekarang dan dapatkan hasil terbaik untuk tampilan Anda.
                 </p>
-                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">Barbers Professional</span>
+                </div>
+                <button 
+                  onClick={() => handleWhatsAppClick("Demo Suma Barber")}
+                  className="bg-blue-500 hover:bg-blue-600 text-white w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                   Lihat Demo
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">
+                  *Ini contoh tampilan portofolio
+                </p>
               </div>
             </div>
-            <div className="bg-white dark:bg-gray-900 rounded-xl overflow-hidden border border-gray-200 dark:border-gray-700">
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-48" />
+            <div className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow">
+              <div className="bg-gradient-to-r from-green-100 to-green-50 dark:from-green-900/20 dark:to-green-800/20 border-b border-gray-200 dark:border-gray-700 p-5">
+                <h3 className="font-medium mb-1 text-gray-900 dark:text-white">Ayu Sari, Konsultan Pajak</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">Personal Brand</p>
+              </div>
               <div className="p-6">
-                <h3 className="font-medium mb-2 text-gray-900 dark:text-white">Personal Brand</h3>
+                <div className="bg-gradient-to-br from-green-200 to-green-400 rounded-xl w-full h-40 mb-4 flex items-center justify-center">
+                  <div className="text-6xl">👨‍💼</div>
+                </div>
                 <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                  Tunjukkan expertise Anda dengan landing page profesional
+                  Bantu bisnis Anda urus pajak dengan tenang & aman melalui konsultasi profesional langsung dari konsultan berpengalaman.
                 </p>
-                <button className="text-blue-500 hover:text-blue-600 text-sm font-medium flex items-center gap-1">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-xs text-gray-500 dark:text-gray-400">Sertifikat Terdaftar</span>
+                </div>
+                <button 
+                  onClick={() => handleWhatsAppClick("Demo Ayu Sari Konsultan Pajak")}
+                  className="bg-green-500 hover:bg-green-600 text-white w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 transition-colors">
                   Lihat Demo
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-4 h-4" />
                 </button>
+                <p className="text-xs text-gray-500 dark:text-gray-400 mt-3 text-center">
+                  *Ini contoh tampilan portofolio
+                </p>
               </div>
             </div>
           </div>
@@ -231,7 +273,7 @@ export default function SEDContent() {
               Apa Kata Mereka
             </h2>
             <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-              Testimoni dari pelanggan yang sudah menggunakan jasa kami
+              Contoh testimoni dari pelanggan layanan serupa
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -242,9 +284,9 @@ export default function SEDContent() {
                 ))}
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                "Cepat, murah, hasil rapi—langsung dapat order via WA."
+                "Sejak punya landing page ini, lebih banyak order via WhatsApp. — Demo Client"
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">- Budi Santoso, Resto Padang</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Roti Hangat Bakery</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
               <div className="flex items-center gap-1 mb-4">
@@ -253,9 +295,9 @@ export default function SEDContent() {
                 ))}
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                "Akhirnya bisa tampil online, pelanggan lebih percaya sekarang."
+                "Booking jauh lebih mudah sekarang, pelanggan bisa langsung dari website. — Demo Client"
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">- Siti Rahayu, Jasa Salon</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Suma Barber</p>
             </div>
             <div className="bg-gray-50 dark:bg-gray-900/50 p-6 rounded-xl">
               <div className="flex items-center gap-1 mb-4">
@@ -264,10 +306,15 @@ export default function SEDContent() {
                 ))}
               </div>
               <p className="text-gray-700 dark:text-gray-300 mb-4 italic">
-                "Harga terjangkau tapi hasil profesional, sangat worth it!"
+                "Calon klien bisa langsung kontak saya lewat website, sangat membantu. — Demo Client"
               </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">- Andi Pratama, Bengkel Motor</p>
+              <p className="text-sm text-gray-500 dark:text-gray-400">- Ayu Sari, Konsultan Pajak</p>
             </div>
+          </div>
+          <div className="text-center mt-8">
+            <p className="text-xs text-gray-500 dark:text-gray-400">
+              *Ini contoh testimoni untuk ilustrasi, bukan testimoni asli dari klien kami
+            </p>
           </div>
         </div>
       </section>
@@ -372,7 +419,7 @@ export default function SEDContent() {
             {[
               {
                 question: "Apakah ada biaya tersembunyi?",
-                answer: "Tidak, fixed 500rb untuk paket dasar. Hanya ada biaya tambahan jika Anda memilih upsell seperti domain premium atau hosting."
+                answer: "Tidak, fixed 500rb. Hanya ada biaya tambahan jika Anda memilih upsell seperti domain premium atau hosting."
               },
               {
                 question: "Kalau butuh revisi tambahan?",
@@ -380,7 +427,7 @@ export default function SEDContent() {
               },
               {
                 question: "Berapa lama landing page selesai?",
-                answer: "Rata-rata 2-3 hari kerja setelah konten dari Anda lengkap."
+                answer: "Rata-rata 48 jam kerja setelah konten dari Anda lengkap."
               },
               {
                 question: "Bisakah saya edit sendiri nanti?",
