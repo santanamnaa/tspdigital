@@ -27,6 +27,7 @@ const footerSections: FooterSection[] = [
       { name: "Full-Stack Development", href: "/services" },
       { name: "AI & ML Integration", href: "/services" },
       { name: "Data Analytics", href: "/services" },
+      { name: "SED", href: "/sed" },
     ],
   },
   {
