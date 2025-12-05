@@ -23,9 +23,15 @@ export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-6 py-20 pt-32 bg-[#0C0C00]">
       <div className="max-w-4xl mx-auto text-center space-y-12">
-        {/* Promo Badge */}
-        <div className="inline-block bg-[#0057FF] text-white px-6 py-3 rounded-lg uppercase tracking-wider">
-          🚀 Promo Terbatas
+        {/* SED Logo */}
+        <div className="mb-8">
+          <img 
+            src="/logo/sed/sed logo.png" 
+            alt="SED Logo" 
+            width={200} 
+            height={80}
+            className="mx-auto object-contain"
+          />
         </div>
         
         {/* Main Headline */}

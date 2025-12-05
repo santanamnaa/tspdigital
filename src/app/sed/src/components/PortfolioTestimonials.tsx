@@ -40,7 +40,7 @@ export function PortfolioTestimonials() {
 
   const testimonials = [
     {
-      name: 'Siti Aminah',
+      name: 'Ahmad Fauzi',
       business: 'Warung Nusantara',
       role: 'Pemilik Usaha',
       content: 'Website dari TSP Digital Agency membantu bisnis saya lebih dikenal pelanggan. Kini informasi menu dan kontak lebih mudah diakses, dan tampilan lebih profesional.',
@@ -48,17 +48,17 @@ export function PortfolioTestimonials() {
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b562?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGJ1c2luZXNzfGVufDF8fHx8MTc1OTQwNDcxMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     },
     {
-      name: 'Budi Santoso',
-      business: 'Fashion Trend',
-      role: 'Entrepreneur',
+      name: 'Riski Amelia',
+      business: 'Zelda Photobooth',
+      role: 'Owner',
       content: 'Layanan dari TSP Digital Agency sangat memuaskan! Desain website elegan dan modern, proses pembuatan cepat, serta harga terjangkau. Cocok untuk UMKM seperti saya.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtYW4lMjBidXNpbmVzc3xlbnwxfHx8fDE3NTk0MDQ3MTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     },
     {
-      name: 'Maya Sari',
-      business: 'Aurora Beauty Clinic',
-      role: 'Beauty Entrepreneur',
+      name: 'Sumardi',
+      business: 'Suma Barber',
+      role: 'Barber Master',
       content: 'Tim TSP Digital Agency sangat profesional dan responsif. Website membantu meningkatkan citra bisnis saya, dan kini lebih mudah ditemukan pelanggan potensial.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGVudHJlcHJlbmV1cnxlbnwxfHx8fDE3NTk0MDQ3MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
@@ -74,8 +74,9 @@ export function PortfolioTestimonials() {
   };
 
   return (
-    <section className="py-20 px-6 bg-[#0C0C0C]">
+    <section className="py-20 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0C0C0C]">
       <div className="max-w-7xl mx-auto">
+        
         {/* Portfolio Section */}
         <div className="mb-20">
           <div className="text-center mb-16">

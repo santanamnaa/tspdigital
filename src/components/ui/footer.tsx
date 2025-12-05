@@ -27,7 +27,6 @@ const footerSections: FooterSection[] = [
       { name: "Full-Stack Development", href: "/services" },
       { name: "AI & ML Integration", href: "/services" },
       { name: "Data Analytics", href: "/services" },
-      { name: "SED", href: "/sed" },
     ],
   },
   {
@@ -60,15 +59,15 @@ const contactInfo = [
   { icon: IconMail, text: "tspdigital.id@gmail.com", href: "mailto:tspdigital.id@gmail.com" },
   { icon: IconPhone, text: "+62 851-2119-0261", href: "tel:+6285121190261" },
   { icon: IconBrandWhatsapp, text: "+62 851-2119-0261", href: "https://wa.me/6285121190261" },
-//   { icon: IconMapPin, text: "Jakarta, Indonesia", href: "#" },
+  //   { icon: IconMapPin, text: "Jakarta, Indonesia", href: "#" },
 ];
 
 export function Footer({ darkMode = false }: FooterProps) {
   return (
     <footer className={cn(
       "relative w-full border-t",
-      darkMode 
-        ? "bg-black text-white border-white/10" 
+      darkMode
+        ? "bg-black text-white border-white/10"
         : "bg-card border-border"
     )}>
       {/* Main footer content */}
@@ -78,8 +77,8 @@ export function Footer({ darkMode = false }: FooterProps) {
           <div className="lg:col-span-1">
             <div className={cn(
               "relative p-6 rounded-lg border backdrop-blur-sm text-center sm:text-left",
-              darkMode 
-                ? "border-white/20 bg-black/50" 
+              darkMode
+                ? "border-white/20 bg-black/50"
                 : "border-border/50 bg-card/50"
             )}>
               <GlowingEffect
@@ -95,8 +94,8 @@ export function Footer({ darkMode = false }: FooterProps) {
                 </div>
                 <h3 className={cn(
                   "text-xl sm:text-2xl font-bold mb-4",
-                  darkMode 
-                    ? "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent" 
+                  darkMode
+                    ? "bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent"
                     : "bg-gradient-to-r from-foreground to-muted-foreground bg-clip-text text-transparent"
                 )}>
                   TSP Digital
@@ -107,7 +106,7 @@ export function Footer({ darkMode = false }: FooterProps) {
                 )}>
                   We don&apos;t build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
                 </p>
-                
+
                 {/* Contact info */}
                 <div className="space-y-3 flex flex-col items-center sm:items-start">
                   {contactInfo.map((contact, index) => (
@@ -116,8 +115,8 @@ export function Footer({ darkMode = false }: FooterProps) {
                       href={contact.href}
                       className={cn(
                         "flex items-center gap-3 text-xs sm:text-sm transition-colors group",
-                        darkMode 
-                          ? "text-gray-300 hover:text-white" 
+                        darkMode
+                          ? "text-gray-300 hover:text-white"
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
@@ -146,8 +145,8 @@ export function Footer({ darkMode = false }: FooterProps) {
                       href={link.href}
                       className={cn(
                         "text-xs sm:text-sm transition-colors hover:translate-x-1 inline-block",
-                        darkMode 
-                          ? "text-gray-300 hover:text-white" 
+                        darkMode
+                          ? "text-gray-300 hover:text-white"
                           : "text-muted-foreground hover:text-foreground"
                       )}
                     >
@@ -184,8 +183,8 @@ export function Footer({ darkMode = false }: FooterProps) {
                   rel="noopener noreferrer"
                   className={cn(
                     "relative p-2 rounded-lg border transition-all duration-300 group",
-                    darkMode 
-                      ? "border-white/20 bg-black/50 hover:bg-white/10" 
+                    darkMode
+                      ? "border-white/20 bg-black/50 hover:bg-white/10"
                       : "border-border/50 bg-card/50 hover:bg-accent/50"
                   )}
                 >
@@ -198,8 +197,8 @@ export function Footer({ darkMode = false }: FooterProps) {
                   />
                   <social.icon className={cn(
                     "h-4 w-4 sm:h-5 sm:w-5 transition-all duration-300 relative z-10 group-hover:scale-110",
-                    darkMode 
-                      ? "text-gray-300 group-hover:text-white" 
+                    darkMode
+                      ? "text-gray-300 group-hover:text-white"
                       : "text-muted-foreground group-hover:text-foreground"
                   )} />
                 </a>

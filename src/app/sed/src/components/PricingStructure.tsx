@@ -2,37 +2,38 @@ import { Card } from './ui/card';
 import { Button } from './ui/button';
 import { Check, Star, Zap } from 'lucide-react';
 
-export const sedOffering = {
-  base: {
-    title: 'SED Base — Website Company Profile (1 halaman)',
-    price: 500000, // IDR
-    includes: [
-      'Company Profile',
-      'Contact Info',
-      'Responsive Design',
-      'Basic SEO',
-      'Contact Form',
-      'Google Maps',
-      'Integrasi WhatsApp CTA'
-    ],
-    notes: ['2x revisi teks/gambar', 'Domain, hosting, SSL 1 tahun']
-  },
-  addons: [
-    { key: 'extra_page', label: 'Halaman Tambahan', price: 100000, unit: 'per_page' },
-    { key: 'gallery', label: 'Galeri/Portfolio Dinamis', price: 150000 },
-    { key: 'analytics', label: 'Google Analytics & Search Console', price: 150000 },
-    { key: 'copywriting', label: 'Copywriting Ringkas (≤300 kata)', price: 200000 },
-    { key: 'logo', label: 'Logo Sederhana', price: 300000 },
-    { key: 'social_kit', label: 'Social Media Kit (5 aset)', price: 350000 },
-    { key: 'biz_email', label: 'Business Email (1 akun/tahun)', price: 200000, recurring: true },
-    { key: 'lite_ecom', label: 'E-commerce Ringan (catalog + checkout link/WA)', price: 400000 },
-    { key: 'booking', label: 'Online Booking Sederhana', price: 300000 },
-    { key: 'i18n', label: 'Multibahasa (2 bahasa)', price: 300000 },
-    { key: 'priority_support', label: 'Support Prioritas (7 hari)', price: 150000 }
-  ]
-};
-
 export function PricingStructure() {
+  const sedOffering = {
+    base: {
+      title: 'SED Base — Website Company Profile (1 halaman)',
+      price: 500000, // IDR
+      includes: [
+        'Company Profile',
+        'Contact Info',
+        'Responsive Design',
+        'Basic SEO',
+        'Contact Form',
+        'Google Maps',
+        'Integrasi WhatsApp CTA'
+      ],
+      notes: ['2x revisi teks/gambar', 'Domain, hosting, SSL 1 tahun']
+    },
+    addons: [
+      { key: 'extra_page', label: 'Halaman Tambahan', price: 100000, unit: 'per_page' },
+      { key: 'gallery', label: 'Galeri/Portfolio Dinamis', price: 150000 },
+      { key: 'analytics', label: 'Google Analytics & Search Console', price: 150000 },
+      { key: 'copywriting', label: 'Copywriting Ringkas (≤300 kata)', price: 200000 },
+      { key: 'logo', label: 'Logo Sederhana', price: 300000 },
+      { key: 'social_kit', label: 'Social Media Kit (5 aset)', price: 350000 },
+      { key: 'biz_email', label: 'Business Email (1 akun/tahun)', price: 200000, recurring: true },
+      { key: 'lite_ecom', label: 'E-commerce Ringan (catalog + checkout link/WA)', price: 400000 },
+      { key: 'booking', label: 'Online Booking Sederhana', price: 300000 },
+      { key: 'i18n', label: 'Multibahasa (2 bahasa)', price: 300000 },
+      { key: 'priority_support', label: 'Support Prioritas (7 hari)', price: 150000 }
+    ]
+  };
+
+  
   const formatPrice = (price: number) => {
     if (price >= 1000000) {
       return `${price / 1000000}jt`;
@@ -47,10 +48,16 @@ export function PricingStructure() {
     <section className="py-20 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0C0C0C]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl mb-6">
-            <span className="text-white">SED Base </span>
-            <span className="text-[#0057FF]">+ Add-ons</span>
-          </h2>
+          <div className="w-20 h-20 mx-auto mb-6">
+            <img 
+              src="/logo/sed/sed logo.png" 
+              alt="SED Logo" 
+              width={80} 
+              height={80}
+              className="object-contain"
+            />
+          </div>
+          <h2 className="text-5xl lg:text-6xl text-white mb-6">SED <span className="text-[#0057FF]">Pricing</span></h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Mulai dengan paket dasar, lalu tambahkan fitur sesuai kebutuhan bisnis Anda.
           </p>
@@ -73,12 +80,11 @@ export function PricingStructure() {
                 <div className="flex items-center justify-center gap-2 mb-2">
                   <span className="text-5xl text-[#FF5C00]">Rp {formatPrice(sedOffering.base.price)}</span>
                   <div className="text-left">
-                    <div className="text-gray-400 line-through text-lg">Rp 1.5jt</div>
-                    <div className="text-xs text-gray-500">sekali bayar</div>
+                    <div className="text-gray-400 text-lg">sekali bayar</div>
                   </div>
                 </div>
-                <div className="inline-block bg-[#00FF88] text-black px-3 py-1 rounded-lg text-sm font-semibold">
-                  Hemat 67%
+                <div className="inline-block bg-[#0057FF] text-white px-3 py-1 rounded-lg text-sm font-semibold">
+                  Harga Jujur
                 </div>
               </div>
               
@@ -181,31 +187,31 @@ export function PricingStructure() {
           </div>
           
           <div className="mt-8 p-6 bg-gradient-to-r from-[#FF5C00]/5 to-[#00FF88]/5 rounded-xl border border-[#0057FF]/20">
-            <h4 className="text-2xl text-white mb-3">🎯 Mengapa Memilih SED Base + Add-ons?</h4>
+            <h4 className="text-2xl text-white mb-3">🎯 Mengapa Memilih SED?</h4>
             <div className="grid md:grid-cols-2 gap-4 text-sm">
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#FF5C00]/20 rounded-full flex items-center justify-center">
                   <span className="text-[#FF5C00] font-bold">✓</span>
                 </div>
-                <span className="text-gray-300">Investasi sesuai budget</span>
+                <span className="text-gray-300">Harga transparan, tidak ada yang disembunyikan</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#0057FF]/20 rounded-full flex items-center justify-center">
                   <span className="text-[#0057FF] font-bold">✓</span>
                 </div>
-                <span className="text-gray-300">Upgrade sewaktu-waktu</span>
+                <span className="text-gray-300">Upgrade sewaktu-waktu sesuai kebutuhan</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#00FF88]/20 rounded-full flex items-center justify-center">
                   <span className="text-[#00FF88] font-bold">✓</span>
                 </div>
-                <span className="text-gray-300">Tidak ada fitur yang tidak terpakai</span>
+                <span className="text-gray-300">Bayar hanya untuk fitur yang Anda butuhkan</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-8 h-8 bg-[#FF5C00]/20 rounded-full flex items-center justify-center">
                   <span className="text-[#FF5C00] font-bold">✓</span>
                 </div>
-                <span className="text-gray-300">ROI maksimal dari investasi</span>
+                <span className="text-gray-300">Solusi terjangkau untuk UMKM</span>
               </div>
             </div>
           </div>

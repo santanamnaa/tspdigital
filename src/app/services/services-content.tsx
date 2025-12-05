@@ -31,10 +31,6 @@ export default function ServicesContent() {
       link: "/services",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
-    },
-    {
       name: "Projects",
       link: "/projects",
     },
@@ -94,7 +90,7 @@ export default function ServicesContent() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 py-20">
         <div className="max-w-6xl mx-auto text-center">

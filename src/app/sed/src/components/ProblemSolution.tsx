@@ -6,6 +6,15 @@ export function ProblemSolution() {
     <section className="py-20 px-6 bg-gradient-to-b from-[#0C0C0C] to-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
+          <div className="w-20 h-20 mx-auto mb-6">
+            <img 
+              src="/logo/sed/sed logo.png" 
+              alt="SED Logo" 
+              width={80} 
+              height={80}
+              className="object-contain"
+            />
+          </div>
           <h2 className="text-5xl lg:text-6xl mb-6">
             <span className="text-white">Cara Lama vs </span>
             <span className="text-[#0057FF]">Cara Baru</span>

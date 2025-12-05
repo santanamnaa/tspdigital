@@ -31,10 +31,6 @@ export default function PricingContent() {
       link: "/services",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
-    },
-    {
       name: "Projects",
       link: "/projects",
     },
@@ -598,7 +594,7 @@ export default function PricingContent() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 py-20">
         <div className="max-w-6xl mx-auto text-center">
@@ -622,18 +618,17 @@ export default function PricingContent() {
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
-                className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
-                  activeCategory === category.id
+                className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category.id
                     ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                     : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
-                }`}
+                  }`}
               >
                 {category.icon}
                 <span>{category.name}</span>
               </button>
             ))}
           </div>
-          
+
           {/* Category Description */}
           <div className="text-center mb-12">
             <h2 className="text-2xl md:text-3xl font-bold mb-4">
@@ -706,7 +701,7 @@ const PricingCard = ({ plan, onWhatsAppClick }: PricingCardProps) => {
           </span>
         </div>
       )}
-      
+
       <div className="relative h-full rounded-2xl border p-2 md:rounded-3xl md:p-3">
         <GlowingEffect
           spread={40}
@@ -725,7 +720,7 @@ const PricingCard = ({ plan, onWhatsAppClick }: PricingCardProps) => {
                 </div>
                 <h3 className="text-xl font-semibold">{plan.name}</h3>
               </div>
-              
+
               {/* Pricing */}
               <div className="space-y-2">
                 <div className="flex items-baseline gap-2">

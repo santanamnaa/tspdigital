@@ -36,10 +36,16 @@ export function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-r from-[#FF5C00] to-[#0057FF] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">TSP</span>
+              <div className="w-10 h-10">
+                <img 
+                  src="/logo/sed/sed logo.png" 
+                  alt="SED Logo" 
+                  width={40} 
+                  height={40}
+                  className="object-contain"
+                />
               </div>
-              <span className="text-white font-semibold text-lg">TSP Digital</span>
+              <span className="text-white font-semibold text-lg">SED by TSP Digital</span>
             </Link>
           </div>
 

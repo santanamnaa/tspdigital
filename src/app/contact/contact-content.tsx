@@ -33,10 +33,6 @@ export default function ContactContent() {
       link: "/services",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
-    },
-    {
       name: "Projects",
       link: "/projects",
     },
@@ -47,7 +43,7 @@ export default function ContactContent() {
   ];
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  
+
   // Form state
   const [formData, setFormData] = useState({
     name: "",
@@ -55,7 +51,7 @@ export default function ContactContent() {
     company: "",
     message: "",
   });
-  
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
@@ -99,7 +95,7 @@ export default function ContactContent() {
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     const validationError = validateForm();
     if (validationError) {
       setErrorMessage(validationError);
@@ -192,7 +188,7 @@ export default function ContactContent() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
+
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-4 py-20">
         <div className="max-w-6xl mx-auto text-center">
@@ -202,9 +198,9 @@ export default function ContactContent() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
             Ready to Build Your Unfair Advantage?
           </h1>
-                            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-                    Let&apos;s discuss your project and discover how we can accelerate your growth through strategic technology solutions.
-                  </p>
+          <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            Let&apos;s discuss your project and discover how we can accelerate your growth through strategic technology solutions.
+          </p>
         </div>
       </section>
 
@@ -349,8 +345,8 @@ export default function ContactContent() {
         </div>
       </section>
 
-       {/* Google Gemini Effect Section */}
-       <div
+      {/* Google Gemini Effect Section */}
+      <div
         className="h-[400vh] bg-black w-full dark:border dark:border-white/[0.1] rounded-md relative pt-40 overflow-clip"
         ref={ref}
       >

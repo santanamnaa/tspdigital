@@ -33,10 +33,6 @@ export default function AboutContent() {
       link: "/services",
     },
     {
-      name: "Pricing",
-      link: "/pricing",
-    },
-    {
       name: "Projects",
       link: "/projects",
     },
@@ -96,24 +92,24 @@ export default function AboutContent() {
           </MobileNavMenu>
         </MobileNav>
       </Navbar>
-      
+
       {/* Hero Section with Container Scroll Animation */}
       <div className="flex flex-col overflow-hidden">
-                  <ContainerScroll
-            titleComponent={
-              <>
-                <div className="flex justify-center mb-8">
-                  <Logo width={120} height={120} showText={false} />
-                </div>
-                <h1 className="text-4xl font-semibold text-black dark:text-white">
-                  We Are Architects of <br />
-                  <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                    Digital Dominance.
-                  </span>
-                </h1>
-              </>
-            }
-          >
+        <ContainerScroll
+          titleComponent={
+            <>
+              <div className="flex justify-center mb-8">
+                <Logo width={120} height={120} showText={false} />
+              </div>
+              <h1 className="text-4xl font-semibold text-black dark:text-white">
+                We Are Architects of <br />
+                <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+                  Digital Dominance.
+                </span>
+              </h1>
+            </>
+          }
+        >
           <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
             <div className="text-center p-8">
               <h2 className="text-2xl font-bold mb-4 text-white">T.S.P. Digital</h2>
@@ -274,7 +270,7 @@ const AceternityIcon = React.memo(function AceternityIcon() {
   );
 });
 
-const Icon = ({ className, ...rest }: { className?: string; [key: string]: unknown }) => {
+const Icon = ({ className, ...rest }: { className?: string;[key: string]: unknown }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

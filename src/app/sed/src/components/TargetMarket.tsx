@@ -9,7 +9,7 @@ export function TargetMarket() {
       title: 'F&B Business',
       description: 'Cafe, restaurant, katering, minuman',
       examples: ['Menu online', 'Sistem informasi', 'Gallery makanan', 'Info kontak & lokasi'],
-      image: 'https://images.unsplash.com/photo-1594402918464-2d7bb2e97292?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwb3duZXIlMjBjYWZlfGVufDF8fHx8MTc1OTQwNDY1M3ww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+      image: 'https://images.unsplash.com/photo-1594402918464-2d7bb2e97292?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwY2FmZXxlbnwxfHx8fDE3NTk0MDQ2NTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       gradient: 'from-orange-500/20 to-red-500/20'
     },
     {
@@ -39,15 +39,21 @@ export function TargetMarket() {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0C0C0C]">
+    <section className="py-20 px-6 bg-gradient-to-b from-[#0C0C0C] to-[#1a1a1a]">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-5xl lg:text-6xl mb-6">
-            <span className="text-white">Apakah Ini </span>
-            <span className="text-[#0057FF]">Untuk Bisnismu?</span>
-          </h2>
+          <div className="w-20 h-20 mx-auto mb-6">
+            <img 
+              src="/logo/sed/sed logo.png" 
+              alt="SED Logo" 
+              width={80} 
+              height={80}
+              className="object-contain"
+            />
+          </div>
+          <h2 className="text-5xl lg:text-6xl text-white mb-6">Target <span className="text-[#0057FF]">Market</span></h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Solusi digital untuk UMKM Indonesia yang ingin tampil profesional online
+            Solusi digitalisasi yang cocok untuk berbagai jenis bisnis UMKM di Indonesia
           </p>
         </div>
         
