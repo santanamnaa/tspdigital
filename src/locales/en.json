@@ -8,25 +8,25 @@
         "start": "Start"
     },
     "hero": {
-        "title1": "We Don't Build Apps.",
+        "title1": "We Don't Just Build Software.",
         "title2": "We Build",
-        "title3": "Unfair Advantages.",
-        "description": "Transformasi Strategi Progresif Digital (TSP Digital) is a strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software."
+        "title3": "Business Growth.",
+        "description": "TSP Digital is your strategic technology partner. We transform business challenges into scalable solutions through data-driven strategy, full-stack engineering, and AI integration."
     },
     "services": {
-        "title": "Our Arsenal.",
-        "description": "We deploy a full spectrum of capabilities from strategy and engineering to AI integration to give you a decisive edge.",
+        "title": "Our Capabilities.",
+        "description": "From initial strategy to ongoing optimization, we provide end-to-end technology solutions designed to accelerate your digital transformation.",
         "strategy": {
             "title": "Strategy & Blueprint",
-            "description": "We map the battlefield."
+            "description": "We analyze your business requirements and design the technical roadmap."
         },
         "development": {
             "title": "Full-Stack Development",
-            "description": "We build the war machine."
+            "description": "We build scalable, production-ready applications."
         },
         "ai": {
             "title": "AI & ML Integration",
-            "description": "We deliver the intelligence."
+            "description": "We implement intelligent automation for measurable efficiency gains."
         }
     },
     "projects": {
@@ -46,12 +46,12 @@
         }
     },
     "about": {
-        "heroTitle1": "We Are Architects of",
-        "heroTitle2": "Digital Dominance.",
+        "heroTitle1": "We Are Experts in",
+        "heroTitle2": "Digital Transformation.",
         "heading": "T.S.P. Digital",
-        "description": "Strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software.",
-        "quote": "Transformasi Strategi Progresif Digital (TSP Digital) was founded on a simple, brutal principle: in the modern economy, technology is not a tool—it is the entire battlefield. We exist to provide our clients with the strategic and technical firepower necessary to not just compete, but to dominate their market. We believe in proactive transformation, not reactive solutions. Our obsession is turning complex business problems into elegant, automated, and intelligent systems that deliver measurable results.",
-        "teamTitle": "The Core Command.",
+        "description": "Strategic technology partner that optimizes your data infrastructure and automates your business processes using AI and intelligent software.",
+        "quote": "TSP Digital was founded on a clear mission: to help Indonesian businesses thrive in the digital economy. Technology should be an enabler, not a barrier. We partner with clients to solve complex business challenges through strategic planning, modern engineering practices, and AI-driven solutions that deliver measurable ROI. Our approach is proactive, data-informed, and focused on sustainable growth.",
+        "teamTitle": "Our Leadership Team.",
         "team": {
             "santana": {
                 "name": "Santana Mena",
@@ -93,8 +93,8 @@
     },
     "projectsPage": {
         "hero": {
-            "title": "Evidence of Execution.",
-            "description": "Talk is cheap. Here is our work."
+            "title": "Proven Results Across Industries.",
+            "description": "Our portfolio demonstrates expertise in delivering complex technology solutions for government agencies, enterprises, and growing businesses."
         },
         "client": "Client",
         "type": "Type",
@@ -131,8 +131,8 @@
     },
     "contactPage": {
         "hero": {
-            "title": "Ready to Build Your Unfair Advantage?",
-            "description": "Let's discuss your project and discover how we can accelerate your growth through strategic technology solutions."
+            "title": "Ready to Accelerate Your Digital Transformation?",
+            "description": "Let's discuss your project and explore how our technology solutions can drive measurable business growth."
         },
         "form": {
             "title": "Get in Touch",
@@ -162,11 +162,11 @@
         },
         "gemini": {
             "title": "Ready to Transform Your Business?",
-            "description": "Let's build something extraordinary together. Our team is ready to help you create the technology solutions that will give you an unfair advantage in your market."
+            "description": "Let's build something exceptional together. Our team will help you implement technology solutions that deliver competitive advantages through efficiency, automation, and data intelligence."
         }
     },
     "footer": {
-        "description": "We don't build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.",
+        "description": "We partner with businesses to implement strategic technology solutions that drive growth, efficiency, and competitive differentiation.",
         "sections": {
             "services": {
                 "title": "Services",

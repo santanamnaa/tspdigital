@@ -8,25 +8,25 @@
         "start": "Mulai"
     },
     "hero": {
-        "title1": "Kami Tidak Membangun Aplikasi.",
+        "title1": "Kami Tidak Hanya Membangun Software.",
         "title2": "Kami Membangun",
-        "title3": "Ke unggulan Kompetitif.",
-        "description": "Transformasi Strategi Progresif Digital (TSP Digital) adalah mitra teknologi strategis yang mempersenjatai data Anda dan mengotomatisasi proses Anda menggunakan AI dan perangkat lunak cerdas."
+        "title3": "Pertumbuhan Bisnis.",
+        "description": "TSP Digital adalah mitra teknologi strategis Anda. Kami mengubah tantangan bisnis menjadi solusi yang skalabel melalui strategi berbasis data, rekayasa full-stack, dan integrasi AI."
     },
     "services": {
-        "title": "Arsenal Kami.",
-        "description": "Kami menerapkan spektrum penuh kemampuan dari strategi dan teknik hingga integrasi AI untuk memberi Anda keunggulan yang menentukan.",
+        "title": "Kemampuan Kami.",
+        "description": "Dari strategi awal hingga optimisasi berkelanjutan, kami menyediakan solusi teknologi end-to-end yang dirancang untuk mempercepat transformasi digital Anda.",
         "strategy": {
             "title": "Strategi & Cetak Biru",
-            "description": "Kami memetakan medan perang."
+            "description": "Kami menganalisis kebutuhan bisnis Anda dan merancang roadmap teknis."
         },
         "development": {
             "title": "Pengembangan Full-Stack",
-            "description": "Kami membangun mesin perang."
+            "description": "Kami membangun aplikasi yang skalabel dan production-ready."
         },
         "ai": {
             "title": "Integrasi AI & ML",
-            "description": "Kami memberikan kecerdasan."
+            "description": "Kami menerapkan otomasi cerdas untuk peningkatan efisiensi yang terukur."
         }
     },
     "projects": {
@@ -46,12 +46,12 @@
         }
     },
     "about": {
-        "heroTitle1": "Kami Adalah Arsitek",
-        "heroTitle2": "Dominasi Digital.",
+        "heroTitle1": "Kami Adalah Ahli dalam",
+        "heroTitle2": "Transformasi Digital.",
         "heading": "T.S.P. Digital",
-        "description": "Mitra teknologi strategis yang mempersenjatai data Anda dan mengotomatisasi proses Anda menggunakan AI dan perangkat lunak cerdas.",
-        "quote": "Transformasi Strategi Progresif Digital (TSP Digital) didirikan berdasarkan prinsip yang sederhana namun brutal: dalam ekonomi modern, teknologi bukan sekadar alat—ia adalah seluruh medan pertempuran. Kami ada untuk menyediakan klien kami dengan kekuatan strategis dan teknis yang diperlukan untuk tidak hanya bersaing, tetapi untuk mendominasi pasar mereka. Kami percaya pada transformasi proaktif, bukan solusi reaktif. Obsesi kami adalah mengubah masalah bisnis yang kompleks menjadi sistem yang elegan, otomatis, dan cerdas yang memberikan hasil terukur.",
-        "teamTitle": "Komando Inti.",
+        "description": "Mitra teknologi strategis yang mengoptimalkan infrastruktur data Anda dan mengotomatisasi proses bisnis Anda menggunakan AI dan perangkat lunak cerdas.",
+        "quote": "TSP Digital didirikan dengan misi yang jelas: membantu bisnis Indonesia berkembang di era ekonomi digital. Teknologi harus menjadi enabler, bukan penghalang. Kami bermitra dengan klien untuk menyelesaikan tantangan bisnis yang kompleks melalui perencanaan strategis, praktik engineering modern, dan solusi berbasis AI yang memberikan ROI terukur. Pendekatan kami proaktif, berdasarkan data, dan berfokus pada pertumbuhan berkelanjutan.",
+        "teamTitle": "Tim Kepemimpinan Kami.",
         "team": {
             "santana": {
                 "name": "Santana Mena",
@@ -93,8 +93,8 @@
     },
     "projectsPage": {
         "hero": {
-            "title": "Bukti Eksekusi.",
-            "description": "Bicara itu murah. Inilah karya kami."
+            "title": "Hasil Terbukti di Berbagai Industri.",
+            "description": "Portofolio kami menunjukkan keahlian dalam menghadirkan solusi teknologi kompleks untuk lembaga pemerintah, perusahaan, dan bisnis yang berkembang."
         },
         "client": "Klien",
         "type": "Tipe",
@@ -131,8 +131,8 @@
     },
     "contactPage": {
         "hero": {
-            "title": "Siap Membangun Keunggulan Kompetitif Anda?",
-            "description": "Mari diskusikan proyek Anda dan temukan bagaimana kami dapat mempercepat pertumbuhan Anda melalui solusi teknologi strategis."
+            "title": "Siap Mempercepat Transformasi Digital Anda?",
+            "description": "Mari diskusikan proyek Anda dan jelajahi bagaimana solusi teknologi kami dapat mendorong pertumbuhan bisnis yang terukur."
         },
         "form": {
             "title": "Hubungi Kami",
@@ -162,11 +162,11 @@
         },
         "gemini": {
             "title": "Siap Mentransformasi Bisnis Anda?",
-            "description": "Mari membangun sesuatu yang luar biasa bersama. Tim kami siap membantu Anda menciptakan solusi teknologi yang akan memberi Anda keunggulan kompetitif di pasar Anda."
+            "description": "Mari membangun sesuatu yang luar biasa bersama. Tim kami akan membantu Anda menerapkan solusi teknologi yang memberikan keunggulan kompetitif melalui efisiensi, otomasi, dan kecerdasan data."
         }
     },
     "footer": {
-        "description": "Kami tidak membangun aplikasi. Kami membangun keunggulan kompetitif melalui solusi teknologi strategis yang memberi Anda keunggulan yang menentukan.",
+        "description": "Kami bermitra dengan bisnis untuk menerapkan solusi teknologi strategis yang mendorong pertumbuhan, efisiensi, dan diferensiasi kompetitif.",
         "sections": {
             "services": {
                 "title": "Layanan",
