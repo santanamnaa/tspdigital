@@ -315,7 +315,7 @@ export default function ContactContent() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">{t("contactPage.whyChoose.title")}</h3>
                 <ul className="space-y-4 text-muted-foreground">
-                  {(t("contactPage.whyChoose.items") as unknown as string[]).map((item: string, index: number) => (
+                  {(Array.isArray(t<string[]>("contactPage.whyChoose.items")) ? t<string[]>("contactPage.whyChoose.items") : []).map((item: string, index: number) => (
                     <li key={index} className="flex items-start gap-3">
                       <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span>{item}</span>

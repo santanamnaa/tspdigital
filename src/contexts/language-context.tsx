@@ -7,14 +7,14 @@ type Language = 'id' | 'en';
 interface LanguageContextType {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (key: string) => string;
+  t: <T = string>(key: string) => T;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguageState] = useState<Language>('en');
-  const [translations, setTranslations] = useState<Record<string, any>>({});
+  const [translations, setTranslations] = useState<Record<string, unknown>>({});
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -46,19 +46,19 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const t = (key: string): string => {
+  const t = <T = string>(key: string): T => {
     const keys = key.split('.');
-    let value: any = translations;
+    let value: unknown = translations;
     
     for (const k of keys) {
       if (value && typeof value === 'object') {
-        value = value[k];
+        value = (value as Record<string, unknown>)[k];
       } else {
-        return key; // Return key if translation not found
+        return key as unknown as T;
       }
     }
     
-    return typeof value === 'string' ? value : key;
+    return (value !== undefined ? value : key) as T;
   };
 
   return (
