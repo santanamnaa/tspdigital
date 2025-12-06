@@ -15,33 +15,36 @@ import {
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Check, Star, Zap, Crown, Shield, Globe, Mail, Database, Users, CreditCard, Code, Brain, Smartphone, TrendingUp, Palette, Server, Lock, BarChart3 } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
+import { useLanguage } from "@/contexts/language-context";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 
 export default function PricingContent() {
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeCategory, setActiveCategory] = useState("wordpress");
+
   const navItems = [
     {
-      name: "Home",
+      name: t("nav.home"),
       link: "/",
     },
     {
-      name: "About",
+      name: t("nav.about"),
       link: "/about",
     },
     {
-      name: "Services",
+      name: t("nav.services"),
       link: "/services",
     },
     {
-      name: "Projects",
+      name: t("nav.projects"),
       link: "/projects",
     },
     {
-      name: "Contact",
+      name: t("nav.contact"),
       link: "/contact",
     },
   ];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeCategory, setActiveCategory] = useState("wordpress");
 
   const handleWhatsAppClick = (packageName: string) => {
     const message = `Halo! Saya tertarik dengan paket ${packageName}. Bisa minta informasi lebih detail?`;
@@ -52,33 +55,33 @@ export default function PricingContent() {
   const pricingCategories = [
     {
       id: "wordpress",
-      name: "WordPress Website",
+      name: t("pricingPage.categories.wordpress.name"),
       icon: <Globe className="h-5 w-5" />,
-      description: "Complete WordPress solutions with hosting and setup"
+      description: t("pricingPage.categories.wordpress.description")
     },
     {
       id: "webdev",
-      name: "Custom Web Development",
+      name: t("pricingPage.categories.webdev.name"),
       icon: <Code className="h-5 w-5" />,
-      description: "Bespoke web applications and platforms"
+      description: t("pricingPage.categories.webdev.description")
     },
     {
       id: "ai-ml",
-      name: "AI & Machine Learning",
+      name: t("pricingPage.categories.aiml.name"),
       icon: <Brain className="h-5 w-5" />,
-      description: "Intelligent automation and data solutions"
+      description: t("pricingPage.categories.aiml.description")
     },
     {
       id: "mobile",
-      name: "Mobile App Development",
+      name: t("pricingPage.categories.mobile.name"),
       icon: <Smartphone className="h-5 w-5" />,
-      description: "Native and cross-platform mobile applications"
+      description: t("pricingPage.categories.mobile.description")
     },
     {
       id: "strategy",
-      name: "Digital Strategy",
+      name: t("pricingPage.categories.strategy.name"),
       icon: <TrendingUp className="h-5 w-5" />,
-      description: "Consulting and strategic planning services"
+      description: t("pricingPage.categories.strategy.description")
     }
   ];
 
@@ -554,7 +557,8 @@ export default function PricingContent() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
+            <LanguageToggle />
+            <NavbarButton href="/contact" variant="primary">{t("nav.start")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -582,13 +586,14 @@ export default function PricingContent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <LanguageToggle className="w-full" />
               <NavbarButton
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Start
+                {t("nav.start")}
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -602,10 +607,10 @@ export default function PricingContent() {
             <Logo width={100} height={100} showText={false} />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Strategic Pricing Solutions
+            {t("pricingPage.hero.title")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Choose the perfect plan for your digital transformation journey. From WordPress websites to AI-powered solutions.
+            {t("pricingPage.hero.description")}
           </p>
         </div>
       </section>
@@ -619,8 +624,8 @@ export default function PricingContent() {
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all duration-300 ${activeCategory === category.id
-                    ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
-                    : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
+                  : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
                   }`}
               >
                 {category.icon}
@@ -660,16 +665,16 @@ export default function PricingContent() {
       <section className="py-20 px-4 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Need Custom Solutions?
+            {t("pricingPage.cta.title")}
           </h2>
           <p className="text-lg text-muted-foreground mb-8">
-            Our team is ready to help you choose the perfect solution for your business needs.
+            {t("pricingPage.cta.description")}
           </p>
           <button
-            onClick={() => handleWhatsAppClick("Custom Consultation")}
+            onClick={() => handleWhatsAppClick(t("pricingPage.cta.customConsultation"))}
             className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
           >
-            💬 Chat WhatsApp
+            {t("pricingPage.labels.chatWhatsApp")}
           </button>
         </div>
       </section>
@@ -692,12 +697,14 @@ interface PricingCardProps {
 }
 
 const PricingCard = ({ plan, onWhatsAppClick }: PricingCardProps) => {
+  const { t } = useLanguage();
+
   return (
     <div className={`relative ${plan.popular ? 'scale-105' : ''}`}>
       {plan.popular && (
         <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-            ⭐ Most Popular
+            {t("pricingPage.labels.mostPopular")}
           </span>
         </div>
       )}
@@ -738,7 +745,7 @@ const PricingCard = ({ plan, onWhatsAppClick }: PricingCardProps) => {
 
             {/* Features */}
             <div className="space-y-3">
-              <h4 className="font-semibold text-lg">Fitur:</h4>
+              <h4 className="font-semibold text-lg">{t("pricingPage.labels.features")}</h4>
               <ul className="space-y-2">
                 {plan.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-2">
@@ -754,7 +761,7 @@ const PricingCard = ({ plan, onWhatsAppClick }: PricingCardProps) => {
               onClick={onWhatsAppClick}
               className="w-full bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
             >
-              💬 Pesan Sekarang
+              {t("pricingPage.labels.orderNow")}
             </button>
           </div>
         </div>

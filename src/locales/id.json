@@ -165,6 +165,47 @@
             "description": "Mari membangun sesuatu yang luar biasa bersama. Tim kami akan membantu Anda menerapkan solusi teknologi yang memberikan keunggulan kompetitif melalui efisiensi, otomasi, dan kecerdasan data."
         }
     },
+    "pricingPage": {
+        "hero": {
+            "title": "Solusi Harga Strategis",
+            "description": "Pilih paket sempurna untuk perjalanan transformasi digital Anda. Dari website WordPress hingga solusi berbasis AI."
+        },
+        "categories": {
+            "wordpress": {
+                "name": "Website WordPress",
+                "description": "Solusi WordPress lengkap dengan hosting dan setup"
+            },
+            "webdev": {
+                "name": "Pengembangan Web Kustom",
+                "description": "Aplikasi dan platform web yang disesuaikan"
+            },
+            "aiml": {
+                "name": "AI & Machine Learning",
+                "description": "Otomasi cerdas dan solusi data"
+            },
+            "mobile": {
+                "name": "Pengembangan Aplikasi Mobile",
+                "description": "Aplikasi mobile native dan cross-platform"
+            },
+            "strategy": {
+                "name": "Strategi Digital",
+                "description": "Konsultasi dan layanan perencanaan strategis"
+            }
+        },
+        "labels": {
+            "mostPopular": "⭐ Paling Populer",
+            "renewal": "Perpanjangan",
+            "save": "Hemat",
+            "features": "Fitur:",
+            "orderNow": "💬 Pesan Sekarang",
+            "chatWhatsApp": "💬 Chat WhatsApp"
+        },
+        "cta": {
+            "title": "Butuh Solusi Kustom?",
+            "description": "Tim kami siap membantu Anda memilih solusi sempurna untuk kebutuhan bisnis Anda.",
+            "customConsultation": "Konsultasi Kustom"
+        }
+    },
     "footer": {
         "description": "Kami bermitra dengan bisnis untuk menerapkan solusi teknologi strategis yang mendorong pertumbuhan, efisiensi, dan diferensiasi kompetitif.",
         "sections": {

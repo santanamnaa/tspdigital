@@ -165,6 +165,47 @@
             "description": "Let's build something exceptional together. Our team will help you implement technology solutions that deliver competitive advantages through efficiency, automation, and data intelligence."
         }
     },
+    "pricingPage": {
+        "hero": {
+            "title": "Strategic Pricing Solutions",
+            "description": "Choose the perfect plan for your digital transformation journey. From WordPress websites to AI-powered solutions."
+        },
+        "categories": {
+            "wordpress": {
+                "name": "WordPress Website",
+                "description": "Complete WordPress solutions with hosting and setup"
+            },
+            "webdev": {
+                "name": "Custom Web Development",
+                "description": "Bespoke web applications and platforms"
+            },
+            "aiml": {
+                "name": "AI & Machine Learning",
+                "description": "Intelligent automation and data solutions"
+            },
+            "mobile": {
+                "name": "Mobile App Development",
+                "description": "Native and cross-platform mobile applications"
+            },
+            "strategy": {
+                "name": "Digital Strategy",
+                "description": "Consulting and strategic planning services"
+            }
+        },
+        "labels": {
+            "mostPopular": "⭐ Most Popular",
+            "renewal": "Renewal",
+            "save": "Save",
+            "features": "Features:",
+            "orderNow": "💬 Order Now",
+            "chatWhatsApp": "💬 Chat WhatsApp"
+        },
+        "cta": {
+            "title": "Need Custom Solutions?",
+            "description": "Our team is ready to help you choose the perfect solution for your business needs.",
+            "customConsultation": "Custom Consultation"
+        }
+    },
     "footer": {
         "description": "We partner with businesses to implement strategic technology solutions that drive growth, efficiency, and competitive differentiation.",
         "sections": {
