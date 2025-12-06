@@ -1,148 +1,121 @@
 import React from "react";
 import { Timeline } from "@/components/ui/timeline";
+import { useLanguage } from "@/contexts/language-context";
 
 export default function TimelineDemo() {
+  const { t } = useLanguage();
+
   const data = [
     {
-      title: "Phase 1",
+      title: t("timeline.phase1.title"),
       content: (
         <div>
           <h4 className="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Strategic Deep Dive
+            {t("timeline.phase1.heading")}
           </h4>
           <p className="mb-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
-            We don&apos;t write code until we understand your business. This phase is an intensive immersion into your operational challenges, market position, and strategic goals. We define the precise problem we will solve together.
+            {t("timeline.phase1.description")}
           </p>
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-              Stakeholder Workshops
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-              Technical & Business Audit
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-blue-500"></div>
-              Finalized Strategic Blueprint
-            </div>
+            {(t("timeline.phase1.items") as unknown as string[]).map((item: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
+                <div className="h-2 w-2 rounded-full bg-blue-500"></div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       ),
     },
     {
-      title: "Phase 2",
+      title: t("timeline.phase2.title"),
       content: (
         <div>
           <h4 className="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Architectural Design & Prototyping
+            {t("timeline.phase2.heading")}
           </h4>
           <p className="mb-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
-            Ideas are translated into tangible, testable designs. We create wireframes and high-fidelity interactive prototypes, allowing you to see and feel the solution before a single line of code is written. No surprises, only precision.
+            {t("timeline.phase2.description")}
           </p>
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-              User Flow & Journey Mapping
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-              High-Fidelity UI/UX Prototypes
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-purple-500"></div>
-              Technical Architecture Plan
-            </div>
+            {(t("timeline.phase2.items") as unknown as string[]).map((item: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
+                <div className="h-2 w-2 rounded-full bg-purple-500"></div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       ),
     },
     {
-      title: "Phase 3",
+      title: t("timeline.phase3.title"),
       content: (
         <div>
           <h4 className="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Agile Development Sprints
+            {t("timeline.phase3.heading")}
           </h4>
           <p className="mb-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
-            This is where the machine is built. We operate in rigorous two-week sprints, delivering functional pieces of the application for your review. You get full transparency and witness progress in real-time, every step of the way.
+            {t("timeline.phase3.description")}
           </p>
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              Backend & API Development
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              Frontend Component Construction
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              Bi-Weekly Sprint Reviews
-            </div>
+            {(t("timeline.phase3.items") as unknown as string[]).map((item: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
+                <div className="h-2 w-2 rounded-full bg-green-500"></div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       ),
     },
     {
-      title: "Phase 4",
+      title: t("timeline.phase4.title"),
       content: (
         <div>
           <h4 className="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Rigorous Quality Assurance
+            {t("timeline.phase4.heading")}
           </h4>
           <p className="mb-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
-            We hunt for flaws so your users don&apos;t have to. Our process involves comprehensive testing across devices, scenarios, and security vectors to ensure the final product is stable, secure, and market-ready.
+            {t("timeline.phase4.description")}
           </p>
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-orange-500"></div>
-              Automated & Manual Testing
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-orange-500"></div>
-              User Acceptance Testing (UAT)
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-orange-500"></div>
-              Performance & Security Audits
-            </div>
+            {(t("timeline.phase4.items") as unknown as string[]).map((item: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
+                <div className="h-2 w-2 rounded-full bg-orange-500"></div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       ),
     },
     {
-      title: "Phase 5",
+      title: t("timeline.phase5.title"),
       content: (
         <div>
           <h4 className="text-xl font-bold mb-4 text-neutral-900 dark:text-neutral-100">
-            Deployment & Strategic Partnership
+            {t("timeline.phase5.heading")}
           </h4>
           <p className="mb-6 text-sm font-normal text-neutral-800 md:text-base dark:text-neutral-200">
-            Launch is not the end; it&apos;s the beginning of your advantage. We manage the full deployment process and transition into a strategic partnership role, monitoring performance and identifying new opportunities for growth.
+            {t("timeline.phase5.description")}
           </p>
           <div className="space-y-2">
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-red-500"></div>
-              Server Configuration & App Store Submission
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-red-500"></div>
-              Post-Launch Monitoring
-            </div>
-            <div className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
-              <div className="h-2 w-2 rounded-full bg-red-500"></div>
-              Long-Term Growth Roadmap
-            </div>
+            {(t("timeline.phase5.items") as unknown as string[]).map((item: string, index: number) => (
+              <div key={index} className="flex items-center gap-2 text-sm text-neutral-700 md:text-base dark:text-neutral-300">
+                <div className="h-2 w-2 rounded-full bg-red-500"></div>
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       ),
     },
   ];
-  
+
   return (
     <div className="relative w-full overflow-clip">
       <Timeline data={data} />
     </div>
   );
-} 
+}

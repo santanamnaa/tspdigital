@@ -206,6 +206,58 @@
             "customConsultation": "Konsultasi Kustom"
         }
     },
+    "timeline": {
+        "phase1": {
+            "title": "Fase 1",
+            "heading": "Pendalaman Strategis",
+            "description": "Kami tidak menulis kode sampai kami memahami bisnis Anda. Fase ini adalah pendalaman intensif terhadap tantangan operasional, posisi pasar, dan tujuan strategis Anda. Kami mendefinisikan masalah yang tepat yang akan kami selesaikan bersama.",
+            "items": [
+                "Workshop Stakeholder",
+                "Audit Teknis & Bisnis",
+                "Finalisasi Cetak Biru Strategis"
+            ]
+        },
+        "phase2": {
+            "title": "Fase 2",
+            "heading": "Desain Arsitektur & Prototyping",
+            "description": "Ide diterjemahkan menjadi desain yang nyata dan dapat diuji. Kami membuat wireframe dan prototipe interaktif beresolusi tinggi, memungkinkan Anda melihat dan merasakan solusi sebelum satu baris kode pun ditulis. Tanpa kejutan, hanya presisi.",
+            "items": [
+                "Pemetaan Alur & Perjalanan Pengguna",
+                "Prototipe UI/UX Beresolusi Tinggi",
+                "Rencana Arsitektur Teknis"
+            ]
+        },
+        "phase3": {
+            "title": "Fase 3",
+            "heading": "Sprint Pengembangan Agile",
+            "description": "Di sinilah solusi dibangun. Kami beroperasi dalam sprint dua minggu yang ketat, menghasilkan bagian-bagian fungsional aplikasi untuk Anda tinjau. Anda mendapatkan transparansi penuh dan menyaksikan kemajuan secara real-time, di setiap langkah.",
+            "items": [
+                "Pengembangan Backend & API",
+                "Konstruksi Komponen Frontend",
+                "Review Sprint Dua Mingguan"
+            ]
+        },
+        "phase4": {
+            "title": "Fase 4",
+            "heading": "Jaminan Kualitas yang Ketat",
+            "description": "Kami mencari kekurangan agar pengguna Anda tidak perlu melakukannya. Proses kami melibatkan pengujian komprehensif di berbagai perangkat, skenario, dan vektor keamanan untuk memastikan produk akhir stabil, aman, dan siap pasar.",
+            "items": [
+                "Pengujian Otomatis & Manual",
+                "User Acceptance Testing (UAT)",
+                "Audit Performa & Keamanan"
+            ]
+        },
+        "phase5": {
+            "title": "Fase 5",
+            "heading": "Deployment & Kemitraan Strategis",
+            "description": "Peluncuran bukan akhir; ini adalah awal dari keunggulan kompetitif Anda. Kami mengelola proses deployment penuh dan bertransisi menjadi peran mitra strategis, memantau performa dan mengidentifikasi peluang pertumbuhan baru.",
+            "items": [
+                "Konfigurasi Server & Pengajuan App Store",
+                "Pemantauan Pasca-Peluncuran",
+                "Roadmap Pertumbuhan Jangka Panjang"
+            ]
+        }
+    },
     "footer": {
         "description": "Kami bermitra dengan bisnis untuk menerapkan solusi teknologi strategis yang mendorong pertumbuhan, efisiensi, dan diferensiasi kompetitif.",
         "sections": {
