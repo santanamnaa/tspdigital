@@ -15,32 +15,35 @@ import {
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Box, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { Logo } from "@/components/ui/logo";
+import { useLanguage } from "@/contexts/language-context";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 
 export default function ServicesContent() {
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     {
-      name: "Home",
+      name: t("nav.home"),
       link: "/",
     },
     {
-      name: "About",
+      name: t("nav.about"),
       link: "/about",
     },
     {
-      name: "Services",
+      name: t("nav.services"),
       link: "/services",
     },
     {
-      name: "Projects",
+      name: t("nav.projects"),
       link: "/projects",
     },
     {
-      name: "Contact",
+      name: t("nav.contact"),
       link: "/contact",
     },
   ];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="relative w-full">
@@ -50,7 +53,8 @@ export default function ServicesContent() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
+            <LanguageToggle />
+            <NavbarButton href="/contact" variant="primary">{t("nav.start")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -78,13 +82,14 @@ export default function ServicesContent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <LanguageToggle className="w-full" />
               <NavbarButton
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Start
+                {t("nav.start")}
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -98,10 +103,10 @@ export default function ServicesContent() {
             <Logo width={100} height={100} showText={false} />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            A Suite of Strategic Services.
+            {t("servicesPage.hero.title")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            We offer three core engagement models, designed to deliver maximum impact at every stage of your digital transformation journey.
+            {t("servicesPage.hero.description")}
           </p>
         </div>
       </section>
@@ -113,36 +118,36 @@ export default function ServicesContent() {
             <GridItem
               area="md:[grid-area:1/1/2/7] xl:[grid-area:1/1/2/5]"
               icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
-              title="Strategy & Blueprint"
-              description="We analyze your business, map user flows, and design a clear technical blueprint—setting your project up for success from day one."
+              title={t("servicesPage.items.strategy.title")}
+              description={t("servicesPage.items.strategy.description")}
             />
 
             <GridItem
               area="md:[grid-area:1/7/2/13] xl:[grid-area:2/1/3/5]"
               icon={<Settings className="h-4 w-4 text-black dark:text-neutral-400" />}
-              title="Full-Stack Development"
-              description="We build robust, scalable web and mobile apps—from intuitive front-ends to powerful back-ends."
+              title={t("servicesPage.items.development.title")}
+              description={t("servicesPage.items.development.description")}
             />
 
             <GridItem
               area="md:[grid-area:2/1/3/7] xl:[grid-area:1/5/3/8]"
               icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
-              title="AI & ML Integration"
-              description="Unlock the power of your data. We specialize in developing and integrating custom machine learning models and AI-driven automation into your existing operations. From predictive analytics to computer vision, we turn your data from a cost center into a strategic asset."
+              title={t("servicesPage.items.ai.title")}
+              description={t("servicesPage.items.ai.description")}
             />
 
             <GridItem
               area="md:[grid-area:2/7/3/13] xl:[grid-area:1/8/2/13]"
               icon={<Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />}
-              title="Custom Solutions"
-              description="Every business is unique. We create tailored solutions that address your specific challenges and opportunities, leveraging cutting-edge technology to give you a competitive edge in your market."
+              title={t("servicesPage.items.custom.title")}
+              description={t("servicesPage.items.custom.description")}
             />
 
             <GridItem
               area="md:[grid-area:3/1/4/13] xl:[grid-area:2/8/3/13]"
               icon={<Search className="h-4 w-4 text-black dark:text-neutral-400" />}
-              title="Ongoing Support & Optimization"
-              description="Our relationship doesn't end at launch. We provide continuous support, monitoring, and optimization to ensure your systems remain efficient, secure, and aligned with your evolving business needs."
+              title={t("servicesPage.items.support.title")}
+              description={t("servicesPage.items.support.description")}
             />
           </ul>
         </div>

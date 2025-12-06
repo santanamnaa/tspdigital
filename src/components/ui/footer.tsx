@@ -4,6 +4,7 @@ import { IconBrandLinkedin, IconBrandGithub, IconBrandTwitter, IconMail, IconPho
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { Logo } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
+import { useLanguage } from "@/contexts/language-context";
 
 interface FooterLink {
   name: string;
@@ -63,6 +64,37 @@ const contactInfo = [
 ];
 
 export function Footer({ darkMode = false }: FooterProps) {
+  const { t } = useLanguage();
+
+  const footerSections: FooterSection[] = [
+    {
+      title: t("footer.sections.services.title"),
+      links: [
+        { name: t("footer.sections.services.strategyBlueprint"), href: "/services" },
+        { name: t("footer.sections.services.fullStackDevelopment"), href: "/services" },
+        { name: t("footer.sections.services.aiMlIntegration"), href: "/services" },
+        { name: t("footer.sections.services.dataAnalytics"), href: "/services" },
+      ],
+    },
+    {
+      title: t("footer.sections.company.title"),
+      links: [
+        { name: t("footer.sections.company.aboutUs"), href: "/about" },
+        { name: t("footer.sections.company.ourApproach"), href: "/about" },
+        { name: t("footer.sections.company.caseStudies"), href: "/projects" },
+        { name: t("footer.sections.company.contact"), href: "/contact" },
+      ],
+    },
+    {
+      title: t("footer.sections.resources.title"),
+      links: [
+        { name: t("footer.sections.resources.blog"), href: "/blog" },
+        { name: t("footer.sections.resources.documentation"), href: "/docs" },
+        { name: t("footer.sections.resources.privacyPolicy"), href: "/privacy" },
+        { name: t("footer.sections.resources.termsOfService"), href: "/terms" },
+      ],
+    },
+  ];
   return (
     <footer className={cn(
       "relative w-full border-t",
@@ -104,7 +136,7 @@ export function Footer({ darkMode = false }: FooterProps) {
                   "text-xs sm:text-sm mb-6 leading-relaxed",
                   darkMode ? "text-gray-300" : "text-muted-foreground"
                 )}>
-                  We don&apos;t build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.
+                  {t("footer.description")}
                 </p>
 
                 {/* Contact info */}
@@ -170,7 +202,7 @@ export function Footer({ darkMode = false }: FooterProps) {
               "text-xs sm:text-sm text-center sm:text-left",
               darkMode ? "text-gray-300" : "text-muted-foreground"
             )}>
-              © {new Date().getFullYear()} TSP Digital.
+              {t("footer.copyright").replace("{year}", new Date().getFullYear().toString())}
             </div>
 
             {/* Social links */}

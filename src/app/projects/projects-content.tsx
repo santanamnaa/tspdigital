@@ -14,32 +14,35 @@ import {
 
 import { GlowingStarsBackgroundCard, GlowingStarsTitle, GlowingStarsDescription } from "@/components/ui/glowing-stars";
 import { Logo } from "@/components/ui/logo";
+import { useLanguage } from "@/contexts/language-context";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 
 export default function ProjectsContent() {
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     {
-      name: "Home",
+      name: t("nav.home"),
       link: "/",
     },
     {
-      name: "About",
+      name: t("nav.about"),
       link: "/about",
     },
     {
-      name: "Services",
+      name: t("nav.services"),
       link: "/services",
     },
     {
-      name: "Projects",
+      name: t("nav.projects"),
       link: "/projects",
     },
     {
-      name: "Contact",
+      name: t("nav.contact"),
       link: "/contact",
     },
   ];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
     <div className="relative w-full">
@@ -49,7 +52,8 @@ export default function ProjectsContent() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
+            <LanguageToggle />
+            <NavbarButton href="/contact" variant="primary">{t("nav.start")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -77,13 +81,14 @@ export default function ProjectsContent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <LanguageToggle className="w-full" />
               <NavbarButton
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Start
+                {t("nav.start")}
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -97,10 +102,10 @@ export default function ProjectsContent() {
             <Logo width={100} height={100} showText={false} />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Evidence of Execution.
+            {t("projectsPage.hero.title")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Talk is cheap. Here is our work.
+            {t("projectsPage.hero.description")}
           </p>
         </div>
       </section>
@@ -110,12 +115,12 @@ export default function ProjectsContent() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>AI-Powered Aerial Inspection System</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.aerial.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Client:</strong> National Research and Innovation Agency (BRIN)
+                  <strong>{t("projectsPage.client")}:</strong> {t("projectsPage.items.aerial.client")}
                   <br />
-                  Developed a computer vision system using YOLOv8 and OpenCV to detect aircraft body damage from drone footage, enhancing inspection speed and accuracy.
+                  {t("projectsPage.items.aerial.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />
@@ -124,12 +129,12 @@ export default function ProjectsContent() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>Real-Time Project Management Platform</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.management.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Client:</strong> PT. Gunung Amal Solutions Internasional
+                  <strong>{t("projectsPage.client")}:</strong> {t("projectsPage.items.management.client")}
                   <br />
-                  Built a full-stack system to streamline task assignments, progress tracking, and team collaboration, leveraging Node.js and cloud database integration.
+                  {t("projectsPage.items.management.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />
@@ -138,12 +143,12 @@ export default function ProjectsContent() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>Predictive Heart Disease Model</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.heart.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Type:</strong> R&D Case Study
+                  <strong>{t("projectsPage.type")}:</strong> {t("projectsPage.rdCaseStudy")}
                   <br />
-                  Designed and developed a heart disease prediction application using a Random Forest machine learning model and interactive visualizations with Streamlit.
+                  {t("projectsPage.items.heart.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />
@@ -152,12 +157,12 @@ export default function ProjectsContent() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>Decentralized Identity Platform</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.identity.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Type:</strong> R&D Case Study
+                  <strong>{t("projectsPage.type")}:</strong> {t("projectsPage.rdCaseStudy")}
                   <br />
-                  Engineered a secure identity management platform using Motoko Backend and Vanilla JS, allowing users to generate unique ID addresses for seamless integration.
+                  {t("projectsPage.items.identity.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />
@@ -166,12 +171,12 @@ export default function ProjectsContent() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>AI-Powered Pothole Detector</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.pothole.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Client:</strong> Binus University (PKM-KC Nominee)
+                  <strong>{t("projectsPage.client")}:</strong> {t("projectsPage.items.pothole.client")}
                   <br />
-                  Developed and fine-tuned a pothole detection system that generates automated PDF reports for infrastructure maintenance.
+                  {t("projectsPage.items.pothole.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />
@@ -180,12 +185,12 @@ export default function ProjectsContent() {
             </GlowingStarsBackgroundCard>
 
             <GlowingStarsBackgroundCard>
-              <GlowingStarsTitle>Nationwide Blood Bank Application (&quot;Hemo&quot;)</GlowingStarsTitle>
+              <GlowingStarsTitle>{t("projectsPage.items.bloodBank.title")}</GlowingStarsTitle>
               <div className="flex justify-between items-end">
                 <GlowingStarsDescription>
-                  <strong>Type:</strong> R&D Case Study
+                  <strong>{t("projectsPage.type")}:</strong> {t("projectsPage.rdCaseStudy")}
                   <br />
-                  Built a web-based platform to connect blood donors with those in need, featuring real-time requests and inventory management.
+                  {t("projectsPage.items.bloodBank.description")}
                 </GlowingStarsDescription>
                 <div className="h-8 w-8 rounded-full bg-[hsla(0,0%,100%,.1)] flex items-center justify-center">
                   <Icon />

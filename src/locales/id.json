@@ -1,0 +1,195 @@
+{
+    "nav": {
+        "home": "Beranda",
+        "about": "Tentang",
+        "services": "Layanan",
+        "projects": "Proyek",
+        "contact": "Kontak",
+        "start": "Mulai"
+    },
+    "hero": {
+        "title1": "Kami Tidak Membangun Aplikasi.",
+        "title2": "Kami Membangun",
+        "title3": "Ke unggulan Kompetitif.",
+        "description": "Transformasi Strategi Progresif Digital (TSP Digital) adalah mitra teknologi strategis yang mempersenjatai data Anda dan mengotomatisasi proses Anda menggunakan AI dan perangkat lunak cerdas."
+    },
+    "services": {
+        "title": "Arsenal Kami.",
+        "description": "Kami menerapkan spektrum penuh kemampuan dari strategi dan teknik hingga integrasi AI untuk memberi Anda keunggulan yang menentukan.",
+        "strategy": {
+            "title": "Strategi & Cetak Biru",
+            "description": "Kami memetakan medan perang."
+        },
+        "development": {
+            "title": "Pengembangan Full-Stack",
+            "description": "Kami membangun mesin perang."
+        },
+        "ai": {
+            "title": "Integrasi AI & ML",
+            "description": "Kami memberikan kecerdasan."
+        }
+    },
+    "projects": {
+        "title": "Dari Riset Nasional hingga Operasional Bisnis.",
+        "description": "Portofolio kami mencakup dari inisiatif riset skala nasional hingga solusi bisnis transformatif, menampilkan keahlian kami dalam memberikan dampak nyata di berbagai industri.",
+        "aerial": {
+            "title": "Sistem Inspeksi Udara Berbasis AI",
+            "description": "Mengembangkan sistem computer vision menggunakan YOLOv8 dan OpenCV untuk mendeteksi kerusakan badan pesawat dari rekaman drone, meningkatkan kecepatan dan akurasi inspeksi."
+        },
+        "management": {
+            "title": "Platform Manajemen Proyek Real-Time",
+            "description": "Membangun sistem full-stack untuk menyederhanakan penugasan tugas, pelacakan kemajuan, dan kolaborasi tim, memanfaatkan Node.js dan integrasi database cloud."
+        },
+        "heart": {
+            "title": "Model Prediksi Penyakit Jantung",
+            "description": "Merancang dan mengembangkan aplikasi prediksi penyakit jantung menggunakan model machine learning Random Forest dan visualisasi interaktif dengan Streamlit."
+        }
+    },
+    "about": {
+        "heroTitle1": "Kami Adalah Arsitek",
+        "heroTitle2": "Dominasi Digital.",
+        "heading": "T.S.P. Digital",
+        "description": "Mitra teknologi strategis yang mempersenjatai data Anda dan mengotomatisasi proses Anda menggunakan AI dan perangkat lunak cerdas.",
+        "quote": "Transformasi Strategi Progresif Digital (TSP Digital) didirikan berdasarkan prinsip yang sederhana namun brutal: dalam ekonomi modern, teknologi bukan sekadar alat—ia adalah seluruh medan pertempuran. Kami ada untuk menyediakan klien kami dengan kekuatan strategis dan teknis yang diperlukan untuk tidak hanya bersaing, tetapi untuk mendominasi pasar mereka. Kami percaya pada transformasi proaktif, bukan solusi reaktif. Obsesi kami adalah mengubah masalah bisnis yang kompleks menjadi sistem yang elegan, otomatis, dan cerdas yang memberikan hasil terukur.",
+        "teamTitle": "Komando Inti.",
+        "team": {
+            "santana": {
+                "name": "Santana Mena",
+                "role": "Ahli Strategi Utama & Insinyur Utama"
+            },
+            "irgya": {
+                "name": "Irgya Genta Arnezzi",
+                "role": "Chief Technology Officer"
+            }
+        }
+    },
+    "servicesPage": {
+        "hero": {
+            "title": "Rangkaian Layanan Strategis.",
+            "description": "Kami menawarkan tiga model keterlibatan inti, dirancang untuk memberikan dampak maksimal di setiap tahap perjalanan transformasi digital Anda."
+        },
+        "items": {
+            "strategy": {
+                "title": "Strategi & Cetak Biru",
+                "description": "Kami menganalisis bisnis Anda, memetakan alur pengguna, dan merancang cetak biru teknis yang jelas—mempersiapkan proyek Anda untuk sukses sejak hari pertama."
+            },
+            "development": {
+                "title": "Pengembangan Full-Stack",
+                "description": "Kami membangun aplikasi web dan mobile yang kokoh dan skalabel—dari front-end yang intuitif hingga back-end yang kuat."
+            },
+            "ai": {
+                "title": "Integrasi AI & ML",
+                "description": "Buka kekuatan data Anda. Kami mengkhususkan diri dalam mengembangkan dan mengintegrasikan model machine learning kustom dan otomasi berbasis AI ke dalam operasi Anda yang ada. Dari analitik prediktif hingga computer vision, kami mengubah data Anda dari pusat biaya menjadi aset strategis."
+            },
+            "custom": {
+                "title": "Solusi Kustom",
+                "description": "Setiap bisnis unik. Kami menciptakan solusi yang disesuaikan untuk mengatasi tantangan dan peluang spesifik Anda, memanfaatkan teknologi canggih untuk memberi Anda keunggulan kompetitif di pasar Anda."
+            },
+            "support": {
+                "title": "Dukungan & Optimisasi Berkelanjutan",
+                "description": "Hubungan kami tidak berakhir saat peluncuran. Kami menyediakan dukungan, pemantauan, dan optimisasi berkelanjutan untuk memastikan sistem Anda tetap efisien, aman, dan selaras dengan kebutuhan bisnis Anda yang berkembang."
+            }
+        }
+    },
+    "projectsPage": {
+        "hero": {
+            "title": "Bukti Eksekusi.",
+            "description": "Bicara itu murah. Inilah karya kami."
+        },
+        "client": "Klien",
+        "type": "Tipe",
+        "rdCaseStudy": "Studi Kasus R&D",
+        "items": {
+            "aerial": {
+                "title": "Sistem Inspeksi Udara Berbasis AI",
+                "client": "Badan Riset dan Inovasi Nasional (BRIN)",
+                "description": "Mengembangkan sistem computer vision menggunakan YOLOv8 dan OpenCV untuk mendeteksi kerusakan badan pesawat dari rekaman drone, meningkatkan kecepatan dan akurasi inspeksi."
+            },
+            "management": {
+                "title": "Platform Manajemen Proyek Real-Time",
+                "client": "PT. Gunung Amal Solutions Internasional",
+                "description": "Membangun sistem full-stack untuk menyederhanakan penugasan tugas, pelacakan kemajuan, dan kolaborasi tim, memanfaatkan Node.js dan integrasi database cloud."
+            },
+            "heart": {
+                "title": "Model Prediksi Penyakit Jantung",
+                "description": "Merancang dan mengembangkan aplikasi prediksi penyakit jantung menggunakan model machine learning Random Forest dan visualisasi interaktif dengan Streamlit."
+            },
+            "identity": {
+                "title": "Platform Identitas Terdesentralisasi",
+                "description": "Merancang platform manajemen identitas yang aman menggunakan Motoko Backend dan Vanilla JS, memungkinkan pengguna membuat alamat ID unik untuk integrasi yang mulus."
+            },
+            "pothole": {
+                "title": "Detektor Lubang Jalan Berbasis AI",
+                "client": "Universitas Binus (Nominee PKM-KC)",
+                "description": "Mengembangkan dan menyempurnakan sistem deteksi lubang jalan yang menghasilkan laporan PDF otomatis untuk pemeliharaan infrastruktur."
+            },
+            "bloodBank": {
+                "title": "Aplikasi Bank Darah Nasional (\"Hemo\")",
+                "description": "Membangun platform berbasis web untuk menghubungkan pendonor darah dengan yang membutuhkan, menampilkan permintaan real-time dan manajemen inventaris."
+            }
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "title": "Siap Membangun Keunggulan Kompetitif Anda?",
+            "description": "Mari diskusikan proyek Anda dan temukan bagaimana kami dapat mempercepat pertumbuhan Anda melalui solusi teknologi strategis."
+        },
+        "form": {
+            "title": "Hubungi Kami",
+            "subtitle": "Siap mentransformasi bisnis Anda? Mari mulai percakapan tentang proyek Anda.",
+            "namePlaceholder": "Nama Anda",
+            "emailPlaceholder": "Email Anda",
+            "companyPlaceholder": "Perusahaan (Opsional)",
+            "messagePlaceholder": "Ceritakan tentang proyek Anda...",
+            "submitButton": "Kirim Pesan",
+            "sending": "Mengirim...",
+            "successMessage": "Pesan berhasil dikirim!",
+            "errorMessage": "Gagal mengirim pesan. Silakan email kami langsung di tspdigital.id@gmail.com."
+        },
+        "whyChoose": {
+            "title": "Mengapa Memilih TSP Digital?",
+            "items": [
+                "Pendekatan strategis untuk implementasi teknologi",
+                "Keahlian AI dan ML untuk keunggulan kompetitif",
+                "Kemampuan pengembangan full-stack",
+                "Rekam jejak terbukti dengan lembaga nasional"
+            ]
+        },
+        "whatToExpect": {
+            "title": "Apa yang Diharapkan",
+            "description1": "Kami akan menjadwalkan konsultasi strategis untuk memahami tantangan dan peluang bisnis Anda. Tim kami kemudian akan mengusulkan solusi yang disesuaikan dengan tujuan Anda.",
+            "description2": "Dari konsep awal hingga deployment akhir, kami memastikan setiap langkah dioptimalkan untuk kesuksesan Anda."
+        },
+        "gemini": {
+            "title": "Siap Mentransformasi Bisnis Anda?",
+            "description": "Mari membangun sesuatu yang luar biasa bersama. Tim kami siap membantu Anda menciptakan solusi teknologi yang akan memberi Anda keunggulan kompetitif di pasar Anda."
+        }
+    },
+    "footer": {
+        "description": "Kami tidak membangun aplikasi. Kami membangun keunggulan kompetitif melalui solusi teknologi strategis yang memberi Anda keunggulan yang menentukan.",
+        "sections": {
+            "services": {
+                "title": "Layanan",
+                "strategyBlueprint": "Strategi & Cetak Biru",
+                "fullStackDevelopment": "Pengembangan Full-Stack",
+                "aiMlIntegration": "Integrasi AI & ML",
+                "dataAnalytics": "Analitik Data"
+            },
+            "company": {
+                "title": "Perusahaan",
+                "aboutUs": "Tentang Kami",
+                "ourApproach": "Pendekatan Kami",
+                "caseStudies": "Studi Kasus",
+                "contact": "Kontak"
+            },
+            "resources": {
+                "title": "Sumber Daya",
+                "blog": "Blog",
+                "documentation": "Dokumentasi",
+                "privacyPolicy": "Kebijakan Privasi",
+                "termsOfService": "Ketentuan Layanan"
+            }
+        },
+        "copyright": "© {year} TSP Digital."
+    }
+}

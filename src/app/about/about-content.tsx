@@ -3,6 +3,8 @@ import React, { useState, useMemo, lazy, Suspense } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { ContainerScroll } from "@/components/ui/container-scroll-animation";
 import { Logo } from "@/components/ui/logo";
+import { useLanguage } from "@/contexts/language-context";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 
 // Lazy load CanvasRevealEffect untuk performa yang lebih baik
 const CanvasRevealEffect = lazy(() => import("@/components/ui/canvas-reveal-effect").then(module => ({ default: module.CanvasRevealEffect })));
@@ -19,30 +21,31 @@ import {
 } from "@/components/ui/resizable-navbar";
 
 export default function AboutContent() {
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = useMemo(() => [
     {
-      name: "Home",
+      name: t("nav.home"),
       link: "/",
     },
     {
-      name: "About",
+      name: t("nav.about"),
       link: "/about",
     },
     {
-      name: "Services",
+      name: t("nav.services"),
       link: "/services",
     },
     {
-      name: "Projects",
+      name: t("nav.projects"),
       link: "/projects",
     },
     {
-      name: "Contact",
+      name: t("nav.contact"),
       link: "/contact",
     },
-  ], []);
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  ], [t]);
 
   return (
     <div className="relative w-full">
@@ -52,7 +55,8 @@ export default function AboutContent() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
+            <LanguageToggle />
+            <NavbarButton href="/contact" variant="primary">{t("nav.start")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -80,13 +84,14 @@ export default function AboutContent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <LanguageToggle className="w-full" />
               <NavbarButton
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Start
+                {t("nav.start")}
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -102,9 +107,9 @@ export default function AboutContent() {
                 <Logo width={120} height={120} showText={false} />
               </div>
               <h1 className="text-4xl font-semibold text-black dark:text-white">
-                We Are Architects of <br />
+                {t("about.heroTitle1")} <br />
                 <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                  Digital Dominance.
+                  {t("about.heroTitle2")}
                 </span>
               </h1>
             </>
@@ -112,9 +117,9 @@ export default function AboutContent() {
         >
           <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/5 rounded-2xl flex items-center justify-center">
             <div className="text-center p-8">
-              <h2 className="text-2xl font-bold mb-4 text-white">T.S.P. Digital</h2>
+              <h2 className="text-2xl font-bold mb-4 text-white">{t("about.heading")}</h2>
               <p className="text-lg text-muted-foreground max-w-2xl">
-                Strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software.
+                {t("about.description")}
               </p>
             </div>
           </div>
@@ -125,7 +130,7 @@ export default function AboutContent() {
       <section className="py-20 px-4">
         <div className="max-w-4xl mx-auto">
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed text-center">
-            &quot;Transformasi Strategi Progresif Digital (TSP Digital) was founded on a simple, brutal principle: in the modern economy, technology is not a tool—it is the entire battlefield. We exist to provide our clients with the strategic and technical firepower necessary to not just compete, but to dominate their market. We believe in proactive transformation, not reactive solutions. Our obsession is turning complex business problems into elegant, automated, and intelligent systems that deliver measurable results.&quot;
+            &quot;{t("about.quote")}&quot;
           </p>
         </div>
       </section>
@@ -134,10 +139,10 @@ export default function AboutContent() {
       <section className="py-12 md:py-20 px-4 bg-card">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center mb-8 md:mb-16">
-            The Core Command.
+            {t("about.teamTitle")}
           </h2>
           <div className="py-8 md:py-20 flex flex-col lg:flex-row items-center justify-center w-full gap-6 md:gap-8 mx-auto px-4 md:px-8">
-            <Card title="Santana Mena" subtitle="Lead Strategist & Principal Engineer" icon={<AceternityIcon />} bgColor="bg-[#080c39]">
+            <Card title={t("about.team.santana.name")} subtitle={t("about.team.santana.role")} icon={<AceternityIcon />} bgColor="bg-[#080c39]">
               <Suspense fallback={<div className="w-full h-full bg-[#080c39] animate-pulse" />}>
                 <CanvasRevealEffect
                   animationSpeed={3}
@@ -153,7 +158,7 @@ export default function AboutContent() {
                 <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-[#080c39]/30" />
               </Suspense>
             </Card>
-            <Card title="Muhammad Haekal A. R." subtitle="Head of Research & AI" icon={<AceternityIcon />} bgColor="bg-[#943834]">
+            <Card title={t("about.team.irgya.name")} subtitle={t("about.team.irgya.role")} icon={<AceternityIcon />} bgColor="bg-[#943834]">
               <Suspense fallback={<div className="w-full h-full bg-[#943834] animate-pulse" />}>
                 <CanvasRevealEffect
                   animationSpeed={3}
@@ -167,22 +172,6 @@ export default function AboutContent() {
                   opacities={[0.4, 0.6, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]}
                 />
                 <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-[#943834]/30" />
-              </Suspense>
-            </Card>
-            <Card title="Rayhan Kafi Pratama" subtitle="Lead Systems Architect" icon={<AceternityIcon />} bgColor="bg-[#7d8baf]">
-              <Suspense fallback={<div className="w-full h-full bg-[#7d8baf] animate-pulse" />}>
-                <CanvasRevealEffect
-                  animationSpeed={3}
-                  containerClassName="bg-[#7d8baf]"
-                  colors={[
-                    [125, 139, 175], // #7d8baf base
-                    [149, 163, 199], // brighter version
-                    [173, 187, 223], // even brighter for glow
-                  ]}
-                  dotSize={3}
-                  opacities={[0.4, 0.6, 0.8, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0]}
-                />
-                <div className="absolute inset-0 [mask-image:radial-gradient(400px_at_center,white,transparent)] bg-[#7d8baf]/30" />
               </Suspense>
             </Card>
           </div>

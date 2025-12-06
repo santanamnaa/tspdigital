@@ -17,32 +17,35 @@ import { IconMessage, IconUser, IconSend, IconCheck } from "@tabler/icons-react"
 import { DarkFooter } from "@/components/ui/dark-footer";
 import { Logo } from "@/components/ui/logo";
 import emailjs from '@emailjs/browser';
+import { useLanguage } from "@/contexts/language-context";
+import { LanguageToggle } from "@/components/ui/language-toggle";
 
 export default function ContactContent() {
+  const { t } = useLanguage();
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
   const navItems = [
     {
-      name: "Home",
+      name: t("nav.home"),
       link: "/",
     },
     {
-      name: "About",
+      name: t("nav.about"),
       link: "/about",
     },
     {
-      name: "Services",
+      name: t("nav.services"),
       link: "/services",
     },
     {
-      name: "Projects",
+      name: t("nav.projects"),
       link: "/projects",
     },
     {
-      name: "Contact",
+      name: t("nav.contact"),
       link: "/contact",
     },
   ];
-
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   // Form state
   const [formData, setFormData] = useState({
@@ -148,7 +151,8 @@ export default function ContactContent() {
           <NavbarLogo />
           <NavItems items={navItems} />
           <div className="flex items-center gap-4">
-            <NavbarButton href="/contact" variant="primary">Start</NavbarButton>
+            <LanguageToggle />
+            <NavbarButton href="/contact" variant="primary">{t("nav.start")}</NavbarButton>
           </div>
         </NavBody>
 
@@ -176,13 +180,14 @@ export default function ContactContent() {
               </a>
             ))}
             <div className="flex w-full flex-col gap-4">
+              <LanguageToggle className="w-full" />
               <NavbarButton
                 href="/contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 variant="primary"
                 className="w-full"
               >
-                Start
+                {t("nav.start")}
               </NavbarButton>
             </div>
           </MobileNavMenu>
@@ -196,10 +201,10 @@ export default function ContactContent() {
             <Logo width={100} height={100} showText={false} />
           </div>
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-            Ready to Build Your Unfair Advantage?
+            {t("contactPage.hero.title")}
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-            Let&apos;s discuss your project and discover how we can accelerate your growth through strategic technology solutions.
+            {t("contactPage.hero.description")}
           </p>
         </div>
       </section>
@@ -211,9 +216,9 @@ export default function ContactContent() {
             {/* Contact Form */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Get in Touch</h2>
+                <h2 className="text-3xl font-bold mb-4">{t("contactPage.form.title")}</h2>
                 <p className="text-muted-foreground">
-                  Ready to transform your business? Let&apos;s start a conversation about your project.
+                  {t("contactPage.form.subtitle")}
                 </p>
               </div>
 
@@ -226,7 +231,7 @@ export default function ContactContent() {
                       name="name"
                       value={formData.name}
                       onChange={handleInputChange}
-                      placeholder="Your Name"
+                      placeholder={t("contactPage.form.namePlaceholder")}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                       required
                     />
@@ -239,7 +244,7 @@ export default function ContactContent() {
                       name="email"
                       value={formData.email}
                       onChange={handleInputChange}
-                      placeholder="Your Email"
+                      placeholder={t("contactPage.form.emailPlaceholder")}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                       required
                     />
@@ -252,7 +257,7 @@ export default function ContactContent() {
                       name="company"
                       value={formData.company}
                       onChange={handleInputChange}
-                      placeholder="Company (Optional)"
+                      placeholder={t("contactPage.form.companyPlaceholder")}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white"
                     />
                   </div>
@@ -263,7 +268,7 @@ export default function ContactContent() {
                       name="message"
                       value={formData.message}
                       onChange={handleInputChange}
-                      placeholder="Tell us about your project..."
+                      placeholder={t("contactPage.form.messagePlaceholder")}
                       rows={6}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white resize-none"
                       required
@@ -279,12 +284,12 @@ export default function ContactContent() {
                   {isSubmitting ? (
                     <>
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
-                      Sending...
+                      {t("contactPage.form.sending")}
                     </>
                   ) : (
                     <>
                       <IconSend className="h-4 w-4" />
-                      Send Message
+                      {t("contactPage.form.submitButton")}
                     </>
                   )}
                 </button>
@@ -292,14 +297,14 @@ export default function ContactContent() {
                 {submitStatus === "success" && (
                   <div className="flex items-center gap-2 text-green-600 bg-green-50 dark:bg-green-900/20 p-3 rounded-lg">
                     <IconCheck className="h-5 w-5" />
-                    <span>Message sent successfully!</span>
+                    <span>{t("contactPage.form.successMessage")}</span>
                   </div>
                 )}
 
                 {submitStatus === "error" && (
                   <div className="flex items-center gap-2 text-red-600 bg-red-50 dark:bg-red-900/20 p-3 rounded-lg">
                     <IconMessage className="h-5 w-5" />
-                    <span>{errorMessage}</span>
+                    <span>{errorMessage || t("contactPage.form.errorMessage")}</span>
                   </div>
                 )}
               </form>
@@ -308,35 +313,25 @@ export default function ContactContent() {
             {/* Contact Info */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold mb-4">Why Choose TSP Digital?</h3>
+                <h3 className="text-2xl font-bold mb-4">{t("contactPage.whyChoose.title")}</h3>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Strategic approach to technology implementation</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span>AI and ML expertise for competitive advantage</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Full-stack development capabilities</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                    <span>Proven track record with national agencies</span>
-                  </li>
+                  {(t("contactPage.whyChoose.items") as unknown as string[]).map((item: string, index: number) => (
+                    <li key={index} className="flex items-start gap-3">
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+                      <span>{item}</span>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold mb-4">What to Expect</h3>
+                <h3 className="text-2xl font-bold mb-4">{t("contactPage.whatToExpect.title")}</h3>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    We&apos;ll schedule a strategic consultation to understand your business challenges and opportunities. Our team will then propose a tailored solution that aligns with your goals.
+                    {t("contactPage.whatToExpect.description1")}
                   </p>
                   <p>
-                    From initial concept to final deployment, we ensure every step is optimized for your success.
+                    {t("contactPage.whatToExpect.description2")}
                   </p>
                 </div>
               </div>
@@ -358,8 +353,8 @@ export default function ContactContent() {
             pathLengthFourth,
             pathLengthFifth,
           ]}
-          title="Ready to Transform Your Business?"
-          description="Let&apos;s build something extraordinary together. Our team is ready to help you create the technology solutions that will give you an unfair advantage in your market."
+          title={t("contactPage.gemini.title")}
+          description={t("contactPage.gemini.description")}
         />
       </div>
 

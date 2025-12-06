@@ -1,0 +1,195 @@
+{
+    "nav": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "projects": "Projects",
+        "contact": "Contact",
+        "start": "Start"
+    },
+    "hero": {
+        "title1": "We Don't Build Apps.",
+        "title2": "We Build",
+        "title3": "Unfair Advantages.",
+        "description": "Transformasi Strategi Progresif Digital (TSP Digital) is a strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software."
+    },
+    "services": {
+        "title": "Our Arsenal.",
+        "description": "We deploy a full spectrum of capabilities from strategy and engineering to AI integration to give you a decisive edge.",
+        "strategy": {
+            "title": "Strategy & Blueprint",
+            "description": "We map the battlefield."
+        },
+        "development": {
+            "title": "Full-Stack Development",
+            "description": "We build the war machine."
+        },
+        "ai": {
+            "title": "AI & ML Integration",
+            "description": "We deliver the intelligence."
+        }
+    },
+    "projects": {
+        "title": "From National Research to Business Operations.",
+        "description": "Our portfolio spans from national-scale research initiatives to transformative business solutions, showcasing our expertise in delivering real-world impact across industries.",
+        "aerial": {
+            "title": "AI-Powered Aerial Inspection System",
+            "description": "Developed a computer vision system using YOLOv8 and OpenCV to detect aircraft body damage from drone footage, enhancing inspection speed and accuracy."
+        },
+        "management": {
+            "title": "Real-Time Project Management Platform",
+            "description": "Built a full-stack system to streamline task assignments, progress tracking, and team collaboration, leveraging Node.js and cloud database integration."
+        },
+        "heart": {
+            "title": "Predictive Heart Disease Model",
+            "description": "Designed and developed a heart disease prediction application using a Random Forest machine learning model and interactive visualizations with Streamlit."
+        }
+    },
+    "about": {
+        "heroTitle1": "We Are Architects of",
+        "heroTitle2": "Digital Dominance.",
+        "heading": "T.S.P. Digital",
+        "description": "Strategic technology partner that weaponizes your data and automates your processes using AI and intelligent software.",
+        "quote": "Transformasi Strategi Progresif Digital (TSP Digital) was founded on a simple, brutal principle: in the modern economy, technology is not a tool—it is the entire battlefield. We exist to provide our clients with the strategic and technical firepower necessary to not just compete, but to dominate their market. We believe in proactive transformation, not reactive solutions. Our obsession is turning complex business problems into elegant, automated, and intelligent systems that deliver measurable results.",
+        "teamTitle": "The Core Command.",
+        "team": {
+            "santana": {
+                "name": "Santana Mena",
+                "role": "Lead Strategist & Principal Engineer"
+            },
+            "irgya": {
+                "name": "Irgya Genta Arnezzi",
+                "role": "Chief Technology Officer"
+            }
+        }
+    },
+    "servicesPage": {
+        "hero": {
+            "title": "A Suite of Strategic Services.",
+            "description": "We offer three core engagement models, designed to deliver maximum impact at every stage of your digital transformation journey."
+        },
+        "items": {
+            "strategy": {
+                "title": "Strategy & Blueprint",
+                "description": "We analyze your business, map user flows, and design a clear technical blueprint—setting your project up for success from day one."
+            },
+            "development": {
+                "title": "Full-Stack Development",
+                "description": "We build robust, scalable web and mobile apps—from intuitive front-ends to powerful back-ends."
+            },
+            "ai": {
+                "title": "AI & ML Integration",
+                "description": "Unlock the power of your data. We specialize in developing and integrating custom machine learning models and AI-driven automation into your existing operations. From predictive analytics to computer vision, we turn your data from a cost center into a strategic asset."
+            },
+            "custom": {
+                "title": "Custom Solutions",
+                "description": "Every business is unique. We create tailored solutions that address your specific challenges and opportunities, leveraging cutting-edge technology to give you a competitive edge in your market."
+            },
+            "support": {
+                "title": "Ongoing Support & Optimization",
+                "description": "Our relationship doesn't end at launch. We provide continuous support, monitoring, and optimization to ensure your systems remain efficient, secure, and aligned with your evolving business needs."
+            }
+        }
+    },
+    "projectsPage": {
+        "hero": {
+            "title": "Evidence of Execution.",
+            "description": "Talk is cheap. Here is our work."
+        },
+        "client": "Client",
+        "type": "Type",
+        "rdCaseStudy": "R&D Case Study",
+        "items": {
+            "aerial": {
+                "title": "AI-Powered Aerial Inspection System",
+                "client": "National Research and Innovation Agency (BRIN)",
+                "description": "Developed a computer vision system using YOLOv8 and OpenCV to detect aircraft body damage from drone footage, enhancing inspection speed and accuracy."
+            },
+            "management": {
+                "title": "Real-Time Project Management Platform",
+                "client": "PT. Gunung Amal Solutions Internasional",
+                "description": "Built a full-stack system to streamline task assignments, progress tracking, and team collaboration, leveraging Node.js and cloud database integration."
+            },
+            "heart": {
+                "title": "Predictive Heart Disease Model",
+                "description": "Designed and developed a heart disease prediction application using a Random Forest machine learning model and interactive visualizations with Streamlit."
+            },
+            "identity": {
+                "title": "Decentralized Identity Platform",
+                "description": "Engineered a secure identity management platform using Motoko Backend and Vanilla JS, allowing users to generate unique ID addresses for seamless integration."
+            },
+            "pothole": {
+                "title": "AI-Powered Pothole Detector",
+                "client": "Binus University (PKM-KC Nominee)",
+                "description": "Developed and fine-tuned a pothole detection system that generates automated PDF reports for infrastructure maintenance."
+            },
+            "bloodBank": {
+                "title": "Nationwide Blood Bank Application (\"Hemo\")",
+                "description": "Built a web-based platform to connect blood donors with those in need, featuring real-time requests and inventory management."
+            }
+        }
+    },
+    "contactPage": {
+        "hero": {
+            "title": "Ready to Build Your Unfair Advantage?",
+            "description": "Let's discuss your project and discover how we can accelerate your growth through strategic technology solutions."
+        },
+        "form": {
+            "title": "Get in Touch",
+            "subtitle": "Ready to transform your business? Let's start a conversation about your project.",
+            "namePlaceholder": "Your Name",
+            "emailPlaceholder": "Your Email",
+            "companyPlaceholder": "Company (Optional)",
+            "messagePlaceholder": "Tell us about your project...",
+            "submitButton": "Send Message",
+            "sending": "Sending...",
+            "successMessage": "Message sent successfully!",
+            "errorMessage": "Failed to send message. Please email us directly at tspdigital.id@gmail.com."
+        },
+        "whyChoose": {
+            "title": "Why Choose TSP Digital?",
+            "items": [
+                "Strategic approach to technology implementation",
+                "AI and ML expertise for competitive advantage",
+                "Full-stack development capabilities",
+                "Proven track record with national agencies"
+            ]
+        },
+        "whatToExpect": {
+            "title": "What to Expect",
+            "description1": "We'll schedule a strategic consultation to understand your business challenges and opportunities. Our team will then propose a tailored solution that aligns with your goals.",
+            "description2": "From initial concept to final deployment, we ensure every step is optimized for your success."
+        },
+        "gemini": {
+            "title": "Ready to Transform Your Business?",
+            "description": "Let's build something extraordinary together. Our team is ready to help you create the technology solutions that will give you an unfair advantage in your market."
+        }
+    },
+    "footer": {
+        "description": "We don't build apps. We build unfair advantages through strategic technology solutions that give you a decisive edge.",
+        "sections": {
+            "services": {
+                "title": "Services",
+                "strategyBlueprint": "Strategy & Blueprint",
+                "fullStackDevelopment": "Full-Stack Development",
+                "aiMlIntegration": "AI & ML Integration",
+                "dataAnalytics": "Data Analytics"
+            },
+            "company": {
+                "title": "Company",
+                "aboutUs": "About Us",
+                "ourApproach": "Our Approach",
+                "caseStudies": "Case Studies",
+                "contact": "Contact"
+            },
+            "resources": {
+                "title": "Resources",
+                "blog": "Blog",
+                "documentation": "Documentation",
+                "privacyPolicy": "Privacy Policy",
+                "termsOfService": "Terms of Service"
+            }
+        },
+        "copyright": "© {year} TSP Digital."
+    }
+}
