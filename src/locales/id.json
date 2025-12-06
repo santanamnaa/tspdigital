@@ -258,6 +258,66 @@
             ]
         }
     },
+    "projectCarousel": {
+        "title": "Portofolio Strategis Kami.",
+        "description": "Showcase proyek berdampak tinggi yang kami hadirkan untuk klien di industri kritis.",
+        "labels": {
+            "technologiesUsed": "Teknologi yang Digunakan",
+            "keyFeatures": "Fitur Utama",
+            "client": "Klien",
+            "type": "Tipe"
+        },
+        "projects": {
+            "aerial": {
+                "category": "AI & Computer Vision",
+                "title": "Sistem Inspeksi Udara Berbasis AI",
+                "client": "Badan Riset dan Inovasi Nasional (BRIN)",
+                "description": "Mengembangkan dan mengintegrasikan sistem computer vision YOLOv8 untuk mendeteksi kerusakan badan pesawat dari rekaman drone, meningkatkan kecepatan dan akurasi inspeksi dalam lingkungan berisiko tinggi."
+            },
+            "attendance": {
+                "category": "Pengembangan Full-Stack",
+                "title": "Platform Proyek & Absensi Real-Time",
+                "client": "PT. Gunung Amal Solutions Internasional",
+                "description": "Merancang sistem full-stack untuk menyederhanakan manajemen tugas, absensi, dan pelacakan cuti, memberikan visibilitas operasional total untuk tim bisnis."
+            },
+            "health": {
+                "category": "Machine Learning",
+                "title": "Pemodelan Kesehatan Prediktif",
+                "type": "Studi Kasus R&D",
+                "description": "Merancang dan men-deploy model machine learning (Random Forest & XGBoost) dalam aplikasi web fungsional untuk memberikan prediksi risiko penyakit real-time berdasarkan data kesehatan pengguna."
+            },
+            "bloodBank": {
+                "category": "Arsitektur Sistem",
+                "title": "Aplikasi Bank Darah Nasional",
+                "type": "Studi Kasus Arsitektur Sistem",
+                "description": "Merancang platform web yang kompleks dan skalabel untuk menghubungkan pendonor darah dengan penerima, menampilkan backend performa tinggi yang dibangun dengan Go dan gRPC."
+            },
+            "pothole": {
+                "category": "Infrastruktur AI",
+                "title": "Pemantauan Infrastruktur Berbasis AI",
+                "client": "Universitas Binus (Nominee PKM-KC)",
+                "description": "Mengembangkan dan menyempurnakan sistem deteksi lubang jalan yang menghasilkan laporan PDF otomatis untuk pemeliharaan infrastruktur."
+            },
+            "identity": {
+                "category": "Blockchain & Identitas",
+                "title": "Platform Identitas Terdesentralisasi",
+                "type": "Studi Kasus R&D",
+                "description": "Merancang platform manajemen identitas yang aman menggunakan Motoko Backend, memungkinkan pengguna membuat alamat ID unik untuk integrasi yang mulus dan privat dengan perusahaan."
+            },
+            "emergency": {
+                "category": "AI Respons Darurat",
+                "title": "Sistem Autoresponder Darurat",
+                "type": "Studi Kasus R&D",
+                "description": "Melatih model TensorFlow pada 20.000 gambar untuk mendeteksi kecelakaan lalu lintas, membentuk inti dari sistem respons darurat otomatis."
+            },
+            "commercial": {
+                "category": "Aplikasi Web Komersial",
+                "title": "Sistem Booking & Dashboard Full-Stack",
+                "client": "Suma Barber, PT Aitiserve, dan Lainnya",
+                "description": "Mengembangkan dan memelihara beberapa aplikasi web komersial, termasuk sistem booking online dan dashboard data dinamis menggunakan React, Next.js, dan Node.js."
+            }
+        }
+    },
     "footer": {
         "description": "Kami bermitra dengan bisnis untuk menerapkan solusi teknologi strategis yang mendorong pertumbuhan, efisiensi, dan diferensiasi kompetitif.",
         "sections": {

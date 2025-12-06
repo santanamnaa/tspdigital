@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import ContactContent from './contact-content';
+import ContactPageWrapper from './contact-wrapper';
 
 export const metadata: Metadata = {
   title: 'Contact Us',
@@ -7,5 +7,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <ContactContent />;
+  return <ContactPageWrapper />;
 } 

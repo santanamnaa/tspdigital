@@ -258,6 +258,66 @@
             ]
         }
     },
+    "projectCarousel": {
+        "title": "Our Strategic Portfolio.",
+        "description": "A showcase of high-impact projects delivered for clients in critical industries.",
+        "labels": {
+            "technologiesUsed": "Technologies Used",
+            "keyFeatures": "Key Features",
+            "client": "Client",
+            "type": "Type"
+        },
+        "projects": {
+            "aerial": {
+                "category": "AI & Computer Vision",
+                "title": "AI-Powered Aerial Inspection System",
+                "client": "National Research and Innovation Agency (BRIN)",
+                "description": "Developed and integrated a YOLOv8 computer vision system to detect aircraft body damage from drone footage, enhancing inspection speed and accuracy in a high-stakes environment."
+            },
+            "attendance": {
+                "category": "Full-Stack Development",
+                "title": "Real-Time Project & Attendance Platform",
+                "client": "PT. Gunung Amal Solutions Internasional",
+                "description": "Engineered a full-stack system to streamline task management, attendance, and leave tracking, providing total operational visibility for business teams."
+            },
+            "health": {
+                "category": "Machine Learning",
+                "title": "Predictive Health Modeling",
+                "type": "R&D Case Study",
+                "description": "Designed and deployed machine learning models (Random Forest & XGBoost) in functional web apps to provide real-time disease risk predictions based on user health data."
+            },
+            "bloodBank": {
+                "category": "Systems Architecture",
+                "title": "Nationwide Blood Bank Application",
+                "type": "Systems Architecture Case Study",
+                "description": "Architected a complex, scalable web platform to connect blood donors with recipients, featuring a high-performance backend built with Go and gRPC."
+            },
+            "pothole": {
+                "category": "AI Infrastructure",
+                "title": "AI-Powered Infrastructure Monitoring",
+                "client": "Binus University (PKM-KC Nominee)",
+                "description": "Developed and fine-tuned a pothole detection system that generates automated PDF reports for infrastructure maintenance."
+            },
+            "identity": {
+                "category": "Blockchain & Identity",
+                "title": "Decentralized Identity Platform",
+                "type": "R&D Case Study",
+                "description": "Engineered a secure identity management platform using Motoko Backend, allowing users to generate unique ID addresses for seamless and private integration with companies."
+            },
+            "emergency": {
+                "category": "Emergency Response AI",
+                "title": "Emergency Autoresponder System",
+                "type": "R&D Case Study",
+                "description": "Trained a TensorFlow model on 20,000 images to detect traffic accidents, forming the core of an automated emergency response system."
+            },
+            "commercial": {
+                "category": "Commercial Web Apps",
+                "title": "Full-Stack Booking & Dashboard Systems",
+                "client": "Suma Barber, PT Aitiserve, and Others",
+                "description": "Developed and maintained multiple commercial web applications, including online booking systems and dynamic data dashboards using React, Next.js, and Node.js."
+            }
+        }
+    },
     "footer": {
         "description": "We partner with businesses to implement strategic technology solutions that drive growth, efficiency, and competitive differentiation.",
         "sections": {

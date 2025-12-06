@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useScroll, useTransform } from "motion/react";
 import { GoogleGeminiEffect } from "@/components/ui/google-gemini-effect";
 import {
@@ -19,10 +19,16 @@ import { Logo } from "@/components/ui/logo";
 import emailjs from '@emailjs/browser';
 import { useLanguage } from "@/contexts/language-context";
 import { LanguageToggle } from "@/components/ui/language-toggle";
+import ReCAPTCHA from 'react-google-recaptcha';
 
-export default function ContactContent() {
+interface ContactContentProps {
+  recaptchaSiteKey: string;
+}
+
+export default function ContactContent({ recaptchaSiteKey }: ContactContentProps) {
   const { t } = useLanguage();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const navItems = [
     {
@@ -91,7 +97,8 @@ export default function ContactContent() {
 
   // Initialize EmailJS
   useEffect(() => {
-    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+    const publicKey = "a0rSUGmPU4fx4oZn9"; // Hardcoded for testing
+    console.log("EmailJS Public Key:", publicKey); // Debug log
     emailjs.init(publicKey);
   }, []);
 
@@ -111,16 +118,40 @@ export default function ContactContent() {
     setErrorMessage("");
 
     try {
-      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
-      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
+      // Get reCAPTCHA token from v2 checkbox
+      const recaptchaToken = recaptchaRef.current?.getValue();
+
+      if (!recaptchaToken) {
+        console.error('reCAPTCHA not completed');
+        setErrorMessage("Please complete the reCAPTCHA verification.");
+        setSubmitStatus("error");
+        setIsSubmitting(false);
+        return;
+      }
+
+      console.log('reCAPTCHA token obtained'); // Debug log
+
+      const serviceId = "service_r1gnlzm"; // Updated service ID
+      const templateId = "template_7t40ifs"; // Updated template ID
+      const publicKey = "a0rSUGmPU4fx4oZn9"; // Public key
+
+      // Debug logging
+      console.log("EmailJS Configuration:", {
+        serviceId,
+        templateId,
+        publicKey,
+        hasRecaptcha: !!recaptchaToken,
+      });
 
       const result = await emailjs.send(serviceId, templateId, {
         from_name: formData.name,
         from_email: formData.email,
         company: formData.company,
         message: formData.message,
+        'g-recaptcha-response': recaptchaToken, // Add reCAPTCHA token
       }, publicKey);
+
+      console.log("EmailJS Result:", result); // Debug log
 
       if (result.status === 200) {
         setSubmitStatus("success");
@@ -130,14 +161,22 @@ export default function ContactContent() {
           company: "",
           message: "",
         });
+        // Reset reCAPTCHA for next submission
+        recaptchaRef.current?.reset();
       } else {
         setSubmitStatus("error");
         setErrorMessage("Failed to send message. Please email us directly at tspdigital.id@gmail.com.");
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("EmailJS error:", error);
+      console.error("Error details:", {
+        message: error?.message,
+        text: error?.text,
+        status: error?.status,
+      });
       setSubmitStatus("error");
-      setErrorMessage("Failed to send message. Please email us directly at tspdigital@gmail.com.");
+      const errorMsg = error?.text || error?.message || "Failed to send message";
+      setErrorMessage(`${errorMsg}. Please email us directly at tspdigital.id@gmail.com.`);
     } finally {
       setIsSubmitting(false);
     }
@@ -272,6 +311,15 @@ export default function ContactContent() {
                       rows={6}
                       className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white dark:bg-gray-800 dark:border-gray-600 dark:text-white resize-none"
                       required
+                    />
+                  </div>
+
+                  {/* reCAPTCHA v2 Checkbox */}
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={recaptchaSiteKey}
+                      theme="light"
                     />
                   </div>
                 </div>
