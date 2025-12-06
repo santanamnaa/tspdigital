@@ -33,7 +33,7 @@ export const CarouselContext = createContext<{
   onCardClose: (index: number) => void;
   currentIndex: number;
 }>({
-  onCardClose: () => {},
+  onCardClose: () => { },
   currentIndex: 0,
 });
 
@@ -60,13 +60,17 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
   const scrollLeft = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      const cardWidth = window.innerWidth < 768 ? 230 : 384;
+      const gap = 16;
+      carouselRef.current.scrollBy({ left: -(cardWidth + gap), behavior: "smooth" });
     }
   };
 
   const scrollRight = () => {
     if (carouselRef.current) {
-      carouselRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      const cardWidth = window.innerWidth < 768 ? 230 : 384;
+      const gap = 16;
+      carouselRef.current.scrollBy({ left: cardWidth + gap, behavior: "smooth" });
     }
   };
 
@@ -93,9 +97,10 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
     >
       <div className="relative w-full">
         <div
-          className="flex w-full overflow-x-scroll overscroll-x-auto scroll-smooth py-10 [scrollbar-width:none] md:py-20"
+          className="flex w-full overflow-x-scroll overscroll-x-auto py-10 [scrollbar-width:none] [scroll-snap-type:x_mandatory] scroll-smooth md:py-20"
           ref={carouselRef}
           onScroll={checkScrollability}
+          style={{ scrollPaddingLeft: '1rem' }}
         >
           <div
             className={cn(
@@ -105,8 +110,8 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
 
           <div
             className={cn(
-              "flex flex-row justify-start gap-4 pl-4",
-              "mx-auto max-w-7xl", // remove max-w-4xl if you want the carousel to span the full width of its container
+              "flex flex-row justify-start gap-4 pl-4 pr-4",
+              "max-w-7xl", // removed mx-auto to start from left
             )}
           >
             {items.map((item, index) => (
@@ -125,7 +130,10 @@ export const Carousel = ({ items, initialScroll = 0 }: CarouselProps) => {
                   },
                 }}
                 key={"card" + index}
-                className="rounded-3xl last:pr-[5%] md:last:pr-[33%]"
+                className={cn(
+                  "rounded-3xl [scroll-snap-align:start] flex-shrink-0",
+                  index === items.length - 1 && "mr-4"
+                )}
               >
                 {item}
               </motion.div>
