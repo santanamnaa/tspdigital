@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | TSP Digital',
     default: 'TSP Digital - AI & Strategic Development',
   },
-  description: 'We are a strategic technology partner that weaponizes data and automates processes using AI. We build unfair advantages for ambitious businesses.',
+  description: 'We are a strategic technology partner that accelerates operations and transforms data using AI. We build lasting value for forward-thinking organizations.',
   icons: {
     icon: '/logo/tspd.svg',
     shortcut: '/logo/tspd.svg',

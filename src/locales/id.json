@@ -10,15 +10,15 @@
     "hero": {
         "title1": "Kami Tidak Hanya Membangun Software.",
         "title2": "Kami Membangun",
-        "title3": "Pertumbuhan Bisnis.",
-        "description": "TSP Digital adalah mitra teknologi strategis Anda. Kami mengubah tantangan bisnis menjadi solusi yang skalabel melalui strategi berbasis data, rekayasa full-stack, dan integrasi AI."
+        "title3": "Akselerasi Digital.",
+        "description": "TSP Digital adalah mitra teknologi strategis Anda. Kami mempercepat inisiatif strategis dan mengubah tantangan menjadi solusi yang skalabel melalui strategi berbasis data, rekayasa full-stack, dan integrasi AI."
     },
     "services": {
         "title": "Kemampuan Kami.",
         "description": "Dari strategi awal hingga optimisasi berkelanjutan, kami menyediakan solusi teknologi end-to-end yang dirancang untuk mempercepat transformasi digital Anda.",
         "strategy": {
             "title": "Strategi & Cetak Biru",
-            "description": "Kami menganalisis kebutuhan bisnis Anda dan merancang roadmap teknis."
+            "description": "Kami menganalisis tujuan organisasi Anda dan merancang roadmap teknis."
         },
         "development": {
             "title": "Pengembangan Full-Stack",
@@ -49,17 +49,17 @@
         "heroTitle1": "Kami Adalah Ahli dalam",
         "heroTitle2": "Transformasi Digital.",
         "heading": "T.S.P. Digital",
-        "description": "Mitra teknologi strategis yang mengoptimalkan infrastruktur data Anda dan mengotomatisasi proses bisnis Anda menggunakan AI dan perangkat lunak cerdas.",
-        "quote": "TSP Digital didirikan dengan misi yang jelas: membantu bisnis Indonesia berkembang di era ekonomi digital. Teknologi harus menjadi enabler, bukan penghalang. Kami bermitra dengan klien untuk menyelesaikan tantangan bisnis yang kompleks melalui perencanaan strategis, praktik engineering modern, dan solusi berbasis AI yang memberikan ROI terukur. Pendekatan kami proaktif, berdasarkan data, dan berfokus pada pertumbuhan berkelanjutan.",
+        "description": "Mitra teknologi strategis yang mengoptimalkan infrastruktur data Anda dan mempercepat alur kerja operasional Anda menggunakan AI dan perangkat lunak cerdas.",
+        "quote": "TSP Digital didirikan dengan misi yang jelas: mempercepat kemajuan digital Indonesia. Teknologi harus menjadi enabler, bukan penghalang. Kami bermitra dengan klien untuk menyelesaikan tantangan kompleks melalui perencanaan strategis, praktik engineering modern, dan solusi berbasis AI yang memberikan ROI terukur. Pendekatan kami proaktif, berdasarkan data, dan berfokus pada akselerasi berkelanjutan.",
         "teamTitle": "Tim Kepemimpinan Kami.",
         "team": {
             "santana": {
                 "name": "Santana Mena",
-                "role": "Ahli Strategi Utama & Insinyur Utama"
+                "role": "Pendiri & Pemimpin Strategis"
             },
             "irgya": {
                 "name": "Irgya Genta Arnezzi",
-                "role": "Chief Technology Officer"
+                "role": "Co-Founder & Kepala Operasional"
             }
         }
     },
@@ -71,7 +71,7 @@
         "items": {
             "strategy": {
                 "title": "Strategi & Cetak Biru",
-                "description": "Kami menganalisis bisnis Anda, memetakan alur pengguna, dan merancang cetak biru teknis yang jelas—mempersiapkan proyek Anda untuk sukses sejak hari pertama."
+                "description": "Kami menganalisis organisasi Anda, memetakan alur pengguna, dan merancang cetak biru teknis yang jelas—mempersiapkan proyek Anda untuk sukses sejak hari pertama."
             },
             "development": {
                 "title": "Pengembangan Full-Stack",
@@ -87,7 +87,7 @@
             },
             "support": {
                 "title": "Dukungan & Optimisasi Berkelanjutan",
-                "description": "Hubungan kami tidak berakhir saat peluncuran. Kami menyediakan dukungan, pemantauan, dan optimisasi berkelanjutan untuk memastikan sistem Anda tetap efisien, aman, dan selaras dengan kebutuhan bisnis Anda yang berkembang."
+                "description": "Hubungan kami tidak berakhir saat peluncuran. Kami menyediakan dukungan, pemantauan, dan optimisasi berkelanjutan untuk memastikan sistem Anda tetap efisien, aman, dan selaras dengan kebutuhan Anda yang berkembang."
             }
         }
     },
@@ -132,11 +132,11 @@
     "contactPage": {
         "hero": {
             "title": "Siap Mempercepat Transformasi Digital Anda?",
-            "description": "Mari diskusikan proyek Anda dan jelajahi bagaimana solusi teknologi kami dapat mendorong pertumbuhan bisnis yang terukur."
+            "description": "Mari diskusikan proyek Anda dan jelajahi bagaimana solusi teknologi kami dapat mendorong percepatan dan efisiensi terukur."
         },
         "form": {
             "title": "Hubungi Kami",
-            "subtitle": "Siap mentransformasi bisnis Anda? Mari mulai percakapan tentang proyek Anda.",
+            "subtitle": "Siap mempercepat dampak Anda? Mari mulai percakapan tentang proyek Anda.",
             "namePlaceholder": "Nama Anda",
             "emailPlaceholder": "Email Anda",
             "companyPlaceholder": "Perusahaan (Opsional)",
@@ -157,7 +157,7 @@
         },
         "whatToExpect": {
             "title": "Apa yang Diharapkan",
-            "description1": "Kami akan menjadwalkan konsultasi strategis untuk memahami tantangan dan peluang bisnis Anda. Tim kami kemudian akan mengusulkan solusi yang disesuaikan dengan tujuan Anda.",
+            "description1": "Kami akan menjadwalkan konsultasi strategis untuk memahami tantangan dan peluang Anda. Tim kami kemudian akan mengusulkan solusi yang disesuaikan dengan tujuan Anda.",
             "description2": "Dari konsep awal hingga deployment akhir, kami memastikan setiap langkah dioptimalkan untuk kesuksesan Anda."
         },
         "gemini": {
@@ -202,7 +202,7 @@
         },
         "cta": {
             "title": "Butuh Solusi Kustom?",
-            "description": "Tim kami siap membantu Anda memilih solusi sempurna untuk kebutuhan bisnis Anda.",
+            "description": "Tim kami siap membantu Anda memilih solusi sempurna untuk kebutuhan spesifik Anda.",
             "customConsultation": "Konsultasi Kustom"
         }
     },
@@ -210,7 +210,7 @@
         "phase1": {
             "title": "Fase 1",
             "heading": "Pendalaman Strategis",
-            "description": "Kami tidak menulis kode sampai kami memahami bisnis Anda. Fase ini adalah pendalaman intensif terhadap tantangan operasional, posisi pasar, dan tujuan strategis Anda. Kami mendefinisikan masalah yang tepat yang akan kami selesaikan bersama.",
+            "description": "Kami tidak menulis kode sampai kami memahami organisasi Anda. Fase ini adalah pendalaman intensif terhadap tantangan operasional, posisi strategis, dan tujuan Anda. Kami mendefinisikan masalah yang tepat yang akan kami selesaikan bersama.",
             "items": [
                 "Workshop Stakeholder",
                 "Audit Teknis & Bisnis",
@@ -250,7 +250,7 @@
         "phase5": {
             "title": "Fase 5",
             "heading": "Deployment & Kemitraan Strategis",
-            "description": "Peluncuran bukan akhir; ini adalah awal dari keunggulan kompetitif Anda. Kami mengelola proses deployment penuh dan bertransisi menjadi peran mitra strategis, memantau performa dan mengidentifikasi peluang pertumbuhan baru.",
+            "description": "Peluncuran bukan akhir; ini adalah awal dari keunggulan operasional Anda. Kami mengelola proses deployment penuh dan bertransisi menjadi peran mitra strategis, memantau performa dan mengidentifikasi peluang akselerasi baru.",
             "items": [
                 "Konfigurasi Server & Pengajuan App Store",
                 "Pemantauan Pasca-Peluncuran",
@@ -319,7 +319,7 @@
         }
     },
     "footer": {
-        "description": "Kami bermitra dengan bisnis untuk menerapkan solusi teknologi strategis yang mendorong pertumbuhan, efisiensi, dan diferensiasi kompetitif.",
+        "description": "Kami bermitra dengan organisasi untuk menerapkan solusi teknologi strategis yang mendorong akselerasi, efisiensi, dan diferensiasi operasional.",
         "sections": {
             "services": {
                 "title": "Layanan",

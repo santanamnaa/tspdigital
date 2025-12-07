@@ -10,15 +10,15 @@
     "hero": {
         "title1": "We Don't Just Build Software.",
         "title2": "We Build",
-        "title3": "Business Growth.",
-        "description": "TSP Digital is your strategic technology partner. We transform business challenges into scalable solutions through data-driven strategy, full-stack engineering, and AI integration."
+        "title3": "Digital Acceleration.",
+        "description": "TSP Digital is your strategic technology partner. We accelerate strategic initiatives and transform challenges into scalable solutions through data-driven strategy, full-stack engineering, and AI integration."
     },
     "services": {
         "title": "Our Capabilities.",
         "description": "From initial strategy to ongoing optimization, we provide end-to-end technology solutions designed to accelerate your digital transformation.",
         "strategy": {
             "title": "Strategy & Blueprint",
-            "description": "We analyze your business requirements and design the technical roadmap."
+            "description": "We analyze your organizational goals and design the technical roadmap."
         },
         "development": {
             "title": "Full-Stack Development",
@@ -49,17 +49,17 @@
         "heroTitle1": "We Are Experts in",
         "heroTitle2": "Digital Transformation.",
         "heading": "T.S.P. Digital",
-        "description": "Strategic technology partner that optimizes your data infrastructure and automates your business processes using AI and intelligent software.",
-        "quote": "TSP Digital was founded on a clear mission: to help Indonesian businesses thrive in the digital economy. Technology should be an enabler, not a barrier. We partner with clients to solve complex business challenges through strategic planning, modern engineering practices, and AI-driven solutions that deliver measurable ROI. Our approach is proactive, data-informed, and focused on sustainable growth.",
+        "description": "Strategic technology partner that optimizes your data infrastructure and accelerates your operational workflows using AI and intelligent software.",
+        "quote": "TSP Digital was founded on a clear mission: to accelerate Indonesia's digital advancement. Technology should be an enabler, not a barrier. We partner with clients to solve complex challenges through strategic planning, modern engineering practices, and AI-driven solutions that deliver measurable ROI. Our approach is proactive, data-informed, and focused on sustainable acceleration.",
         "teamTitle": "Our Leadership Team.",
         "team": {
             "santana": {
                 "name": "Santana Mena",
-                "role": "Lead Strategist & Principal Engineer"
+                "role": "Founder & Strategic Lead"
             },
             "irgya": {
                 "name": "Irgya Genta Arnezzi",
-                "role": "Chief Technology Officer"
+                "role": "Co-Founder & Head of Operations"
             }
         }
     },
@@ -71,7 +71,7 @@
         "items": {
             "strategy": {
                 "title": "Strategy & Blueprint",
-                "description": "We analyze your business, map user flows, and design a clear technical blueprint—setting your project up for success from day one."
+                "description": "We analyze your organization, map user flows, and design a clear technical blueprint—setting your project up for success from day one."
             },
             "development": {
                 "title": "Full-Stack Development",
@@ -87,7 +87,7 @@
             },
             "support": {
                 "title": "Ongoing Support & Optimization",
-                "description": "Our relationship doesn't end at launch. We provide continuous support, monitoring, and optimization to ensure your systems remain efficient, secure, and aligned with your evolving business needs."
+                "description": "Our relationship doesn't end at launch. We provide continuous support, monitoring, and optimization to ensure your systems remain efficient, secure, and aligned with your evolving needs."
             }
         }
     },
@@ -132,11 +132,11 @@
     "contactPage": {
         "hero": {
             "title": "Ready to Accelerate Your Digital Transformation?",
-            "description": "Let's discuss your project and explore how our technology solutions can drive measurable business growth."
+            "description": "Let's discuss your project and explore how our technology solutions can drive measurable acceleration and efficiency."
         },
         "form": {
             "title": "Get in Touch",
-            "subtitle": "Ready to transform your business? Let's start a conversation about your project.",
+            "subtitle": "Ready to accelerate your impact? Let's start a conversation about your project.",
             "namePlaceholder": "Your Name",
             "emailPlaceholder": "Your Email",
             "companyPlaceholder": "Company (Optional)",
@@ -157,7 +157,7 @@
         },
         "whatToExpect": {
             "title": "What to Expect",
-            "description1": "We'll schedule a strategic consultation to understand your business challenges and opportunities. Our team will then propose a tailored solution that aligns with your goals.",
+            "description1": "We'll schedule a strategic consultation to understand your challenges and opportunities. Our team will then propose a tailored solution that aligns with your goals.",
             "description2": "From initial concept to final deployment, we ensure every step is optimized for your success."
         },
         "gemini": {
@@ -202,7 +202,7 @@
         },
         "cta": {
             "title": "Need Custom Solutions?",
-            "description": "Our team is ready to help you choose the perfect solution for your business needs.",
+            "description": "Our team is ready to help you choose the perfect solution for your specific needs.",
             "customConsultation": "Custom Consultation"
         }
     },
@@ -210,7 +210,7 @@
         "phase1": {
             "title": "Phase 1",
             "heading": "Strategic Deep Dive",
-            "description": "We don't write code until we understand your business. This phase is an intensive immersion into your operational challenges, market position, and strategic goals. We define the precise problem we will solve together.",
+            "description": "We don't write code until we understand your organization. This phase is an intensive immersion into your operational challenges, market position, and strategic goals. We define the precise problem we will solve together.",
             "items": [
                 "Stakeholder Workshops",
                 "Technical & Business Audit",
@@ -319,7 +319,7 @@
         }
     },
     "footer": {
-        "description": "We partner with businesses to implement strategic technology solutions that drive growth, efficiency, and competitive differentiation.",
+        "description": "We partner with organizations to implement strategic technology solutions that drive acceleration, efficiency, and competitive differentiation.",
         "sections": {
             "services": {
                 "title": "Services",

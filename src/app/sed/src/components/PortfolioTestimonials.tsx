@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 export function PortfolioTestimonials() {
   const [currentPortfolio, setCurrentPortfolio] = useState(0);
-  
+
   const portfolios = [
     {
       title: 'Warung Nusantara',
@@ -31,7 +31,7 @@ export function PortfolioTestimonials() {
     },
     {
       title: 'Tech Solutions',
-      category: 'Service Business',
+      category: 'Service Sector',
       description: 'Website company profile untuk perusahaan teknologi dengan portfolio',
       image: 'https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaWdpdGFsJTIwYWdlbmN5fGVufDF8fHx8MTc1OTQwNDcwOXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
       url: 'techsolutions.id'
@@ -43,7 +43,7 @@ export function PortfolioTestimonials() {
       name: 'Ahmad Fauzi',
       business: 'Warung Nusantara',
       role: 'Pemilik Usaha',
-      content: 'Website dari TSP Digital Agency membantu bisnis saya lebih dikenal pelanggan. Kini informasi menu dan kontak lebih mudah diakses, dan tampilan lebih profesional.',
+      content: 'Website dari TSP Digital Agency mempercepat jangkauan pelanggan saya. Kini informasi menu dan kontak lebih mudah diakses, dan tampilan lebih profesional.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1494790108755-2616b612b562?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGJ1c2luZXNzfGVufDF8fHx8MTc1OTQwNDcxMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     },
@@ -59,7 +59,7 @@ export function PortfolioTestimonials() {
       name: 'Sumardi',
       business: 'Suma Barber',
       role: 'Barber Master',
-      content: 'Tim TSP Digital Agency sangat profesional dan responsif. Website membantu meningkatkan citra bisnis saya, dan kini lebih mudah ditemukan pelanggan potensial.',
+      content: 'Tim TSP Digital Agency sangat profesional dan responsif. Website mempercepat branding saya, dan kini lebih mudah ditemukan pelanggan potensial.',
       rating: 5,
       avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx3b21hbiUyMGVudHJlcHJlbmV1cnxlbnwxfHx8fDE3NTk0MDQ3MTZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
     }
@@ -76,7 +76,7 @@ export function PortfolioTestimonials() {
   return (
     <section className="py-20 px-6 bg-gradient-to-b from-[#1a1a1a] to-[#0C0C0C]">
       <div className="max-w-7xl mx-auto">
-        
+
         {/* Portfolio Section */}
         <div className="mb-20">
           <div className="text-center mb-16">
@@ -85,10 +85,10 @@ export function PortfolioTestimonials() {
               <span className="text-[#0057FF]">Website Kami</span>
             </h2>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Contoh website yang telah kami bantu untuk berbagai jenis bisnis UMKM
+              Contoh website yang telah kami bantu percepat pertumbuhannya
             </p>
           </div>
-          
+
           <div className="relative">
             {/* Portfolio Carousel */}
             <Card className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 overflow-hidden">
@@ -101,7 +101,7 @@ export function PortfolioTestimonials() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent lg:hidden"></div>
                 </div>
-                
+
                 <div className="p-8 lg:p-12 flex flex-col justify-center">
                   <div className="mb-6">
                     <span className="inline-block bg-[#0057FF] text-white px-4 py-2 rounded-lg text-sm mb-4">
@@ -118,7 +118,7 @@ export function PortfolioTestimonials() {
                   </div>
                 </div>
               </div>
-              
+
               {/* Navigation */}
               <div className="absolute top-1/2 left-4 transform -translate-y-1/2">
                 <Button
@@ -130,7 +130,7 @@ export function PortfolioTestimonials() {
                   <ArrowLeft className="w-5 h-5" />
                 </Button>
               </div>
-              
+
               <div className="absolute top-1/2 right-4 transform -translate-y-1/2">
                 <Button
                   variant="ghost"
@@ -142,22 +142,21 @@ export function PortfolioTestimonials() {
                 </Button>
               </div>
             </Card>
-            
+
             {/* Portfolio Indicators */}
             <div className="flex justify-center gap-2 mt-6">
               {portfolios.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentPortfolio(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentPortfolio ? 'bg-[#0057FF]' : 'bg-gray-600'
-                  }`}
+                  className={`w-3 h-3 rounded-full transition-colors ${index === currentPortfolio ? 'bg-[#0057FF]' : 'bg-gray-600'
+                    }`}
                 />
               ))}
             </div>
           </div>
         </div>
-        
+
         {/* Testimonials Section */}
         <div>
           <div className="text-center mb-16">
@@ -169,18 +168,18 @@ export function PortfolioTestimonials() {
               Pengalaman pelanggan setelah menggunakan jasa dari TSP Digital Agency
             </p>
           </div>
-          
+
           <div className="grid lg:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card 
-                key={index} 
+              <Card
+                key={index}
                 className="bg-gradient-to-br from-gray-900/50 to-gray-800/50 border-gray-700/50 p-8 hover:border-[#0057FF]/50 transition-all duration-300"
               >
                 <div className="mb-6">
                   <Quote className="w-8 h-8 text-[#0057FF] mb-4" />
                   <p className="text-gray-300 text-lg leading-relaxed">{testimonial.content}</p>
                 </div>
-                
+
                 <div className="flex items-center gap-4">
                   <ImageWithFallback
                     src={testimonial.avatar}
@@ -193,7 +192,7 @@ export function PortfolioTestimonials() {
                     <p className="text-[#0057FF] text-sm">{testimonial.business}</p>
                   </div>
                 </div>
-                
+
                 <div className="flex gap-1 mt-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />

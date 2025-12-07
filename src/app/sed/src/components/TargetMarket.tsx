@@ -6,7 +6,7 @@ export function TargetMarket() {
   const targets = [
     {
       icon: Coffee,
-      title: 'F&B Business',
+      title: 'F&B Sector',
       description: 'Cafe, restaurant, katering, minuman',
       examples: ['Menu online', 'Sistem informasi', 'Gallery makanan', 'Info kontak & lokasi'],
       image: 'https://images.unsplash.com/photo-1594402918464-2d7bb2e97292?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwY2FmZXxlbnwxfHx8fDE3NTk0MDQ2NTN8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
@@ -43,24 +43,24 @@ export function TargetMarket() {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <div className="w-20 h-20 mx-auto mb-6">
-            <img 
-              src="/logo/sed/sed logo.png" 
-              alt="SED Logo" 
-              width={80} 
+            <img
+              src="/logo/sed/sed logo.png"
+              alt="SED Logo"
+              width={80}
               height={80}
               className="object-contain"
             />
           </div>
           <h2 className="text-5xl lg:text-6xl text-white mb-6">Target <span className="text-[#0057FF]">Market</span></h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Solusi digitalisasi yang cocok untuk berbagai jenis bisnis UMKM di Indonesia
+            Solusi digitalisasi yang mempercepat pertumbuhan UMKM di Indonesia
           </p>
         </div>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {targets.map((target, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className={`bg-gradient-to-br ${target.gradient} border-gray-700/50 overflow-hidden hover:scale-105 transition-all duration-300 hover:border-[#0057FF]/50`}
             >
               <div className="relative h-48 overflow-hidden">
@@ -74,13 +74,13 @@ export function TargetMarket() {
                   <target.icon className="w-6 h-6 text-white" />
                 </div>
               </div>
-              
+
               <div className="p-6 space-y-4">
                 <div>
                   <h3 className="text-2xl text-white mb-2">{target.title}</h3>
                   <p className="text-gray-300">{target.description}</p>
                 </div>
-                
+
                 <div className="space-y-2">
                   <p className="text-sm text-gray-400 uppercase tracking-wide">Fitur Tersedia:</p>
                   <ul className="space-y-1">
@@ -96,19 +96,19 @@ export function TargetMarket() {
             </Card>
           ))}
         </div>
-        
+
         <div className="text-center mt-16">
           <Card className="inline-block bg-gradient-to-r from-[#0057FF]/10 to-[#FF5C00]/10 border-[#0057FF]/30 p-8">
-            <h3 className="text-3xl text-white mb-4">Bisnis Lain Juga Bisa!</h3>
+            <h3 className="text-3xl text-white mb-4">Sektor Lain Juga Bisa!</h3>
             <p className="text-xl text-gray-300 mb-6">
-              Apapun bisnisnya, ada solusinya dari TSP Digital Agency
+              Apapun bidangnya, kami percepat digitalisasinya bersama TSP Digital Agency
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 'Photography', 'Event Organizer', 'Travel Agent', 'Fitness Trainer',
                 'Music Teacher', 'Pet Shop', 'Laundry', 'Auto Repair'
               ].map((business, index) => (
-                <span 
+                <span
                   key={index}
                   className="bg-gray-800/50 text-gray-300 px-4 py-2 rounded-lg text-sm"
                 >
