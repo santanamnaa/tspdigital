@@ -11,7 +11,7 @@
 1. In EmailJS dashboard, go to "Email Services"
 2. Click "Add New Service"
 3. Choose "Gmail" or "Custom SMTP"
-4. Configure with your Gmail account (tspdigital.id@gmail.com)
+4. Configure with your Gmail account (info@tspdigital.id)
 5. Note down the **Service ID**
 
 ## Step 3: Create Email Template
@@ -62,7 +62,7 @@ emailjs.init("YOUR_ACTUAL_PUBLIC_KEY");
 
 1. Fill out the contact form
 2. Submit the form
-3. Check tspdigital.id@gmail.com for the email
+3. Check info@tspdigital.id for the email
 
 ## Environment Variables (Optional)
 

@@ -54,7 +54,7 @@ npm run dev
 
 1. Isi form contact
 2. Submit form
-3. Cek email di `tspdigital.id@gmail.com`
+3. Cek email di `info@tspdigital.id`
 
 ## 7. Keamanan:
 

@@ -170,7 +170,7 @@ export default function ContactContent({ recaptchaSiteKey }: ContactContentProps
         recaptchaRef.current?.reset();
       } else {
         setSubmitStatus("error");
-        setErrorMessage("Failed to send message. Please email us directly at tspdigital.id@gmail.com.");
+        setErrorMessage("Failed to send message. Please email us directly at info@tspdigital.id.");
       }
     } catch (error: any) {
       console.error("EmailJS error:", error);
@@ -181,7 +181,7 @@ export default function ContactContent({ recaptchaSiteKey }: ContactContentProps
       });
       setSubmitStatus("error");
       const errorMsg = error?.text || error?.message || "Failed to send message";
-      setErrorMessage(`${errorMsg}. Please email us directly at tspdigital.id@gmail.com.`);
+      setErrorMessage(`${errorMsg}. Please email us directly at info@tspdigital.id.`);
     } finally {
       setIsSubmitting(false);
     }

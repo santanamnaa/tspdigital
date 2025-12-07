@@ -57,7 +57,7 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: IconMail, text: "tspdigital.id@gmail.com", href: "mailto:tspdigital.id@gmail.com" },
+  { icon: IconMail, text: "info@tspdigital.id", href: "mailto:info@tspdigital.id" },
   { icon: IconPhone, text: "+62 851-2119-0261", href: "tel:+6285121190261" },
   { icon: IconBrandWhatsapp, text: "+62 851-2119-0261", href: "https://wa.me/6285121190261" },
   //   { icon: IconMapPin, text: "Jakarta, Indonesia", href: "#" },

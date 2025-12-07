@@ -111,7 +111,7 @@ npm run dev
    - ✅ `EmailJS Result: {status: 200, ...}`
 
 ### 4.3 Cek Email
-Email harus masuk ke inbox yang dikonfigurasi di EmailJS service (kemungkinan `tspdigital.id@gmail.com`)
+Email harus masuk ke inbox yang dikonfigurasi di EmailJS service (kemungkinan `info@tspdigital.id`)
 
 ---
 

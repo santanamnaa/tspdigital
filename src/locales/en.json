@@ -144,7 +144,7 @@
             "submitButton": "Send Message",
             "sending": "Sending...",
             "successMessage": "Message sent successfully!",
-            "errorMessage": "Failed to send message. Please email us directly at tspdigital.id@gmail.com."
+            "errorMessage": "Failed to send message. Please email us directly at info@tspdigital.id."
         },
         "whyChoose": {
             "title": "Why Choose TSP Digital?",

@@ -45,7 +45,7 @@ NEXT_PUBLIC_EMAILJS_TEMPLATE_ID=template_3yc86te
 
 1. Klik "Add New Service"
 2. Pilih "Gmail" atau "Custom SMTP"
-3. Konfigurasi dengan email `tspdigital.id@gmail.com`
+3. Konfigurasi dengan email `info@tspdigital.id`
 4. Setelah dibuat, copy Service ID yang muncul
 
 ## Testing:
