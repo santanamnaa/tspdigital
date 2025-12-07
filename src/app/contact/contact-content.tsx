@@ -97,9 +97,13 @@ export default function ContactContent({ recaptchaSiteKey }: ContactContentProps
 
   // Initialize EmailJS
   useEffect(() => {
-    const publicKey = "a0rSUGmPU4fx4oZn9"; // Hardcoded for testing
-    console.log("EmailJS Public Key:", publicKey); // Debug log
-    emailjs.init(publicKey);
+    const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
+    if (publicKey) {
+      emailjs.init(publicKey);
+      console.log("EmailJS initialized");
+    } else {
+      console.error("EmailJS Public Key not found in environment variables");
+    }
   }, []);
 
   // Handle form submission
@@ -131,15 +135,16 @@ export default function ContactContent({ recaptchaSiteKey }: ContactContentProps
 
       console.log('reCAPTCHA token obtained'); // Debug log
 
-      const serviceId = "service_r1gnlzm"; // Updated service ID
-      const templateId = "template_7t40ifs"; // Updated template ID
-      const publicKey = "a0rSUGmPU4fx4oZn9"; // Public key
+      // Get EmailJS credentials from environment variables
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || '';
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || '';
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || '';
 
       // Debug logging
       console.log("EmailJS Configuration:", {
-        serviceId,
-        templateId,
-        publicKey,
+        hasServiceId: !!serviceId,
+        hasTemplateId: !!templateId,
+        hasPublicKey: !!publicKey,
         hasRecaptcha: !!recaptchaToken,
       });
 
