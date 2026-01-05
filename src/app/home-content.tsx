@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { PartnerCarousel } from "@/components/ui/partner-carousel";
 import {
   Navbar,
   NavBody,
@@ -16,7 +17,7 @@ import { Cover } from "@/components/ui/cover";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
 import { GlowingStarsBackgroundCard, GlowingStarsTitle, GlowingStarsDescription } from "@/components/ui/glowing-stars";
 import TimelineDemo from "@/components/ui/timeline-demo";
-import AppleCardsCarouselDemo from "@/components/ui/apple-cards-carousel-demo";
+
 import AnimatedTooltipDemo from "@/components/ui/animated-tooltip-demo";
 import { Footer } from "@/components/ui/footer";
 import { Logo } from "@/components/ui/logo";
@@ -124,22 +125,10 @@ export default function HomeContent() {
         </div>
       </section>
 
-      {/* Social Proof Section
-      <section className="py-60 px-4 bg-card">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="flex flex-col items-center justify-center">
-            <h2 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-6 text-black dark:text-white max-w-4xl text-center">
-              Trusted in High-Stakes Environments.
-            </h2>
-            <p className="text-neutral-700 dark:text-neutral-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl text-center">
-              Our clients rely on us when the stakes are highest. We deliver results where reliability, security, and innovation are non-negotiable.
-            </p>
-          </div>
-          <div className="mt-20 w-full flex justify-center items-center">
-            <AnimatedTooltipDemo />
-          </div>
-        </div>
-      </section> */}
+      {/* Partner Carousel Section */}
+      <section className="py-10 px-4 bg-transparent">
+        <PartnerCarousel />
+      </section>
 
       {/* Services Teaser Section */}
       <section className="py-60 px-4">
@@ -206,10 +195,7 @@ export default function HomeContent() {
         <TimelineDemo />
       </section>
 
-      {/* Strategic Portfolio Section */}
-      <section className="py-20 px-4">
-        <AppleCardsCarouselDemo />
-      </section>
+
 
       {/* Featured Project Section */}
       <section className="py-20 px-4 bg-card">
