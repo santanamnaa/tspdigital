@@ -4,15 +4,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const lastMod = new Date().toISOString();
 
   return [
-    { url: 'https://tspdigital.agency', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/about', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/services', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/pricing', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/projects', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/contact', lastModified: lastMod },
+    { url: 'https://tspdigital.id', lastModified: lastMod },
+    { url: 'https://tspdigital.id/about', lastModified: lastMod },
+    { url: 'https://tspdigital.id/services', lastModified: lastMod },
+    { url: 'https://tspdigital.id/pricing', lastModified: lastMod },
+    { url: 'https://tspdigital.id/projects', lastModified: lastMod },
+    { url: 'https://tspdigital.id/contact', lastModified: lastMod },
     // SED routes
-    { url: 'https://tspdigital.agency/sed', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/sed/pricing', lastModified: lastMod },
-    { url: 'https://tspdigital.agency/sed/order', lastModified: lastMod },
+    { url: 'https://tspdigital.id/sed', lastModified: lastMod },
+    { url: 'https://tspdigital.id/sed/pricing', lastModified: lastMod },
+    { url: 'https://tspdigital.id/sed/order', lastModified: lastMod },
   ];
 }

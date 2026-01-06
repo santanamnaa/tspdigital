@@ -5,7 +5,7 @@ import { LanguageProvider } from "@/contexts/language-context";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://tspdigital.agency'),
+  metadataBase: new URL('https://tspdigital.id'),
   title: {
     template: '%s | TSP Digital',
     default: 'TSP Digital - AI & Strategic Development',

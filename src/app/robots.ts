@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://tspdigital.agency/sitemap.xml',
+    sitemap: 'https://tspdigital.id/sitemap.xml',
   }
 } 
